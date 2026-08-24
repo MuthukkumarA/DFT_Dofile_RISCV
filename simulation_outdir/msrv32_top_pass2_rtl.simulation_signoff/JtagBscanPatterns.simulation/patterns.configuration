@@ -1,0 +1,7 @@
+config JtagBscanPatterns_configuration;
+  design TB;
+  default liblist dut_work;
+
+  instance TB.DUT_inst use     dut_work.msrv32_top;
+  instance TB.DUT_inst liblist dut_work;
+endconfig

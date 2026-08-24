@@ -1,0 +1,97 @@
+#!/bin/sh
+unset noclobber
+xitval=0
+
+if [ -f ./questa.setup_script ] ; then
+  . ./questa.setup_script
+fi
+
+echo "Number of expected miscompares = 0"
+set -v
+
+
+vlib dut_work
+vmap dut_work dut_work
+
+
+# Entry 1
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f file_lists/questa.list_1 \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 1"; fi
+
+# Entry 2
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tap_main.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_1.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_2.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 2"; fi
+
+# Entry 3
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_cells.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_interface.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 3"; fi
+
+# Entry 4
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_sib_1.v" \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 4"; fi
+
+# Entry 5
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 5"; fi
+
+# Entry 6
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.v" \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 6"; fi
+
+# Entry 7
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist_ncp_index_decoder.instrument/msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 7"; fi
+
+# Entry 8
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.v" \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_single_chain_mode_logic.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 8"; fi
+
+# Entry 9
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "./patterns_directory/JtagBscanPatterns.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 9"; fi
+
+# Entry 10
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "./patterns.configuration"
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 10"; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Compilation failed"
+  exit $xitval
+fi
+
+vsim -c -lib "dut_work" -L dut_work -do 'run -all; exit' +nowarnTFMPC +NEWPATH=./patterns_directory \
+      JtagBscanPatterns_configuration
+if [ $? != 0 ] ; then xitval=-1; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Simulation failed"
+fi
+
+exit $xitval

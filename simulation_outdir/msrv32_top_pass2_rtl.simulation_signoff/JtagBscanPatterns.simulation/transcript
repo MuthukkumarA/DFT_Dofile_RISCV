@@ -1,0 +1,2753 @@
+# vsim -c -lib dut_work -L dut_work -do "run -all; exit" "+nowarnTFMPC" "+NEWPATH=./patterns_directory" JtagBscanPatterns_configuration 
+# Start time: 17:43:54 on Apr 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../../../../rtl/msrv32_csr_file.v(195): (vopt-2958) Implicit wire 'e_irq' does not have any driver.
+# ** Warning: ../../../../rtl/msrv32_csr_file.v(196): (vopt-2958) Implicit wire 't_irq' does not have any driver.
+# ** Warning: ../../../../rtl/msrv32_csr_file.v(197): (vopt-2958) Implicit wire 's_irq' does not have any driver.
+# ** Warning: ../../../TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design/modified_rtl_files/msrv32_top.v(1358): (vopt-2958) Implicit wire 'reset_in' does not have any driver.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# //  Questa Sim-64
+# //  Version 2022.1_2 linux_x86_64 Apr  2 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.JtagBscanPatterns_configuration(fast)
+# Loading work.TB(fast)
+# Loading work.ipad(fast)
+# Loading work.buf02(fast)
+# Loading work.opad(fast)
+# Loading work.tri01(fast)
+# Loading work.clock_buf02(fast)
+# Loading work.cgand(fast)
+# Loading work.clock_mux21(fast)
+# Loading work.dffr(fast)
+# Loading work.mux21(fast)
+# Loading work.clock_inv01(fast)
+# Loading work.inv01(fast)
+# run -all
+# Found New Path ./patterns_directory
+# 
+# Loading ./patterns_directory/JtagBscanPatterns.v.po.name
+# 
+# Loading ./patterns_directory/JtagBscanPatterns.v.0.vec
+# 
+# 0ns: Pattern_set JtagBscanTestStep__test_logic_reset
+# 300ns:  
+# 300ns:  ****************************************************************
+# 300ns:   test_logic_reset test
+# 300ns:  ****************************************************************
+# 300ns:  
+# 300ns:   * Reset the TAP by pulsing trst_p to 1-0-1
+# 600ns:  
+# 600ns:   * Check if RESET succeeded by shifting through the BYPASS register
+# 1100ns:  
+# 1100ns:   * Pre-Load IR with instruction PRELOAD, which differs from the expected post-reset IR instruction
+# 2100ns:  
+# 2100ns:   * Reset the TAP by setting tms_p=1 for 5 tck_p cycles.
+# 2800ns:  
+# 2800ns:   * Check if RESET succeeded by shifting through the BYPASS register
+# 3400ns:  
+# 3400ns:  End of the test_logic_reset test
+# 3400ns:  
+# 3400ns: Pattern_set JtagBscanTestStep__inst_reg
+# 3400ns:  
+# 3400ns:  ****************************************************************
+# 3400ns:   inst_reg test
+# 3400ns:  ****************************************************************
+# 3400ns:  
+# 3400ns:   * Verify that the TAP FSM can skip the IRSHIFT state via
+# 3400ns:     IDLE -> DRSELECT -> IRSELECT -> IRCAPTURE -> IREXIT1 -> IRPAUSE
+# 3900ns:   * Load TDI with a walking one pattern ...000001.
+# 3900ns:   * Compare TDO with the capture value 0001.
+# 3900ns:   * End shifting in IRPAUSE state
+# 4600ns:   * Load    TDI with a walking zero pattern ...111110.
+# 4600ns:   * Compare TDO with a walking one  pattern ...000001.
+# 4600ns:  
+# 5300ns:   * Load    TDI with the BYPASS instruction.
+# 5300ns:   * Compare TDO with a walking zero pattern ...111110.
+# 5300ns:   * End shifting on IDLE state
+# 5300ns:  
+# 6100ns:  
+# 6100ns:  End of the inst_reg test
+# 6100ns:  
+# 6100ns: Pattern_set JtagBscanTestStep__bypass_reg
+# 6100ns:  
+# 6100ns:  ****************************************************************
+# 6100ns:   bypass_reg test
+# 6100ns:  ****************************************************************
+# 6100ns:  
+# 6100ns:   * Load Instruction Register with BYPASS instruction: 1111.
+# 7100ns:  
+# 7100ns:   * Verify that the TAP FSM can skip the SHIFT-DR state via:
+# 7100ns:     IDLE -> SELECT-DR -> CAPTURE-DR -> EXIT1-DR -> PAUSE-DR
+# 7500ns:  
+# 7500ns:   * Load BYPASS register with a logic one.
+# 7500ns:   * Compare BYPASS captured value with the standard-imposed value of logic zero.
+# 7500ns:   * End shifting in PAUSE-DR state
+# 7900ns:  
+# 7900ns:   * Load BYPASS register with a zero (Skipping capture-DR state).
+# 7900ns:   * Compare TDO with previous scanned-in value of one.
+# 7900ns:   * End shifting in PAUSE-DR state
+# 8300ns:  
+# 8300ns:   * Verify that the TAP FSM can skip the IDLE state between two DR-STATES, via:
+# 8300ns:     PAUSE-DR -> EXIT2-DR -> UPDATE-DR -> SELECT-DR -> CAPTURE-DR -> EXIT1-DR -> PAUSE-DR.
+# 8900ns:  
+# 8900ns:   * Load BYPASS register with a logic one.
+# 8900ns:   * Compare BYPASS captured value with the standard-imposed value of logic zero.
+# 8900ns:   * End shifting in IDLE state
+# 9400ns:  
+# 9400ns:  End of the bypass_reg test
+# 9400ns:  
+# 9400ns: Pattern_set JtagBscanTestStep__bscan_reg
+# 9400ns:  
+# 9400ns:  ****************************************************************
+# 9400ns:   bscan_reg test
+# 9400ns:  ****************************************************************
+# 9400ns:  
+# 9400ns:  
+# 9400ns:   * Loading TAP Instruction Register with PRELOAD instruction.
+# 10300ns:   * Load bscan with a walking one pattern ...000001.
+# 10300ns:   * End shifting in PAUSE-DR state
+# 10300ns:  
+# 32700ns:   * Load bscan with a walking zero pattern ...111110.
+# 32700ns:   * Compare TDO with a walking one  pattern ...000001.
+# 32700ns:  
+# 55000ns:   * Load bscan with a safe pattern (load each cell BSDL SAFE value).
+# 55000ns:   * Compare TDO with a walking zero pattern ...111110.
+# 55000ns:   * End shifting on IDLE state
+# 55000ns:  
+# 77400ns:  
+# 77400ns:  End of the bscan_reg test
+# 77400ns:  
+# 77400ns: Pattern_set JtagBscanTestStep__input
+# 77400ns:  
+# 77400ns:  ****************************************************************
+# 77400ns:   input test
+# 77400ns:  ****************************************************************
+# 77400ns:  
+# 77400ns:  
+# 77400ns:   * Loading TAP Instruction Register with PRELOAD instruction.
+# 78300ns:  
+# 78300ns:   * Loading bscan chain with an EVEN pattern:
+# 78300ns:         EVEN pins = 1  and  ODD pins = 0
+# 78300ns:     All control cells are disabled
+# 100700ns:  
+# 100700ns:   * Loading TAP Instruction Register with EXTEST instruction.
+# 101700ns:   * Setting input Pins with an ODD pattern:
+# 101700ns:         EVEN pins = 0  and  ODD pins = 1
+# 101700ns:     Setting  edt_channel_in1_p  to '1'
+# 101700ns:     Setting  edt_update  to '0'
+# 101700ns:     Setting  edt_clock  to '0'
+# 101700ns:     Setting  control_chain_scan_in  to '1'
+# 101700ns:     Setting  control_chain_enable  to '0'
+# 101700ns:     Setting  ramclk_p  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_clk_in_p  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_sirq_in  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_tirq_in  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_eirq_in  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_hresp_in  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_hready_in  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(31)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(30)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(29)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(28)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(27)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(26)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(25)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(24)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(23)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(22)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(21)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(20)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(19)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(18)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(17)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(16)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(15)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(14)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(13)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(12)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(11)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(10)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(9)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(8)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(7)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(6)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(5)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(4)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(3)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(2)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(1)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_data_in(0)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_hready_in  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(31)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(30)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(29)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(28)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(27)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(26)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(25)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(24)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(23)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(22)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(21)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(20)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(19)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(18)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(17)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(16)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(15)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(14)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(13)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(12)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(11)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(10)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(9)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(8)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(7)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(6)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(5)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(4)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(3)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(2)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(1)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_instr_in(0)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(63)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(62)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(61)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(60)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(59)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(58)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(57)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(56)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(55)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(54)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(53)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(52)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(51)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(50)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(49)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(48)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(47)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(46)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(45)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(44)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(43)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(42)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(41)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(40)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(39)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(38)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(37)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(36)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(35)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(34)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(33)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(32)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(31)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(30)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(29)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(28)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(27)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(26)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(25)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(24)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(23)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(22)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(21)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(20)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(19)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(18)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(17)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(16)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(15)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(14)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(13)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(12)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(11)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(10)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(9)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(8)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(7)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(6)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(5)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(4)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(3)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(2)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(1)  to '1'
+# 101700ns:     Setting  ms_riscv32_mp_rc_in(0)  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_rst_in  to '0'
+# 101700ns:     Setting  ms_riscv32_mp_clk_in  to '1'
+# 101800ns:  
+# 101800ns:   * Checking bscan captured values from previous pattern and
+# 101800ns:     loading bscan chain with an ODD pattern:
+# 101800ns:         EVEN pins = 0  and  ODD pins = 1
+# 101800ns:     All control cells are disabled
+# 124300ns:   * Setting input Pins with an EVEN pattern:
+# 124300ns:         EVEN pins = 1  and  ODD pins = 0
+# 124300ns:     Setting  edt_channel_in1_p  to '0'
+# 124300ns:     Setting  edt_update  to '1'
+# 124300ns:     Setting  edt_clock  to '1'
+# 124300ns:     Setting  control_chain_scan_in  to '0'
+# 124300ns:     Setting  control_chain_enable  to '1'
+# 124300ns:     Setting  ramclk_p  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_clk_in_p  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_sirq_in  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_tirq_in  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_eirq_in  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_hresp_in  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_hready_in  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(31)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(30)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(29)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(28)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(27)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(26)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(25)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(24)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(23)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(22)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(21)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(20)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(19)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(18)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(17)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(16)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(15)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(14)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(13)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(12)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(11)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(10)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(9)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(8)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(7)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(6)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(5)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(4)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(3)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(2)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(1)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_data_in(0)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_hready_in  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(31)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(30)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(29)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(28)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(27)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(26)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(25)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(24)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(23)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(22)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(21)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(20)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(19)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(18)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(17)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(16)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(15)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(14)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(13)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(12)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(11)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(10)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(9)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(8)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(7)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(6)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(5)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(4)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(3)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(2)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(1)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_instr_in(0)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(63)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(62)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(61)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(60)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(59)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(58)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(57)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(56)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(55)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(54)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(53)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(52)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(51)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(50)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(49)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(48)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(47)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(46)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(45)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(44)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(43)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(42)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(41)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(40)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(39)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(38)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(37)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(36)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(35)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(34)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(33)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(32)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(31)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(30)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(29)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(28)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(27)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(26)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(25)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(24)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(23)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(22)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(21)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(20)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(19)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(18)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(17)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(16)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(15)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(14)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(13)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(12)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(11)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(10)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(9)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(8)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(7)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(6)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(5)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(4)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(3)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(2)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(1)  to '0'
+# 124300ns:     Setting  ms_riscv32_mp_rc_in(0)  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_rst_in  to '1'
+# 124300ns:     Setting  ms_riscv32_mp_clk_in  to '0'
+# 124400ns:  
+# 124400ns:   * Checking bscan  captured  values and loading bscan with a
+# 124400ns:     safe value.
+# 124400ns:  
+# 146900ns:     Setting  edt_update  to '0'
+# 146900ns:     Setting  edt_clock  to '0'
+# 146900ns:     Setting  control_chain_enable  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_clk_in_p  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_tirq_in  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_hresp_in  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(30)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(28)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(26)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(24)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(22)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(20)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(18)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(16)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(14)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(12)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(10)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(8)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(6)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(4)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(2)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_data_in(0)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(30)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(28)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(26)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(24)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(22)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(20)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(18)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(16)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(14)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(12)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(10)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(8)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(6)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(4)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(2)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_instr_in(0)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(62)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(60)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(58)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(56)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(54)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(52)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(50)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(48)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(46)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(44)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(42)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(40)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(38)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(36)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(34)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(32)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(30)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(28)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(26)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(24)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(22)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(20)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(18)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(16)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(14)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(12)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(10)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(8)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(6)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(4)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(2)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rc_in(0)  to '0'
+# 146900ns:     Setting  ms_riscv32_mp_rst_in  to '0'
+# 147000ns:  
+# 147000ns:  End of the input test
+# 147000ns:  
+# 147000ns: Pattern_set JtagBscanTestStep__sample
+# 147000ns:  
+# 147000ns:  ****************************************************************
+# 147000ns:   sample test
+# 147000ns:  ****************************************************************
+# 147000ns:  
+# 147000ns:  
+# 147000ns:   * Loading TAP Instruction Register with PRELOAD instruction.
+# 148000ns:  
+# 148000ns:   * Loading bscan chain with an EVEN pattern:
+# 148000ns:         EVEN pins = 1  and  ODD pins = 0
+# 148000ns:     All pad driver are controlled by the functional logic
+# 170400ns:  
+# 170400ns:   * Loading TAP Instruction Register with SAMPLE instruction.
+# 171400ns:   * Setting input Pins with an ODD pattern:
+# 171400ns:         EVEN pins = 0  and  ODD pins = 1
+# 171400ns:     Setting  edt_channel_in1_p  to '1'
+# 171400ns:     Setting  edt_update  to '0'
+# 171400ns:     Setting  edt_clock  to '0'
+# 171400ns:     Setting  control_chain_scan_in  to '1'
+# 171400ns:     Setting  control_chain_enable  to '0'
+# 171400ns:     Setting  ramclk_p  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_clk_in_p  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_sirq_in  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_tirq_in  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_eirq_in  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_hresp_in  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_hready_in  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(31)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(30)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(29)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(28)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(27)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(26)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(25)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(24)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(23)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(22)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(21)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(20)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(19)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(18)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(17)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(16)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(15)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(14)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(13)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(12)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(11)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(10)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(9)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(8)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(7)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(6)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(5)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(4)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(3)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(2)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(1)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_data_in(0)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_hready_in  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(31)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(30)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(29)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(28)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(27)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(26)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(25)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(24)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(23)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(22)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(21)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(20)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(19)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(18)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(17)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(16)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(15)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(14)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(13)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(12)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(11)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(10)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(9)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(8)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(7)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(6)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(5)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(4)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(3)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(2)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(1)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_instr_in(0)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(63)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(62)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(61)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(60)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(59)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(58)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(57)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(56)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(55)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(54)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(53)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(52)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(51)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(50)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(49)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(48)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(47)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(46)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(45)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(44)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(43)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(42)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(41)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(40)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(39)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(38)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(37)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(36)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(35)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(34)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(33)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(32)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(31)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(30)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(29)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(28)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(27)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(26)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(25)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(24)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(23)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(22)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(21)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(20)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(19)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(18)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(17)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(16)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(15)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(14)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(13)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(12)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(11)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(10)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(9)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(8)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(7)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(6)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(5)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(4)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(3)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(2)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(1)  to '1'
+# 171400ns:     Setting  ms_riscv32_mp_rc_in(0)  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_rst_in  to '0'
+# 171400ns:     Setting  ms_riscv32_mp_clk_in  to '1'
+# 171500ns:  
+# 171500ns:   * Checking bscan captured values from previous pattern and
+# 171500ns:     loading bscan chain with an ODD pattern:
+# 171500ns:         EVEN pins = 0  and  ODD pins = 1
+# 171500ns:     All pad driver are controlled by the functional logic
+# 194000ns:   * Setting input Pins with an EVEN pattern:
+# 194000ns:         EVEN pins = 1  and  ODD pins = 0
+# 194000ns:     Setting  edt_channel_in1_p  to '0'
+# 194000ns:     Setting  edt_update  to '1'
+# 194000ns:     Setting  edt_clock  to '1'
+# 194000ns:     Setting  control_chain_scan_in  to '0'
+# 194000ns:     Setting  control_chain_enable  to '1'
+# 194000ns:     Setting  ramclk_p  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_clk_in_p  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_sirq_in  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_tirq_in  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_eirq_in  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_hresp_in  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_hready_in  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(31)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(30)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(29)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(28)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(27)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(26)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(25)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(24)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(23)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(22)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(21)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(20)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(19)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(18)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(17)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(16)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(15)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(14)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(13)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(12)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(11)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(10)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(9)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(8)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(7)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(6)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(5)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(4)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(3)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(2)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(1)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_data_in(0)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_hready_in  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(31)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(30)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(29)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(28)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(27)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(26)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(25)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(24)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(23)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(22)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(21)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(20)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(19)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(18)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(17)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(16)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(15)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(14)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(13)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(12)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(11)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(10)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(9)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(8)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(7)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(6)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(5)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(4)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(3)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(2)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(1)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_instr_in(0)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(63)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(62)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(61)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(60)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(59)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(58)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(57)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(56)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(55)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(54)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(53)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(52)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(51)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(50)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(49)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(48)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(47)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(46)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(45)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(44)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(43)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(42)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(41)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(40)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(39)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(38)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(37)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(36)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(35)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(34)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(33)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(32)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(31)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(30)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(29)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(28)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(27)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(26)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(25)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(24)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(23)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(22)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(21)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(20)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(19)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(18)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(17)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(16)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(15)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(14)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(13)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(12)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(11)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(10)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(9)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(8)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(7)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(6)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(5)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(4)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(3)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(2)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(1)  to '0'
+# 194000ns:     Setting  ms_riscv32_mp_rc_in(0)  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_rst_in  to '1'
+# 194000ns:     Setting  ms_riscv32_mp_clk_in  to '0'
+# 194100ns:  
+# 194100ns:   * Checking bscan  captured  values and loading bscan with a
+# 194100ns:     safe value.
+# 194100ns:  
+# 216600ns:     Setting  edt_update  to '0'
+# 216600ns:     Setting  edt_clock  to '0'
+# 216600ns:     Setting  control_chain_enable  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_clk_in_p  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_tirq_in  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_hresp_in  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(30)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(28)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(26)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(24)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(22)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(20)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(18)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(16)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(14)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(12)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(10)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(8)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(6)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(4)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(2)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_data_in(0)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(30)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(28)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(26)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(24)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(22)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(20)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(18)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(16)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(14)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(12)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(10)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(8)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(6)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(4)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(2)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_instr_in(0)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(62)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(60)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(58)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(56)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(54)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(52)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(50)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(48)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(46)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(44)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(42)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(40)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(38)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(36)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(34)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(32)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(30)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(28)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(26)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(24)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(22)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(20)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(18)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(16)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(14)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(12)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(10)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(8)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(6)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(4)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(2)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rc_in(0)  to '0'
+# 216600ns:     Setting  ms_riscv32_mp_rst_in  to '0'
+# 216700ns:  
+# 216700ns:  End of the sample test
+# 216700ns:  
+# 216700ns: Pattern_set JtagBscanTestStep__highz
+# 216700ns:  
+# 216700ns:  ****************************************************************
+# 216700ns:   highz test
+# 216700ns:  ****************************************************************
+# 216700ns:  
+# 216700ns:   * Testing disabled outputs
+# 216700ns:  
+# 216700ns:   * Loading TAP Instruction Register with PRELOAD instruction.
+# 217700ns:   * Loading all control and assym.drivers cells with a disabling value
+# 217700ns:     Data registers are all zero
+# 240100ns:  
+# 240100ns:   * Loading TAP Instruction Register with EXTEST instruction.
+# 241200ns:   * Comparing all disabled output pins to 'Z'
+# 241200ns:     Checking  control_chain_scan_out  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmwr_req_out  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with 'Z'
+# 241200ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with 'Z'
+# 241224ns: Mismatch at pin           2 name   ms_riscv32_mp_data_htrans_out[0], Simulated 0, Expected z
+# 241224ns: Mismatch at pin           3 name   ms_riscv32_mp_data_htrans_out[1], Simulated 0, Expected z
+# 241224ns: Mismatch at pin           4 name     ms_riscv32_mp_dmwr_mask_out[0], Simulated 0, Expected z
+# 241224ns: Mismatch at pin           5 name     ms_riscv32_mp_dmwr_mask_out[1], Simulated 0, Expected z
+# 241224ns: Mismatch at pin           6 name     ms_riscv32_mp_dmwr_mask_out[2], Simulated 0, Expected z
+# 241224ns: Mismatch at pin           7 name     ms_riscv32_mp_dmwr_mask_out[3], Simulated 0, Expected z
+# 241224ns: Mismatch at pin           8 name         ms_riscv32_mp_dmwr_req_out, Simulated 0, Expected z
+# 241224ns: Mismatch at pin           9 name        ms_riscv32_mp_dmdata_out[0], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          10 name        ms_riscv32_mp_dmdata_out[1], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          11 name        ms_riscv32_mp_dmdata_out[2], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          12 name        ms_riscv32_mp_dmdata_out[3], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          13 name        ms_riscv32_mp_dmdata_out[4], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          14 name        ms_riscv32_mp_dmdata_out[5], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          15 name        ms_riscv32_mp_dmdata_out[6], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          16 name        ms_riscv32_mp_dmdata_out[7], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          17 name        ms_riscv32_mp_dmdata_out[8], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          18 name        ms_riscv32_mp_dmdata_out[9], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          19 name       ms_riscv32_mp_dmdata_out[10], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          20 name       ms_riscv32_mp_dmdata_out[11], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          21 name       ms_riscv32_mp_dmdata_out[12], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          22 name       ms_riscv32_mp_dmdata_out[13], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          23 name       ms_riscv32_mp_dmdata_out[14], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          24 name       ms_riscv32_mp_dmdata_out[15], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          25 name       ms_riscv32_mp_dmdata_out[16], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          26 name       ms_riscv32_mp_dmdata_out[17], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          27 name       ms_riscv32_mp_dmdata_out[18], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          28 name       ms_riscv32_mp_dmdata_out[19], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          29 name       ms_riscv32_mp_dmdata_out[20], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          30 name       ms_riscv32_mp_dmdata_out[21], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          31 name       ms_riscv32_mp_dmdata_out[22], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          32 name       ms_riscv32_mp_dmdata_out[23], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          33 name       ms_riscv32_mp_dmdata_out[24], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          34 name       ms_riscv32_mp_dmdata_out[25], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          35 name       ms_riscv32_mp_dmdata_out[26], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          36 name       ms_riscv32_mp_dmdata_out[27], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          37 name       ms_riscv32_mp_dmdata_out[28], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          38 name       ms_riscv32_mp_dmdata_out[29], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          39 name       ms_riscv32_mp_dmdata_out[30], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          40 name       ms_riscv32_mp_dmdata_out[31], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          41 name        ms_riscv32_mp_dmaddr_out[0], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          42 name        ms_riscv32_mp_dmaddr_out[1], Simulated 0, Expected z
+# 241224ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected z
+# 241224ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected z
+# 241224ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected z
+# 241224ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected z
+# 241224ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected z
+# 241224ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected z
+# 241224ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected z
+# 241224ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected z
+# 241224ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected z
+# 241224ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected z
+# 241224ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected z
+# 241224ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected z
+# 241224ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected z
+# 241224ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected z
+# 241224ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected z
+# 241224ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected z
+# 241224ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected z
+# 241224ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected z
+# 241224ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected z
+# 241224ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected z
+# 241224ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected z
+# 241224ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected z
+# 241224ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected z
+# 241224ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected z
+# 241224ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected z
+# 241224ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected z
+# 241224ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected z
+# 241224ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected z
+# 241224ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected z
+# 241224ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected z
+# 241400ns:   * Testing the HIGHZ instruction
+# 241400ns:  
+# 241400ns:   * Loading TAP Instruction Register with PRELOAD instruction.
+# 242300ns:   1- Load all CONTROL and assym drivers cells with their ENABLING value
+# 242300ns:   2- Use the HIGHZ TAP instruction to disable all pins
+# 242300ns:   3- Compare all disabled output pins with 'Z'
+# 242300ns:  
+# 242300ns:   * Loading all control bscan cells with enabling values
+# 242300ns:     Data registers are all zero
+# 242300ns:  
+# 264700ns:  
+# 264700ns:   * Loading TAP Instruction Register with HIGHZ instruction.
+# 265800ns:   * Comparing all JTAG output pins to 'Z'
+# 265800ns:  
+# 265800ns:     Checking  control_chain_scan_out  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmwr_req_out  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with 'Z'
+# 265800ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with 'Z'
+# 265824ns: Mismatch at pin           2 name   ms_riscv32_mp_data_htrans_out[0], Simulated 0, Expected z
+# 265824ns: Mismatch at pin           3 name   ms_riscv32_mp_data_htrans_out[1], Simulated 0, Expected z
+# 265824ns: Mismatch at pin           4 name     ms_riscv32_mp_dmwr_mask_out[0], Simulated 0, Expected z
+# 265824ns: Mismatch at pin           5 name     ms_riscv32_mp_dmwr_mask_out[1], Simulated 0, Expected z
+# 265824ns: Mismatch at pin           6 name     ms_riscv32_mp_dmwr_mask_out[2], Simulated 0, Expected z
+# 265824ns: Mismatch at pin           7 name     ms_riscv32_mp_dmwr_mask_out[3], Simulated 0, Expected z
+# 265824ns: Mismatch at pin           8 name         ms_riscv32_mp_dmwr_req_out, Simulated 0, Expected z
+# 265824ns: Mismatch at pin           9 name        ms_riscv32_mp_dmdata_out[0], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          10 name        ms_riscv32_mp_dmdata_out[1], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          11 name        ms_riscv32_mp_dmdata_out[2], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          12 name        ms_riscv32_mp_dmdata_out[3], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          13 name        ms_riscv32_mp_dmdata_out[4], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          14 name        ms_riscv32_mp_dmdata_out[5], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          15 name        ms_riscv32_mp_dmdata_out[6], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          16 name        ms_riscv32_mp_dmdata_out[7], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          17 name        ms_riscv32_mp_dmdata_out[8], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          18 name        ms_riscv32_mp_dmdata_out[9], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          19 name       ms_riscv32_mp_dmdata_out[10], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          20 name       ms_riscv32_mp_dmdata_out[11], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          21 name       ms_riscv32_mp_dmdata_out[12], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          22 name       ms_riscv32_mp_dmdata_out[13], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          23 name       ms_riscv32_mp_dmdata_out[14], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          24 name       ms_riscv32_mp_dmdata_out[15], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          25 name       ms_riscv32_mp_dmdata_out[16], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          26 name       ms_riscv32_mp_dmdata_out[17], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          27 name       ms_riscv32_mp_dmdata_out[18], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          28 name       ms_riscv32_mp_dmdata_out[19], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          29 name       ms_riscv32_mp_dmdata_out[20], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          30 name       ms_riscv32_mp_dmdata_out[21], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          31 name       ms_riscv32_mp_dmdata_out[22], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          32 name       ms_riscv32_mp_dmdata_out[23], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          33 name       ms_riscv32_mp_dmdata_out[24], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          34 name       ms_riscv32_mp_dmdata_out[25], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          35 name       ms_riscv32_mp_dmdata_out[26], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          36 name       ms_riscv32_mp_dmdata_out[27], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          37 name       ms_riscv32_mp_dmdata_out[28], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          38 name       ms_riscv32_mp_dmdata_out[29], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          39 name       ms_riscv32_mp_dmdata_out[30], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          40 name       ms_riscv32_mp_dmdata_out[31], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          41 name        ms_riscv32_mp_dmaddr_out[0], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          42 name        ms_riscv32_mp_dmaddr_out[1], Simulated 0, Expected z
+# 265824ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected z
+# 265824ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected z
+# 265824ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected z
+# 265824ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected z
+# 265824ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected z
+# 265824ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected z
+# 265824ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected z
+# 265824ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected z
+# 265824ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected z
+# 265824ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected z
+# 265824ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected z
+# 265824ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected z
+# 265824ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected z
+# 265824ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected z
+# 265824ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected z
+# 265824ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected z
+# 265824ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected z
+# 265824ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected z
+# 265824ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected z
+# 265824ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected z
+# 265824ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected z
+# 265824ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected z
+# 265824ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected z
+# 265824ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected z
+# 265824ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected z
+# 265824ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected z
+# 265824ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected z
+# 265824ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected z
+# 265824ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected z
+# 265824ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected z
+# 266000ns:  
+# 266000ns:   * Comparing TDO output pin to 'Z' in RTI state
+# 266200ns:  
+# 266200ns:  End of the highz test
+# 266200ns:  
+# 266200ns: Pattern_set JtagBscanTestStep__clamp
+# 266200ns:  
+# 266200ns:  ****************************************************************
+# 266200ns:   clamp test
+# 266200ns:  ****************************************************************
+# 266200ns:  
+# 266200ns:   * clamp test for enable group Engroup0,
+# 266200ns:     which includes the following control cells:
+# 266200ns:           cell: 120
+# 266200ns:           cell: 103
+# 266200ns:           cell: 86
+# 266200ns:           cell: 69
+# 266200ns:           cell: 52
+# 266200ns:  
+# 266200ns:   * Setting input Pins with an EVEN pattern:
+# 266200ns:     Setting  edt_channel_in1_p  to '0'
+# 266200ns:     Setting  edt_update  to '1'
+# 266200ns:     Setting  edt_clock  to '1'
+# 266200ns:     Setting  control_chain_scan_in  to '0'
+# 266200ns:     Setting  control_chain_enable  to '1'
+# 266200ns:     Setting  ramclk_p  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_clk_in_p  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_sirq_in  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_tirq_in  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_eirq_in  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_hresp_in  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_hready_in  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(31)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(30)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(29)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(28)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(27)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(26)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(25)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(24)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(23)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(22)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(21)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(20)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(19)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(18)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(17)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(16)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(15)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(14)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(13)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(12)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(11)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(10)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(9)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(8)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(7)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(6)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(5)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(4)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(3)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(2)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(1)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_data_in(0)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_hready_in  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(31)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(30)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(29)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(28)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(27)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(26)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(25)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(24)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(23)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(22)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(21)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(20)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(19)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(18)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(17)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(16)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(15)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(14)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(13)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(12)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(11)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(10)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(9)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(8)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(7)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(6)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(5)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(4)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(3)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(2)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(1)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_instr_in(0)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(63)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(62)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(61)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(60)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(59)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(58)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(57)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(56)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(55)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(54)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(53)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(52)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(51)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(50)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(49)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(48)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(47)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(46)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(45)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(44)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(43)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(42)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(41)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(40)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(39)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(38)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(37)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(36)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(35)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(34)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(33)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(32)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(31)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(30)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(29)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(28)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(27)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(26)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(25)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(24)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(23)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(22)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(21)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(20)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(19)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(18)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(17)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(16)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(15)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(14)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(13)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(12)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(11)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(10)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(9)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(8)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(7)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(6)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(5)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(4)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(3)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(2)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(1)  to '0'
+# 266200ns:     Setting  ms_riscv32_mp_rc_in(0)  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_rst_in  to '1'
+# 266200ns:     Setting  ms_riscv32_mp_clk_in  to '0'
+# 266200ns:  
+# 266200ns:   * Loading TAP Instruction Register with PRELOAD instruction.
+# 267200ns:  
+# 267200ns:   * Loading bscan chain with an EVEN pattern:
+# 267200ns:         EVEN pins = 1  and  ODD pins = 0
+# 289600ns:  
+# 289600ns:   * Loading TAP Instruction Register with EXTEST instruction.
+# 290600ns:   * Comparing enabled Output Pins with an EVEN pattern:
+# 290600ns:     Open-drain/source pins are compared only if enabled
+# 290700ns:     Checking  control_chain_scan_out  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmwr_req_out  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with '0'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with '1'
+# 290700ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with '0'
+# 290724ns: Mismatch at pin           2 name   ms_riscv32_mp_data_htrans_out[0], Simulated x, Expected 1
+# 290724ns: Mismatch at pin           4 name     ms_riscv32_mp_dmwr_mask_out[0], Simulated x, Expected 1
+# 290724ns: Mismatch at pin           6 name     ms_riscv32_mp_dmwr_mask_out[2], Simulated x, Expected 1
+# 290724ns: Mismatch at pin           8 name         ms_riscv32_mp_dmwr_req_out, Simulated x, Expected 1
+# 290724ns: Mismatch at pin          10 name        ms_riscv32_mp_dmdata_out[1], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          12 name        ms_riscv32_mp_dmdata_out[3], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          14 name        ms_riscv32_mp_dmdata_out[5], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          16 name        ms_riscv32_mp_dmdata_out[7], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          18 name        ms_riscv32_mp_dmdata_out[9], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          20 name       ms_riscv32_mp_dmdata_out[11], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          22 name       ms_riscv32_mp_dmdata_out[13], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          24 name       ms_riscv32_mp_dmdata_out[15], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          26 name       ms_riscv32_mp_dmdata_out[17], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          28 name       ms_riscv32_mp_dmdata_out[19], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          30 name       ms_riscv32_mp_dmdata_out[21], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          32 name       ms_riscv32_mp_dmdata_out[23], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          34 name       ms_riscv32_mp_dmdata_out[25], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          36 name       ms_riscv32_mp_dmdata_out[27], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          38 name       ms_riscv32_mp_dmdata_out[29], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          40 name       ms_riscv32_mp_dmdata_out[31], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          42 name        ms_riscv32_mp_dmaddr_out[1], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected 1
+# 290724ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected 0
+# 290724ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected 1
+# 290900ns:  
+# 290900ns:   * Loading TAP Instruction Register with CLAMP instruction.
+# 291800ns:   * Shifting a logic 1 into  the  BYPASS register,
+# 291800ns:     while expecting a logic 0 over the TDO port.
+# 291800ns:  
+# 292400ns:   * Re-Comparing enabled Output Pins
+# 292400ns:     Checking  control_chain_scan_out  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmwr_req_out  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with '0'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with '1'
+# 292400ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with '0'
+# 292424ns: Mismatch at pin           2 name   ms_riscv32_mp_data_htrans_out[0], Simulated x, Expected 1
+# 292424ns: Mismatch at pin           4 name     ms_riscv32_mp_dmwr_mask_out[0], Simulated x, Expected 1
+# 292424ns: Mismatch at pin           6 name     ms_riscv32_mp_dmwr_mask_out[2], Simulated x, Expected 1
+# 292424ns: Mismatch at pin           8 name         ms_riscv32_mp_dmwr_req_out, Simulated x, Expected 1
+# 292424ns: Mismatch at pin          10 name        ms_riscv32_mp_dmdata_out[1], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          12 name        ms_riscv32_mp_dmdata_out[3], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          14 name        ms_riscv32_mp_dmdata_out[5], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          16 name        ms_riscv32_mp_dmdata_out[7], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          18 name        ms_riscv32_mp_dmdata_out[9], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          20 name       ms_riscv32_mp_dmdata_out[11], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          22 name       ms_riscv32_mp_dmdata_out[13], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          24 name       ms_riscv32_mp_dmdata_out[15], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          26 name       ms_riscv32_mp_dmdata_out[17], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          28 name       ms_riscv32_mp_dmdata_out[19], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          30 name       ms_riscv32_mp_dmdata_out[21], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          32 name       ms_riscv32_mp_dmdata_out[23], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          34 name       ms_riscv32_mp_dmdata_out[25], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          36 name       ms_riscv32_mp_dmdata_out[27], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          38 name       ms_riscv32_mp_dmdata_out[29], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          40 name       ms_riscv32_mp_dmdata_out[31], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          42 name        ms_riscv32_mp_dmaddr_out[1], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected 1
+# 292424ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected 0
+# 292424ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected 1
+# 292600ns:  
+# 292600ns:   * Loading TAP Instruction Register with EXTEST instruction.
+# 293600ns:   * Setting input Pins with an ODD pattern:
+# 293600ns:     Setting  edt_channel_in1_p  to '1'
+# 293600ns:     Setting  edt_update  to '0'
+# 293600ns:     Setting  edt_clock  to '0'
+# 293600ns:     Setting  control_chain_scan_in  to '1'
+# 293600ns:     Setting  control_chain_enable  to '0'
+# 293600ns:     Setting  ramclk_p  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_clk_in_p  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_sirq_in  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_tirq_in  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_eirq_in  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_hresp_in  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_hready_in  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(31)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(30)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(29)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(28)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(27)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(26)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(25)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(24)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(23)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(22)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(21)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(20)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(19)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(18)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(17)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(16)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(15)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(14)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(13)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(12)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(11)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(10)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(9)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(8)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(7)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(6)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(5)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(4)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(3)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(2)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(1)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_data_in(0)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_hready_in  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(31)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(30)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(29)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(28)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(27)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(26)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(25)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(24)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(23)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(22)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(21)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(20)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(19)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(18)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(17)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(16)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(15)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(14)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(13)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(12)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(11)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(10)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(9)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(8)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(7)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(6)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(5)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(4)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(3)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(2)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(1)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_instr_in(0)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(63)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(62)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(61)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(60)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(59)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(58)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(57)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(56)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(55)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(54)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(53)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(52)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(51)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(50)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(49)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(48)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(47)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(46)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(45)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(44)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(43)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(42)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(41)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(40)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(39)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(38)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(37)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(36)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(35)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(34)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(33)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(32)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(31)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(30)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(29)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(28)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(27)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(26)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(25)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(24)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(23)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(22)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(21)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(20)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(19)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(18)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(17)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(16)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(15)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(14)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(13)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(12)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(11)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(10)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(9)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(8)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(7)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(6)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(5)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(4)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(3)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(2)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(1)  to '1'
+# 293600ns:     Setting  ms_riscv32_mp_rc_in(0)  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_rst_in  to '0'
+# 293600ns:     Setting  ms_riscv32_mp_clk_in  to '1'
+# 293600ns:  
+# 293600ns:   * Loading bscan chain with an ODD pattern:
+# 293600ns:         EVEN pins = 0  and  ODD pins = 1
+# 316100ns:   * Comparing enabled Output Pins with an ODD pattern:
+# 316100ns:     Open-drain/source pins are compared only if enabled
+# 316200ns:     Checking  control_chain_scan_out  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmwr_req_out  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with '1'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with '0'
+# 316200ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with '1'
+# 316224ns: Mismatch at pin           0 name             control_chain_scan_out, Simulated 0, Expected 1
+# 316224ns: Mismatch at pin           5 name     ms_riscv32_mp_dmwr_mask_out[1], Simulated x, Expected 1
+# 316224ns: Mismatch at pin           7 name     ms_riscv32_mp_dmwr_mask_out[3], Simulated x, Expected 1
+# 316224ns: Mismatch at pin           9 name        ms_riscv32_mp_dmdata_out[0], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          11 name        ms_riscv32_mp_dmdata_out[2], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          13 name        ms_riscv32_mp_dmdata_out[4], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          15 name        ms_riscv32_mp_dmdata_out[6], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          17 name        ms_riscv32_mp_dmdata_out[8], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          19 name       ms_riscv32_mp_dmdata_out[10], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          21 name       ms_riscv32_mp_dmdata_out[12], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          23 name       ms_riscv32_mp_dmdata_out[14], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          25 name       ms_riscv32_mp_dmdata_out[16], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          27 name       ms_riscv32_mp_dmdata_out[18], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          29 name       ms_riscv32_mp_dmdata_out[20], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          31 name       ms_riscv32_mp_dmdata_out[22], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          33 name       ms_riscv32_mp_dmdata_out[24], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          35 name       ms_riscv32_mp_dmdata_out[26], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          37 name       ms_riscv32_mp_dmdata_out[28], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          39 name       ms_riscv32_mp_dmdata_out[30], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          41 name        ms_riscv32_mp_dmaddr_out[0], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected 0
+# 316224ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected 1
+# 316224ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected 0
+# 316400ns:  
+# 316400ns:   * Loading TAP Instruction Register with CLAMP instruction.
+# 317300ns:   * Shifting a logic 1 into  the  BYPASS register,
+# 317300ns:     while expecting a logic 0 over the TDO port.
+# 317300ns:  
+# 317900ns:   * Re-Comparing enabled Output Pins
+# 317900ns:     Checking  control_chain_scan_out  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmwr_req_out  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with '1'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with '0'
+# 317900ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with '1'
+# 317924ns: Mismatch at pin           0 name             control_chain_scan_out, Simulated 0, Expected 1
+# 317924ns: Mismatch at pin           5 name     ms_riscv32_mp_dmwr_mask_out[1], Simulated x, Expected 1
+# 317924ns: Mismatch at pin           7 name     ms_riscv32_mp_dmwr_mask_out[3], Simulated x, Expected 1
+# 317924ns: Mismatch at pin           9 name        ms_riscv32_mp_dmdata_out[0], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          11 name        ms_riscv32_mp_dmdata_out[2], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          13 name        ms_riscv32_mp_dmdata_out[4], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          15 name        ms_riscv32_mp_dmdata_out[6], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          17 name        ms_riscv32_mp_dmdata_out[8], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          19 name       ms_riscv32_mp_dmdata_out[10], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          21 name       ms_riscv32_mp_dmdata_out[12], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          23 name       ms_riscv32_mp_dmdata_out[14], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          25 name       ms_riscv32_mp_dmdata_out[16], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          27 name       ms_riscv32_mp_dmdata_out[18], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          29 name       ms_riscv32_mp_dmdata_out[20], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          31 name       ms_riscv32_mp_dmdata_out[22], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          33 name       ms_riscv32_mp_dmdata_out[24], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          35 name       ms_riscv32_mp_dmdata_out[26], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          37 name       ms_riscv32_mp_dmdata_out[28], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          39 name       ms_riscv32_mp_dmdata_out[30], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          41 name        ms_riscv32_mp_dmaddr_out[0], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected 0
+# 317924ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected 1
+# 317924ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected 0
+# 318100ns:  
+# 318100ns:   * Loading TAP Instruction Register with EXTEST instruction.
+# 319000ns:   * Loading boundary scan chain  with a SAFE pin pattern.
+# 341500ns:  
+# 341500ns:  End of the clamp test
+# 341500ns:  
+# 341500ns: Pattern_set JtagBscanTestStep__output
+# 341500ns:  
+# 341500ns:  ****************************************************************
+# 341500ns:   output test
+# 341500ns:  ****************************************************************
+# 341500ns:  
+# 341500ns:   * output test for enable group Engroup0,
+# 341500ns:     which includes the following control cells:
+# 341500ns:           cell: 120
+# 341500ns:           cell: 103
+# 341500ns:           cell: 86
+# 341500ns:           cell: 69
+# 341500ns:           cell: 52
+# 341500ns:  
+# 341500ns:   * Setting input Pins with an EVEN pattern:
+# 341500ns:     Setting  edt_channel_in1_p  to '0'
+# 341500ns:     Setting  edt_update  to '1'
+# 341500ns:     Setting  edt_clock  to '1'
+# 341500ns:     Setting  control_chain_scan_in  to '0'
+# 341500ns:     Setting  control_chain_enable  to '1'
+# 341500ns:     Setting  ramclk_p  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_clk_in_p  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_sirq_in  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_tirq_in  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_eirq_in  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_hresp_in  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_hready_in  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(31)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(30)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(29)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(28)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(27)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(26)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(25)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(24)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(23)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(22)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(21)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(20)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(19)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(18)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(17)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(16)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(15)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(14)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(13)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(12)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(11)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(10)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(9)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(8)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(7)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(6)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(5)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(4)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(3)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(2)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(1)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_data_in(0)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_hready_in  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(31)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(30)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(29)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(28)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(27)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(26)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(25)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(24)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(23)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(22)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(21)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(20)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(19)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(18)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(17)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(16)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(15)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(14)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(13)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(12)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(11)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(10)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(9)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(8)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(7)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(6)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(5)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(4)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(3)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(2)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(1)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_instr_in(0)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(63)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(62)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(61)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(60)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(59)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(58)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(57)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(56)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(55)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(54)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(53)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(52)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(51)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(50)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(49)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(48)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(47)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(46)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(45)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(44)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(43)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(42)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(41)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(40)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(39)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(38)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(37)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(36)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(35)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(34)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(33)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(32)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(31)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(30)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(29)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(28)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(27)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(26)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(25)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(24)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(23)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(22)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(21)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(20)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(19)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(18)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(17)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(16)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(15)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(14)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(13)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(12)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(11)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(10)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(9)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(8)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(7)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(6)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(5)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(4)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(3)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(2)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(1)  to '0'
+# 341500ns:     Setting  ms_riscv32_mp_rc_in(0)  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_rst_in  to '1'
+# 341500ns:     Setting  ms_riscv32_mp_clk_in  to '0'
+# 341500ns:  
+# 341500ns:   * Loading TAP Instruction Register with PRELOAD instruction.
+# 342500ns:  
+# 342500ns:   * Loading bscan chain with an EVEN pattern:
+# 342500ns:         EVEN pins = 1  and  ODD pins = 0
+# 364900ns:  
+# 364900ns:   * Loading TAP Instruction Register with EXTEST instruction.
+# 365900ns:   * Comparing enabled Output Pins with an EVEN pattern:
+# 365900ns:     Open-drain/source pins are compared only if enabled
+# 366000ns:     Checking  control_chain_scan_out  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmwr_req_out  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with '0'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with '1'
+# 366000ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with '0'
+# 366024ns: Mismatch at pin           2 name   ms_riscv32_mp_data_htrans_out[0], Simulated x, Expected 1
+# 366024ns: Mismatch at pin           4 name     ms_riscv32_mp_dmwr_mask_out[0], Simulated x, Expected 1
+# 366024ns: Mismatch at pin           6 name     ms_riscv32_mp_dmwr_mask_out[2], Simulated x, Expected 1
+# 366024ns: Mismatch at pin           8 name         ms_riscv32_mp_dmwr_req_out, Simulated x, Expected 1
+# 366024ns: Mismatch at pin          10 name        ms_riscv32_mp_dmdata_out[1], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          12 name        ms_riscv32_mp_dmdata_out[3], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          14 name        ms_riscv32_mp_dmdata_out[5], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          16 name        ms_riscv32_mp_dmdata_out[7], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          18 name        ms_riscv32_mp_dmdata_out[9], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          20 name       ms_riscv32_mp_dmdata_out[11], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          22 name       ms_riscv32_mp_dmdata_out[13], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          24 name       ms_riscv32_mp_dmdata_out[15], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          26 name       ms_riscv32_mp_dmdata_out[17], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          28 name       ms_riscv32_mp_dmdata_out[19], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          30 name       ms_riscv32_mp_dmdata_out[21], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          32 name       ms_riscv32_mp_dmdata_out[23], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          34 name       ms_riscv32_mp_dmdata_out[25], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          36 name       ms_riscv32_mp_dmdata_out[27], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          38 name       ms_riscv32_mp_dmdata_out[29], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          40 name       ms_riscv32_mp_dmdata_out[31], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          42 name        ms_riscv32_mp_dmaddr_out[1], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected 1
+# 366024ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected 0
+# 366024ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected 1
+# 366200ns:   * Setting input Pins with an ODD pattern:
+# 366200ns:     Setting  edt_channel_in1_p  to '1'
+# 366200ns:     Setting  edt_update  to '0'
+# 366200ns:     Setting  edt_clock  to '0'
+# 366200ns:     Setting  control_chain_scan_in  to '1'
+# 366200ns:     Setting  control_chain_enable  to '0'
+# 366200ns:     Setting  ramclk_p  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_clk_in_p  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_sirq_in  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_tirq_in  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_eirq_in  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_hresp_in  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_hready_in  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(31)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(30)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(29)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(28)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(27)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(26)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(25)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(24)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(23)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(22)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(21)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(20)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(19)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(18)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(17)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(16)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(15)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(14)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(13)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(12)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(11)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(10)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(9)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(8)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(7)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(6)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(5)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(4)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(3)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(2)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(1)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_data_in(0)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_hready_in  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(31)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(30)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(29)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(28)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(27)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(26)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(25)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(24)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(23)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(22)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(21)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(20)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(19)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(18)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(17)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(16)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(15)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(14)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(13)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(12)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(11)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(10)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(9)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(8)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(7)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(6)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(5)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(4)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(3)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(2)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(1)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_instr_in(0)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(63)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(62)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(61)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(60)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(59)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(58)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(57)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(56)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(55)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(54)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(53)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(52)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(51)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(50)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(49)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(48)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(47)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(46)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(45)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(44)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(43)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(42)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(41)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(40)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(39)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(38)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(37)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(36)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(35)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(34)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(33)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(32)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(31)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(30)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(29)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(28)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(27)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(26)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(25)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(24)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(23)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(22)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(21)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(20)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(19)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(18)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(17)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(16)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(15)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(14)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(13)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(12)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(11)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(10)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(9)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(8)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(7)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(6)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(5)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(4)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(3)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(2)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(1)  to '1'
+# 366200ns:     Setting  ms_riscv32_mp_rc_in(0)  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_rst_in  to '0'
+# 366200ns:     Setting  ms_riscv32_mp_clk_in  to '1'
+# 366200ns:  
+# 366200ns:   * Loading bscan chain with an ODD pattern:
+# 366200ns:         EVEN pins = 0  and  ODD pins = 1
+# 366200ns:   * Checking bscan captured values from previous EVEN pattern
+# 388600ns:   * Comparing enabled Output Pins with an EVEN pattern just before the update-DR state
+# 388600ns:     Checking  control_chain_scan_out  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmwr_req_out  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with '0'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with '1'
+# 388600ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with '0'
+# 388624ns: Mismatch at pin           2 name   ms_riscv32_mp_data_htrans_out[0], Simulated x, Expected 1
+# 388624ns: Mismatch at pin           3 name   ms_riscv32_mp_data_htrans_out[1], Simulated x, Expected 0
+# 388624ns: Mismatch at pin           4 name     ms_riscv32_mp_dmwr_mask_out[0], Simulated x, Expected 1
+# 388624ns: Mismatch at pin           6 name     ms_riscv32_mp_dmwr_mask_out[2], Simulated x, Expected 1
+# 388624ns: Mismatch at pin           8 name         ms_riscv32_mp_dmwr_req_out, Simulated x, Expected 1
+# 388624ns: Mismatch at pin          10 name        ms_riscv32_mp_dmdata_out[1], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          12 name        ms_riscv32_mp_dmdata_out[3], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          14 name        ms_riscv32_mp_dmdata_out[5], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          16 name        ms_riscv32_mp_dmdata_out[7], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          18 name        ms_riscv32_mp_dmdata_out[9], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          20 name       ms_riscv32_mp_dmdata_out[11], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          22 name       ms_riscv32_mp_dmdata_out[13], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          24 name       ms_riscv32_mp_dmdata_out[15], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          26 name       ms_riscv32_mp_dmdata_out[17], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          28 name       ms_riscv32_mp_dmdata_out[19], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          30 name       ms_riscv32_mp_dmdata_out[21], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          32 name       ms_riscv32_mp_dmdata_out[23], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          34 name       ms_riscv32_mp_dmdata_out[25], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          36 name       ms_riscv32_mp_dmdata_out[27], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          38 name       ms_riscv32_mp_dmdata_out[29], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          40 name       ms_riscv32_mp_dmdata_out[31], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          42 name        ms_riscv32_mp_dmaddr_out[1], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected 1
+# 388624ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected 0
+# 388624ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected 1
+# 389100ns:   * Comparing enabled Output Pins with an ODD pattern:
+# 389100ns:     Open-drain/source pins are compared only if enabled
+# 389200ns:     Checking  control_chain_scan_out  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_data_htrans_out(1)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_data_htrans_out(0)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(3)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(2)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(1)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmwr_mask_out(0)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmwr_req_out  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(31)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(30)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(29)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(28)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(27)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(26)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(25)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(24)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(23)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(22)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(21)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(20)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(19)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(18)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(17)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(16)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(15)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(14)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(13)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(12)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(11)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(10)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(9)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(8)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(7)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(6)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(5)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(4)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(3)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(2)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(1)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmdata_out(0)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(31)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(30)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(29)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(28)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(27)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(26)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(25)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(24)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(23)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(22)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(21)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(20)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(19)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(18)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(17)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(16)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(15)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(14)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(13)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(12)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(11)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(10)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(9)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(8)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(7)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(6)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(5)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(4)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(3)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(2)  with '1'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(1)  with '0'
+# 389200ns:     Checking  ms_riscv32_mp_dmaddr_out(0)  with '1'
+# 389224ns: Mismatch at pin           0 name             control_chain_scan_out, Simulated 0, Expected 1
+# 389224ns: Mismatch at pin           5 name     ms_riscv32_mp_dmwr_mask_out[1], Simulated x, Expected 1
+# 389224ns: Mismatch at pin           7 name     ms_riscv32_mp_dmwr_mask_out[3], Simulated x, Expected 1
+# 389224ns: Mismatch at pin           9 name        ms_riscv32_mp_dmdata_out[0], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          11 name        ms_riscv32_mp_dmdata_out[2], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          13 name        ms_riscv32_mp_dmdata_out[4], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          15 name        ms_riscv32_mp_dmdata_out[6], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          17 name        ms_riscv32_mp_dmdata_out[8], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          19 name       ms_riscv32_mp_dmdata_out[10], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          21 name       ms_riscv32_mp_dmdata_out[12], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          23 name       ms_riscv32_mp_dmdata_out[14], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          25 name       ms_riscv32_mp_dmdata_out[16], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          27 name       ms_riscv32_mp_dmdata_out[18], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          29 name       ms_riscv32_mp_dmdata_out[20], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          31 name       ms_riscv32_mp_dmdata_out[22], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          33 name       ms_riscv32_mp_dmdata_out[24], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          35 name       ms_riscv32_mp_dmdata_out[26], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          37 name       ms_riscv32_mp_dmdata_out[28], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          39 name       ms_riscv32_mp_dmdata_out[30], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          41 name        ms_riscv32_mp_dmaddr_out[0], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          43 name        ms_riscv32_mp_dmaddr_out[2], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          44 name        ms_riscv32_mp_dmaddr_out[3], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          45 name        ms_riscv32_mp_dmaddr_out[4], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          46 name        ms_riscv32_mp_dmaddr_out[5], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          47 name        ms_riscv32_mp_dmaddr_out[6], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          48 name        ms_riscv32_mp_dmaddr_out[7], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          49 name        ms_riscv32_mp_dmaddr_out[8], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          50 name        ms_riscv32_mp_dmaddr_out[9], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          51 name       ms_riscv32_mp_dmaddr_out[10], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          52 name       ms_riscv32_mp_dmaddr_out[11], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          53 name       ms_riscv32_mp_dmaddr_out[12], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          54 name       ms_riscv32_mp_dmaddr_out[13], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          55 name       ms_riscv32_mp_dmaddr_out[14], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          56 name       ms_riscv32_mp_dmaddr_out[15], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          57 name       ms_riscv32_mp_dmaddr_out[16], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          58 name       ms_riscv32_mp_dmaddr_out[17], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          59 name       ms_riscv32_mp_dmaddr_out[18], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          60 name       ms_riscv32_mp_dmaddr_out[19], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          61 name       ms_riscv32_mp_dmaddr_out[20], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          62 name       ms_riscv32_mp_dmaddr_out[21], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          63 name       ms_riscv32_mp_dmaddr_out[22], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          64 name       ms_riscv32_mp_dmaddr_out[23], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          65 name       ms_riscv32_mp_dmaddr_out[24], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          66 name       ms_riscv32_mp_dmaddr_out[25], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          67 name       ms_riscv32_mp_dmaddr_out[26], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          68 name       ms_riscv32_mp_dmaddr_out[27], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          69 name       ms_riscv32_mp_dmaddr_out[28], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          70 name       ms_riscv32_mp_dmaddr_out[29], Simulated x, Expected 0
+# 389224ns: Mismatch at pin          71 name       ms_riscv32_mp_dmaddr_out[30], Simulated x, Expected 1
+# 389224ns: Mismatch at pin          72 name       ms_riscv32_mp_dmaddr_out[31], Simulated x, Expected 0
+# 389400ns:   * Loading boundary scan chain  with a SAFE pin pattern, and
+# 389400ns:     Comparing captured TDO data for an ODD pattern.
+# 411900ns:  
+# 411900ns:  End of the output test
+# 411900ns:  
+# 
+# Simulation finished at time 411901
+# Number of miscompares            =         497
+# Number of 0/1 compares           =        1919
+# Number of Z compares             =         145
+# 
+# Error between simulated and expected patterns
+# 
+# ** Note: $finish    : ./patterns_directory/JtagBscanPatterns.v(4666)
+#    Time: 411902 ns  Iteration: 1  Instance: /TB
+# End time: 17:43:56 on Apr 07,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 4

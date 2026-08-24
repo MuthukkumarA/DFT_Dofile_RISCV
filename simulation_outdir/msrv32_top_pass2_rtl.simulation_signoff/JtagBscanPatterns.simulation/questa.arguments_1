@@ -1,0 +1,2 @@
+ -v ../../../../libs/adk.v
+ -v $TESSENT_HOME/lnx-x86/lib64/hdleng/lib/dft_sim.v

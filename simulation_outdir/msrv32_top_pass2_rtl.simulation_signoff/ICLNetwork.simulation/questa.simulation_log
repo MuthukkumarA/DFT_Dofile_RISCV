@@ -1,0 +1,1279 @@
+Number of expected miscompares = 0
+
+
+vlib dut_work
+vmap dut_work dut_work
+QuestaSim-64 vmap 2022.1_2 Lib Mapping Utility 2022.04 Apr  2 2022
+vmap dut_work dut_work 
+Modifying modelsim.ini
+
+
+# Entry 1
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f file_lists/questa.list_1 \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:49 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f file_lists/questa.list_1 -f questa.arguments_1 
+-- Compiling module csr_data_mux_unit
+-- Compiling module data_wr_mux_unit
+-- Compiling module machine_counter
+-- Compiling module machine_counter_setup
+-- Compiling module mcause_reg
+-- Compiling module mepc_and_mscratch_reg
+-- Compiling module mie_reg
+-- Compiling module mip_reg
+-- Compiling module misa_and_pre_data
+-- Compiling module msrv32_alu
+-- Compiling module msrv32_bu
+-- Compiling module msrv32_csr_file
+-- Compiling module msrv32_dec
+-- Compiling module msrv32_img
+-- Compiling module msrv32_immediate_adder
+-- Compiling module msrv32_instruction_decoder
+-- Compiling module msrv32_integer_file
+-- Compiling module msrv32_lu
+-- Compiling module msrv32_machine_control
+-- Compiling module msrv32_pc
+-- Compiling module msrv32_reg_block_1
+-- Compiling module msrv32_reg_block_2
+-- Compiling module msrv32_store_unit
+-- Compiling module msrv32_wb_mux_sel_unit
+-- Compiling module mstatus_reg
+-- Compiling module mtval_reg
+-- Compiling module mtvec_reg
+-- Compiling module msrv32_wr_en_generator
+-- Compiling module msrv32_top
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling module and02
+-- Compiling module inv01
+-- Compiling module or02
+-- Compiling module ipad
+-- Compiling module opad
+-- Scanning library file '/home/cad/eda/Mentor_Graphics/tessent_2022.2/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling module buf02
+-- Compiling module tri01
+
+Referenced (but uncompiled) modules or primitives:
+	msrv32_top_pass1_rtl_tessent_tap_main
+	msrv32_top_pass1_rtl_tessent_sib_1
+	msrv32_top_pass1_rtl_tessent_sib_2
+	msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl
+	msrv32_top_pass1_rtl_tessent_bscan_interface
+	msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF
+	msrv32_top_pass2_rtl_tessent_sib_1
+	msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl
+	msrv32_top_pass2_rtl_tessent_occ
+	msrv32_top_pass2_rtl_tessent_edt_lbist_c0
+	msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr
+	msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder
+	msrv32_top_pass2_rtl_tessent_lbist
+	msrv32_top_pass2_rtl_tessent_single_chain_mode_logic
+
+Top level modules:
+	msrv32_top
+End time: 17:43:49 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 1"; fi
+
+# Entry 2
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tap_main.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_1.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_2.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:49 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tap_main.v ../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_1.v ../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_2.v ../../../TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl.v -f questa.arguments_1 
+-- Compiling module msrv32_top_pass1_rtl_tessent_tap_main
+-- Compiling module msrv32_top_pass1_rtl_tessent_tap_main_fsm
+-- Compiling module msrv32_top_pass1_rtl_tessent_sib_1
+-- Compiling module msrv32_top_pass1_rtl_tessent_sib_2
+-- Compiling module msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling module clock_buf02
+
+Top level modules:
+	msrv32_top_pass1_rtl_tessent_tap_main
+	msrv32_top_pass1_rtl_tessent_sib_1
+	msrv32_top_pass1_rtl_tessent_sib_2
+	msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl
+End time: 17:43:49 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 2"; fi
+
+# Entry 3
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_cells.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF.v" \
+      "../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_interface.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:49 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_cells.v ../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF.v ../../../TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_interface.v -f questa.arguments_1 
+-- Compiling module msrv32_top_pass1_rtl_tessent_bscan_cell_in_s
+-- Compiling module msrv32_top_pass1_rtl_tessent_bscan_cell_in
+-- Compiling module msrv32_top_pass1_rtl_tessent_bscan_cell_en_1
+-- Compiling module msrv32_top_pass1_rtl_tessent_bscan_cell_out
+-- Compiling module msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF
+-- Compiling module msrv32_top_pass1_rtl_tessent_bscan_interface
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling module cgand
+-- Scanning library file '/home/cad/eda/Mentor_Graphics/tessent_2022.2/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling UDP latch_n
+
+Top level modules:
+	msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF
+	msrv32_top_pass1_rtl_tessent_bscan_interface
+End time: 17:43:49 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 3"; fi
+
+# Entry 4
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_sib_1.v" \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:49 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_sib_1.v ../../../TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl.v -f questa.arguments_1 
+-- Compiling module msrv32_top_pass2_rtl_tessent_sib_1
+-- Compiling module msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl
+-- Scanning library file '../../../../libs/adk.v'
+
+Top level modules:
+	msrv32_top_pass2_rtl_tessent_sib_1
+	msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl
+End time: 17:43:49 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 4"; fi
+
+# Entry 5
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:49 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.v -f questa.arguments_1 
+-- Compiling module msrv32_top_pass2_rtl_tessent_occ
+-- Compiling module msrv32_top_pass2_rtl_tessent_occ_control
+-- Compiling module msrv32_top_pass2_rtl_tessent_occ_shift_reg
+-- Compiling module msrv32_top_pass2_rtl_tessent_occ_sib
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling module sync_cell_rst
+-- Compiling module clock_mux21
+-- Scanning library file '/home/cad/eda/Mentor_Graphics/tessent_2022.2/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling module dffr
+-- Compiling UDP mux2
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling UDP dff_p_r
+
+Top level modules:
+	msrv32_top_pass2_rtl_tessent_occ
+End time: 17:43:49 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 5"; fi
+
+# Entry 6
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.v" \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:49 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.v ../../../TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr.v -f questa.arguments_1 
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_sib
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_decompressor
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_low_power_shift_decoder
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_low_power_shift_controller
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_spatial_compactor_10_w_output_lockup
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_controlled_decoder_4_to_10
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_compactor
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_bypass_logic
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_misr_reg
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_c0_misr
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_lbist_c0
+-- Compiling module msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr
+-- Scanning library file '../../../../libs/adk.v'
+
+Top level modules:
+	msrv32_top_pass2_rtl_tessent_edt_lbist_c0
+	msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr
+End time: 17:43:49 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 6"; fi
+
+# Entry 7
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist_ncp_index_decoder.instrument/msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:49 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist_ncp_index_decoder.instrument/msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.v -f questa.arguments_1 
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder
+-- Scanning library file '../../../../libs/adk.v'
+
+Top level modules:
+	msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder
+End time: 17:43:49 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 7"; fi
+
+# Entry 8
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.v" \
+      "../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_single_chain_mode_logic.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:50 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.v ../../../TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_single_chain_mode_logic.v -f questa.arguments_1 
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_sib
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_fsm
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_ncp_reg
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_vector_cnt_reg
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_bit_cnt_reg
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_counter
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_capture_phase_reg
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_warmup_pattern_cnt_reg
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_ncp_limits
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_ctrl_signals
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist_ctrl
+-- Compiling module msrv32_top_pass2_rtl_tessent_lbist
+-- Compiling module msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_sib
+-- Compiling module msrv32_top_pass2_rtl_tessent_single_chain_mode_logic
+-- Scanning library file '../../../../libs/adk.v'
+-- Compiling module mux21
+-- Compiling module clock_inv01
+-- Scanning library file '/home/cad/eda/Mentor_Graphics/tessent_2022.2/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+
+Top level modules:
+	msrv32_top_pass2_rtl_tessent_lbist
+	msrv32_top_pass2_rtl_tessent_single_chain_mode_logic
+End time: 17:43:50 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 8"; fi
+
+# Entry 9
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "./patterns_directory/ICLNetwork.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:50 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ./patterns_directory/ICLNetwork.v -f questa.arguments_1 
+-- Compiling module TB
+-- Scanning library file '../../../../libs/adk.v'
+
+Top level modules:
+	TB
+End time: 17:43:50 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 9"; fi
+
+# Entry 10
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      "./patterns.configuration"
+QuestaSim-64 vlog 2022.1_2 Compiler 2022.04 Apr  2 2022
+Start time: 17:43:50 on Apr 07,2026
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu ./patterns.configuration 
+-- Compiling configuration ICLNetwork_configuration
+
+Top level modules:
+	ICLNetwork_configuration
+End time: 17:43:50 on Apr 07,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 10"; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Compilation failed"
+  exit $xitval
+fi
+
+vsim -c -lib "dut_work" -L dut_work -do 'run -all; exit' +nowarnTFMPC +NEWPATH=./patterns_directory \
+      ICLNetwork_configuration
+Reading pref.tcl
+
+# 2022.1_2
+
+# vsim -c -lib dut_work -L dut_work -do "run -all; exit" "+nowarnTFMPC" "+NEWPATH=./patterns_directory" ICLNetwork_configuration 
+# Start time: 17:43:50 on Apr 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../../../../rtl/msrv32_csr_file.v(195): (vopt-2958) Implicit wire 'e_irq' does not have any driver.
+# ** Warning: ../../../../rtl/msrv32_csr_file.v(196): (vopt-2958) Implicit wire 't_irq' does not have any driver.
+# ** Warning: ../../../../rtl/msrv32_csr_file.v(197): (vopt-2958) Implicit wire 's_irq' does not have any driver.
+# ** Warning: ../../../TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design/modified_rtl_files/msrv32_top.v(1358): (vopt-2958) Implicit wire 'reset_in' does not have any driver.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# //  Questa Sim-64
+# //  Version 2022.1_2 linux_x86_64 Apr  2 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.ICLNetwork_configuration(fast)
+# Loading work.TB(fast)
+# Loading work.ipad(fast)
+# Loading work.buf02(fast)
+# Loading work.opad(fast)
+# Loading work.tri01(fast)
+# Loading work.clock_buf02(fast)
+# Loading work.cgand(fast)
+# Loading work.clock_mux21(fast)
+# Loading work.dffr(fast)
+# Loading work.mux21(fast)
+# Loading work.clock_inv01(fast)
+# Loading work.inv01(fast)
+# run -all
+# Found New Path ./patterns_directory
+# 
+# Loading ./patterns_directory/ICLNetwork.v.po.name
+# 
+# Loading ./patterns_directory/ICLNetwork.v.0.vec
+# 
+# 0ns: Pattern_set msrv32_top
+# 300ns:  Activate selection of the following scan muxes:
+# 300ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 300ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 9: instruction = 'bx -> DRMux = bypass
+# 1200ns:  Scan in verification pattern to the following scan register:
+# 1200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1
+# 1700ns:  Scan out verification pattern from the following scan register:
+# 1700ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1
+# 2100ns:  Activate selection of the following scan muxes:
+# 2100ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 2100ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 2100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 3000ns:  Scan in verification pattern to the following scan register:
+# 3000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 3500ns:  Scan out verification pattern from the following scan register:
+# 3500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 3900ns:  Activate selection of the following scan muxes:
+# 3900ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 3900ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 3900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 3900ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 3900ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 3900ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 3900ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 3900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 4000ns:  Scan in verification pattern to the following scan registers:
+# 4000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 4000ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 4000ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 4000ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 4000ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 4000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 4900ns:  Scan out verification pattern from the following scan registers:
+# 4900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 4900ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 4900ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 4900ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 4900ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 4900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 5800ns:  Activate selection of the following scan muxes:
+# 5800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 5800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 5800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 5800ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 5800ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 5800ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 5800ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 5800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 5900ns:  Scan in verification pattern to the following scan registers:
+# 5900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 5900ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 1
+# 5900ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 5900ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 5900ns:   msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl_inst.tdr[3:0], load value = 1100
+# 5900ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 5900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 7200ns:  Scan out verification pattern from the following scan registers:
+# 7200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 7200ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 1
+# 7200ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 7200ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 7200ns:   msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl_inst.tdr[3:0], expected value = 1100
+# 7200ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 7200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 8500ns:  Activate selection of the following scan muxes:
+# 8500ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 8500ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 8500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 8500ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 8500ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 8500ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 8500ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 8500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 8600ns:  Scan in verification pattern to the following scan registers:
+# 8600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 8600ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 1
+# 8600ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 0
+# 8600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr_inst.tdr[1:0], load value = 10
+# 8600ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 8600ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 8600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 9700ns:  Scan out verification pattern from the following scan registers:
+# 9700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 9700ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 1
+# 9700ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 0
+# 9700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr_inst.tdr[1:0], expected value = 10
+# 9700ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 9700ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 9700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 10800ns:  Activate selection of the following scan muxes:
+# 10800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 10800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 10800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 10800ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 10800ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 10800ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 10800ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = scan_in
+# 10800ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = scan_in
+# 10800ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 10800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 10900ns:  Scan in verification pattern to the following scan registers:
+# 10900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 10900ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 1
+# 10900ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.sib, load value = 0
+# 10900ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.sib, load value = 0
+# 10900ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 10900ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 10900ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 10900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 12000ns:  Scan out verification pattern from the following scan registers:
+# 12000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 12000ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 1
+# 12000ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.sib, expected value = 0
+# 12000ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.sib, expected value = 0
+# 12000ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 12000ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 12000ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 12000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 13100ns:  Activate selection of the following scan muxes:
+# 13100ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 13100ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 13100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 13100ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 13100ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 13100ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 13100ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = from_scan_out
+# 13100ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = scan_in
+# 13100ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 13100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 13200ns:  Scan in verification pattern to the following scan registers:
+# 13200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 13200ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 1
+# 13200ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.sib, load value = 1
+# 13200ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr[9:0], load value = 0111100001
+# 13200ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.sib, load value = 0
+# 13200ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 13200ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 13200ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 13200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 15300ns:  Scan out verification pattern from the following scan registers:
+# 15300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 15300ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 1
+# 15300ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.sib, expected value = 1
+# 15300ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr[9:0], expected value = 0111100001
+# 15300ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.sib, expected value = 0
+# 15300ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 15300ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 15300ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 15300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 17400ns:  Activate selection of the following scan muxes:
+# 17400ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 17400ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 17400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 17400ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 17400ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 17400ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 17400ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = scan_in
+# 17400ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = from_scan_out
+# 17400ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 17400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 17500ns:  Scan in verification pattern to the following scan registers:
+# 17500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 17500ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 1
+# 17500ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr[9:0], load value = 1111000011
+# 17500ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.sib, load value = 0
+# 17500ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.sib, load value = 0
+# 17500ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 17500ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 17500ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 17500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 19600ns:  Scan out verification pattern from the following scan registers:
+# 19600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 19600ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 1
+# 19600ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr[9:0], expected value = 1111000011
+# 19600ns:   msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst.tdr_sib.sib, expected value = 0
+# 19600ns:   msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst.tdr_sib.sib, expected value = 0
+# 19600ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 19600ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 19600ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 19600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 21800ns:  Activate selection of the following scan muxes:
+# 21800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 21800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 21800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 21800ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 21800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 21800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 21900ns:  Scan in verification pattern to the following scan registers:
+# 21900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 21900ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 21900ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 21900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 21900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 21900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 21900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 21900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 21900ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 21900ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 21900ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 21900ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 21900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 23600ns:  Scan out verification pattern from the following scan registers:
+# 23600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 23600ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 23600ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 23600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 23600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 23600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 23600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 23600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 23600ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 23600ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 23600ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 23600ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 23600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 25200ns:  Activate selection of the following scan muxes:
+# 25200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 25200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 25200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 25200ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 25200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 25200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 25200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_edt_scan_out_mux, selection 0: edt_scan_path_en = 1'b1 -> from_edt_scan_out_mux = from_edt_scan_out
+# 25200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_scan_in_mux, selection 0: ccm_en = 1'b0 -> lbist_scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 25200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 27900ns:  Scan in verification pattern to the following scan registers:
+# 27900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 0
+# 27900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 0
+# 27900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, load value = 0
+# 27900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, load value = 0
+# 27900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 27900ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 27900ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 27900ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 27900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 30100ns:  Scan out verification pattern from the following scan registers:
+# 30100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 0
+# 30100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 0
+# 30100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, expected value = 0
+# 30100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, expected value = 0
+# 30100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 30100ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 30100ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 30100ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 30100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 32200ns:  Activate selection of the following scan muxes:
+# 32200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 32200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 32200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 32200ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 32200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 32200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 32200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_edt_scan_out_mux, selection 0: edt_scan_path_en = 1'b1 -> from_edt_scan_out_mux = from_edt_scan_out
+# 32200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 32200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_scan_in_mux, selection 0: ccm_en = 1'b0 -> lbist_scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 32300ns:  Scan in verification pattern to the following scan registers:
+# 32300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.misr[23:0], load value = 110000111111110000000011
+# 32300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 32300ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 32300ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 32300ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 32300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 36800ns:  Scan out verification pattern from the following scan registers:
+# 36800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.misr[23:0], expected value = 110000111111110000000011
+# 36800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 36800ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 36800ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 36800ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 36800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 41300ns:  Activate selection of the following scan muxes:
+# 41300ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 41300ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 41300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 41300ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 41300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 41300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 41300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_edt_scan_out_mux, selection 0: edt_scan_path_en = 1'b1 -> from_edt_scan_out_mux = from_edt_scan_out
+# 41300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 41300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_scan_in_mux, selection 0: ccm_en = 1'b0 -> lbist_scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 41400ns:  Scan in verification pattern to the following scan registers:
+# 41400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.bist_chain_mask[9:0], load value = 0000111111
+# 41400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.bist_chain_mask_load_en, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 41400ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 41400ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 41400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 44600ns:  Scan out verification pattern from the following scan registers:
+# 44600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.bist_chain_mask[9:0], expected value = 0000111111
+# 44600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.bist_chain_mask_load_en, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 44600ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 44600ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 44600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 47800ns:  Activate selection of the following scan muxes:
+# 47800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 47800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 47800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 47800ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 47800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 47800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 47800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_edt_scan_out_mux, selection 0: edt_scan_path_en = 1'b1 -> from_edt_scan_out_mux = from_edt_scan_out
+# 47800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 47800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_scan_in_mux, selection 0: ccm_en = 1'b0 -> lbist_scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 47900ns:  Scan in verification pattern to the following scan registers:
+# 47900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 47900ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 47900ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 47900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_mask_shift_reg[30:0], load value = 0000111111110000000011111111111
+# 47900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 47900ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 47900ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 47900ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 47900ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 53100ns:  Scan out verification pattern from the following scan registers:
+# 53100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 53100ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 53100ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 53100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_mask_shift_reg[30:0], expected value = 0000111111110000000011111111111
+# 53100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 53100ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 53100ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 53100ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 53100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 58300ns:  Activate selection of the following scan muxes:
+# 58300ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 58300ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 58300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 58300ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 58300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 58300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 58300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_edt_scan_out_mux, selection 0: edt_scan_path_en = 1'b1 -> from_edt_scan_out_mux = from_edt_scan_out
+# 58300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 58300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_scan_in_mux, selection 0: ccm_en = 1'b0 -> lbist_scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 58400ns:  Scan in verification pattern to the following scan registers:
+# 58400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_hold_reg[3:0], load value = 1110
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_toggle_reg[3:0], load value = 1111
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_switching_reg[3:0], load value = 0001
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, load value = 1
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, load value = 1
+# 58400ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, load value = 1
+# 58400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 58400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 58400ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 58400ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 58400ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 58400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 61700ns:  Scan out verification pattern from the following scan registers:
+# 61700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_hold_reg[3:0], expected value = 1110
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_toggle_reg[3:0], expected value = 1111
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_lp_switching_reg[3:0], expected value = 0001
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, expected value = 1
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, expected value = 1
+# 61700ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, expected value = 1
+# 61700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 61700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 61700ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 61700ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 61700ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 61700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 65000ns:  Activate selection of the following scan muxes:
+# 65000ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 65000ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 65000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 65000ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 65000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 65000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 65000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_edt_scan_out_mux, selection 0: edt_scan_path_en = 1'b1 -> from_edt_scan_out_mux = from_edt_scan_out
+# 65000ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 65000ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lfsm_vec_scan_in_mux, selection 0: lbist_en = 1'b1 -> lfsm_vec_scan_in_mux = lbist_scan_in_mux
+# 65000ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lbist_scan_in_mux, selection 0: ccm_en = 1'b0 -> lbist_scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 65100ns:  Scan in verification pattern to the following scan registers:
+# 65100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 65100ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 65100ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 65100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lfsm_vec[30:0], load value = 0011111111000000001111111111111
+# 65100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, load value = 0
+# 65100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, load value = 0
+# 65100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 65100ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 65100ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 65100ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 65100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 70300ns:  Scan out verification pattern from the following scan registers:
+# 70300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 70300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 70300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 70300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.lfsm_vec[30:0], expected value = 0011111111000000001111111111111
+# 70300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i.sib, expected value = 0
+# 70300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i.sib, expected value = 0
+# 70300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_chain_mask_i.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst.msrv32_top_pass2_rtl_tessent_edt_c0_sib_misr_i.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 70300ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 70300ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 70300ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 70300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 75500ns:  Activate selection of the following scan muxes:
+# 75500ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 75500ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 75500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 75500ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 75500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 75500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 75500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_ncp_limits_path_mux, selection 0: lbist_register_path_en = 1'b1 -> from_ncp_limits_path_mux = msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.ijtag_so
+# 75500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 75600ns:  Scan in verification pattern to the following scan registers:
+# 75600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_3_limit[7:0], load value = 11111111
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_2_limit[7:0], load value = 00000111
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_1_limit[7:0], load value = 11111000
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_0_limit[7:0], load value = 10000111
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 75600ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 75600ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 75600ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 75600ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 80400ns:  Scan out verification pattern from the following scan registers:
+# 80400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_3_limit[7:0], expected value = 11111111
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_2_limit[7:0], expected value = 00000111
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_1_limit[7:0], expected value = 11111000
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_0_limit[7:0], expected value = 10000111
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 80400ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 80400ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 80400ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 80400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 85200ns:  Activate selection of the following scan muxes:
+# 85200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 85200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 85200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 85200ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 85200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 85200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 85200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.from_lbist_register_path_mux, selection 0: lbist_register_path_en = 1'b1 -> from_lbist_register_path_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 85300ns:  Scan in verification pattern to the following scan registers:
+# 85300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 85300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 85300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.capture_phase_size[2:0], load value = 000
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.warmup_pattern_cnt[9:0], load value = 1111111100
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bit_cnt_max[5:0], load value = 111111
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.vector_cnt[13:0], load value = 11110000000011
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_cnt[7:0], load value = 00001111
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 85300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 85300ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 85300ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 85300ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 85300ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 85300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 91000ns:  Scan out verification pattern from the following scan registers:
+# 91000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 91000ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 91000ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.capture_phase_size[2:0], expected value = 000
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.warmup_pattern_cnt[9:0], expected value = 1111111100
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bit_cnt_max[5:0], expected value = 111111
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.vector_cnt[13:0], expected value = 11110000000011
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ncp_cnt[7:0], expected value = 00001111
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 91000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 91000ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 91000ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 91000ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 91000ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 91000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 96700ns:  Activate selection of the following scan muxes:
+# 96700ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 96700ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 96700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 96700ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 96700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 96700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 96700ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.msrv32_top_pass2_rtl_tessent_edt_internal_scan_registers_i.blk1_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 96800ns:  Scan in verification pattern to the following scan registers:
+# 96800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 96800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 96800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.msrv32_top_pass2_rtl_tessent_edt_internal_scan_registers_i.blk1_sib_i.sib, load value = 0
+# 96800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 96800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 96800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 96800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 96800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 96800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 96800ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 96800ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 96800ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 96800ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 96800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 98500ns:  Scan out verification pattern from the following scan registers:
+# 98500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 98500ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 98500ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.msrv32_top_pass2_rtl_tessent_edt_internal_scan_registers_i.blk1_sib_i.sib, expected value = 0
+# 98500ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 98500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 98500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 98500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 98500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 98500ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 98500ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 98500ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 98500ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 98500ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 98500ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 100200ns:  Activate selection of the following scan muxes:
+# 100200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 100200ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 100200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 100200ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 100200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 100200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100200ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 100200ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 100300ns:  Scan in verification pattern to the following scan registers:
+# 100300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 100300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_single_bypass, load value = 0
+# 100300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 0
+# 100300ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 0
+# 100300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 100300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 100300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 100300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 100300ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 100300ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 100300ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 100300ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 100300ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 100300ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 102000ns:  Scan out verification pattern from the following scan registers:
+# 102000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 102000ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_single_bypass, expected value = 0
+# 102000ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 0
+# 102000ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 0
+# 102000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 102000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 102000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 102000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 102000ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 102000ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 102000ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 102000ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 102000ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 102000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 103700ns:  Activate selection of the following scan muxes:
+# 103700ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 103700ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 103700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 103700ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 103700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_mux, selection 0: ccm_en = 1'b0 -> ijtag_so_mux = ijtag_so_ff
+# 103700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 103700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103700ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 103800ns:  Scan in verification pattern to the following scan registers:
+# 103800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 103800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.lbist_low_power_shift_en_reg, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.lbist_burn_in_reg, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.shift_clock_select[1:0], load value = 11
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_sync_reset, load value = 0
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_clock_disable, load value = 0
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_setup[2:0], load value = 100
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_en, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, load value = 0
+# 103800ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 103800ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 103800ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 103800ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 106400ns:  Scan out verification pattern from the following scan registers:
+# 106400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 106400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.tdr_sib_i.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst.single_chain_sib_i.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_bist_registers_i.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_ncp_limits_sib_i.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.lbist_low_power_shift_en_reg, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.lbist_burn_in_reg, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.shift_clock_select[1:0], expected value = 11
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_sync_reset, expected value = 0
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_clock_disable, expected value = 0
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_setup[2:0], expected value = 100
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.bist_en, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_sib_control_registers_i.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.msrv32_top_pass2_rtl_tessent_lbist_edt_sib_i.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_lbist_inst.ijtag_so_ff, expected value = 0
+# 106400ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 106400ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 106400ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 106400ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 109000ns:  Activate selection of the following scan muxes:
+# 109000ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 109000ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so
+# 109000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 109000ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 109000ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 109000ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 109000ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 109000ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 109100ns:  Scan in verification pattern to the following scan registers:
+# 109100ns:   msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst.tdr[0:0], load value = 1
+# 109100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 109100ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, load value = 0
+# 109100ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, load value = 1
+# 109100ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, load value = 1
+# 109100ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0
+# 109100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1
+# 110100ns:  Scan out verification pattern from the following scan registers:
+# 110100ns:   msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst.tdr[0:0], expected value = 1
+# 110100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 110100ns:   msrv32_top_pass2_rtl_tessent_sib_lbist_inst.sib, expected value = 0
+# 110100ns:   msrv32_top_pass2_rtl_tessent_sib_occ_inst.sib, expected value = 1
+# 110100ns:   msrv32_top_pass2_rtl_tessent_sib_edt_inst.sib, expected value = 1
+# 110100ns:   msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0
+# 110100ns:   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1
+# 111100ns:  Activate selection of the following scan muxes:
+# 111100ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 111100ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 7: instruction = 4'b0110 -> DRMux = bypass
+# 112000ns:  Scan in verification pattern to the following scan register:
+# 112000ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1
+# 112500ns:  Scan out verification pattern from the following scan register:
+# 112500ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1
+# 112900ns:  Activate selection of the following scan muxes:
+# 112900ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 112900ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 1: instruction = 4'b0000 -> DRMux = bypass
+# 113800ns:  Scan in verification pattern to the following scan register:
+# 113800ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1
+# 114300ns:  Scan out verification pattern from the following scan register:
+# 114300ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1
+# 114700ns:  Activate selection of the following scan muxes:
+# 114700ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux
+# 114700ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 0: instruction = 4'b1111 -> DRMux = bypass
+# 115600ns:  Scan in verification pattern to the following scan register:
+# 115600ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1
+# 116100ns:  Scan out verification pattern from the following scan register:
+# 116100ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1
+# 116500ns:  Activate selection for scan mux msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 1: fsm.irSel = 1'b1 -> IRMux = instruction[0]
+# 116600ns:  Scan in verification pattern to the following scan register:
+# 116600ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0], load value = 1011
+# 117400ns:  Scan out verification pattern from the following scan register:
+# 117400ns:   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0], expected value = 1011
+# 
+# Simulation finished at time 118201
+# Number of miscompares            =           0
+# Number of 0/1 compares           =         784
+# Number of Z compares             =           0
+# 
+# No error between simulated and expected patterns
+# 
+# ** Note: $finish    : ./patterns_directory/ICLNetwork.v(2782)
+#    Time: 118202 ns  Iteration: 1  Instance: /TB
+# End time: 17:43:52 on Apr 07,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 4
+if [ $? != 0 ] ; then xitval=-1; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Simulation failed"
+fi
+
+exit $xitval
+exit0
