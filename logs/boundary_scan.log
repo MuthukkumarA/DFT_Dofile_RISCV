@@ -1,0 +1,392 @@
+//  Tessent Shell  2022.2    Fri May 27 22:24:01 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Tue Apr 07 17:26:07 IST 2026.
+//  64 bit version
+//  Host: mavenserver-RH3 (255072 MB RAM, 122071 MB Swap)
+//
+SETUP> set_context dft -rtl -design_identifier pass1_rtl
+SETUP> 
+SETUP> #Create & set the TSDB directory
+SETUP>  set_tsdb_output_directory TSDB
+TSDB
+SETUP> 
+SETUP> #Read the cell library files
+SETUP>  read_cell_library ../libs/adk.tcelllib
+//  Reading DFT Library file ../libs/adk.tcelllib
+//  Finished reading file ../libs/adk.tcelllib
+SETUP> 
+SETUP> #Read the design source codes
+SETUP>  read_verilog [glob ../rtl/*.v]
+SETUP> 
+SETUP> #Elaborate the design top
+SETUP>  set_current_design msrv32_top[Kp
+SETUP> set_design_level chip
+SETUP> 
+SETUP> #Specify the DFT requirements
+SETUP>  set_dft_specification_requirements -boundary_scan on -logic_test on 
+SETUP>  
+SETUP> #Set attributes for the TAP controller pins
+SETUP>  set_attribute_value tck_p -name function -value tck
+{tck_p}
+SETUP>  set_attribute_value tdi_p -name function -value tdi
+{tdi_p}
+SETUP>  set_attribute_value tms_p -name function -value tms
+{tms_p}
+SETUP>  set_attribute_value trst_p -name function -value trst
+{trst_p}
+SETUP>  set_attribute_value tdo_p -name function -value tdo
+{tdo_p}
+SETUP> set_boundary_scan_port_options {ms_riscv32_mp_imaddr_out edt_channel_out1_p scan_en shift_clock_src_p shift_capture_clock } -cell_optio ns dont_touch
+SETUP> add_dft_signals scan_en -source_nodes scan_en
+SETUP> report_clocks 
+//  No clocks have been defined.
+SETUP> report_clocks -all
+//  No clocks have been defined.
+SETUP>  check_design_rules 
+//  Warning:  The pin order file './TSDB/dft_inserted_designs/msrv32_top.pinorder' was created.
+//            It was ordered using the declaration order of the ports in the design file
+//            as no DEF file was read in. Before going to layout, you should either 
+//             1) load a DEF file so that it can be automatically sorted based on placement 
+//             2) edit this file and manually order it based on placement.
+//            If you chose option 2), use 'set_boundary_scan_port_option -pin_order_file ./TSDB/dft_inserted_designs/msrv32_top.pinorder'
+//            in setup mode to have your edited version used the next time you run the check_design_rules command
+//            and prevent it from being overwritten.
+//  ---------------------------------------------------------------------------
+//  Begin RTL synthesis.
+//  --------------------
+//  Synthesized modules=28, Time=1.45 sec.
+//  ---------------------------------------------------------------------------
+//  Flattening process completed, cell instances=7879, gates=22829, PIs=150, POs=106, CPU time=0.11 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.07 sec.
+//  Error: The pin 'REG2/rtlcreg_rd_addr_reg_out_1/CP' (22690.3) is sourced by port 'ms_riscv32_mp_clk_in' (1.0)
+//         but the port was not defined as clock using the 'add_clocks -period' command. (DFT_C6-1)
+//  Note: Adding DFT signal 'async_set_reset_static_disable' with the -create_with_tdr option.
+//  Note: Adding DFT signal 'async_set_reset_dynamic_disable' with the -create_from_other_signals option.
+//  Note: There was 1 'add_dft_control_points -type async_set_reset' command inferred from DRC. Use report_dft_control_points to see it.
+//  Error: There was 1 DFT_C6 violation (Clock of scannable flip-flops not properly sourced by a declared clock).
+//  36 gates may have an observable X-state. (E5)
+//  Warning: There were 71 BUS gates which may have possible contention. (E10)
+//  ATPG bus checking results: pass=0, bidi=0, fail=71, abort=0, CPU time=0.01 sec.
+//  Error: Rules checking unsuccessful, cannot exit SETUP mode.
+SETUP> add_clocks [get_ports ms_riscv32_mp_clk_in] -period 6ns -label clk
+SETUP> report_clocks 
+User-defined Clock (1):
+=========================
+
+  Sync and Async Source Clock
+  ============================
+   ----------------------  -----  ---------  ------------  --------  --------  
+   Name                    Label  Off State   Constraints  Internal   Period   
+   ----------------------  -----  ---------  ------------  --------  --------  
+   'ms_riscv32_mp_clk_in'  clk        -      Asynchronous     No     6.00ns    
+
+SETUP> report_clocks -all
+User-defined Clock (1):
+=========================
+
+  Sync and Async Source Clock
+  ============================
+   ----------------------  -----  ---------  ------------  --------  --------  
+   Name                    Label  Off State   Constraints  Internal   Period   
+   ----------------------  -----  ---------  ------------  --------  --------  
+   'ms_riscv32_mp_clk_in'  clk        -      Asynchronous     No     6.00ns    
+
+//  No SDC clocks have been defined.
+SETUP> report_clocks -all[21G[K[8Gadd_clocks [get_ports ms_riscv32_mp_clk_in] -period 6ns -label clk[8Gcheck_design_rules[K
+//  Warning:  The pin order file './TSDB/dft_inserted_designs/msrv32_top.pinorder' was created.
+//            It was ordered using the declaration order of the ports in the design file
+//            as no DEF file was read in. Before going to layout, you should either 
+//             1) load a DEF file so that it can be automatically sorted based on placement 
+//             2) edit this file and manually order it based on placement.
+//            If you chose option 2), use 'set_boundary_scan_port_option -pin_order_file ./TSDB/dft_inserted_designs/msrv32_top.pinorder'
+//            in setup mode to have your edited version used the next time you run the check_design_rules command
+//            and prevent it from being overwritten.
+//  Note: There was 1 'add_dft_control_points -type async_set_reset' command inferred from DRC. Use report_dft_control_points to see it.
+//  36 gates may have an observable X-state. (E5)
+//  Warning: There were 71 BUS gates which may have possible contention. (E10)
+//  ATPG bus checking results: pass=0, bidi=0, fail=71, abort=0, CPU time=0.01 sec.
+ANALYSIS> set spec [create_dft_specification -replace]
+//  sub-command: create_dft_specification -replace 
+//  
+//  Begin creation of DftSpecification(msrv32_top,pass1_rtl)
+//    Creation of RtlCells wrapper
+//    Creation of IjtagNetwork wrapper
+//    Creation of BoundaryScan wrapper
+//  
+//  Done  creation of DftSpecification(msrv32_top,pass1_rtl)
+//  
+/DftSpecification(msrv32_top,pass1_rtl)
+ANALYSIS>  report_config_data $spec
+
+DftSpecification(msrv32_top,pass1_rtl) {
+  IjtagNetwork {
+    HostScanInterface(tap) {
+      Interface {
+        tck : tck_p;
+        trst : trst_p;
+        tms : tms_p;
+        tdi : tdi_p;
+        tdo : tdo_p;
+      }
+      Tap(main) {
+        HostIjtag(1) {
+          Sib(sri) {
+            Attributes {
+              tessent_dft_function : scan_resource_instrument_host;
+            }
+            Sib(sri_ctrl) {
+              Tdr(sri_ctrl) {
+                Attributes {
+                  tessent_dft_function : scan_resource_instrument_dft_control;
+                }
+              }
+            }
+          }
+        }
+        HostBscan {
+        }
+      }
+    }
+  }
+  BoundaryScan {
+    ijtag_host_interface : Tap(main)/HostBscan;
+    BoundaryScanCellOptions {
+      edt_channel_out1_p : dont_touch;
+      ms_riscv32_mp_imaddr_out[0] : dont_touch;
+      ms_riscv32_mp_imaddr_out[10] : dont_touch;
+      ms_riscv32_mp_imaddr_out[11] : dont_touch;
+      ms_riscv32_mp_imaddr_out[12] : dont_touch;
+      ms_riscv32_mp_imaddr_out[13] : dont_touch;
+      ms_riscv32_mp_imaddr_out[14] : dont_touch;
+      ms_riscv32_mp_imaddr_out[15] : dont_touch;
+      ms_riscv32_mp_imaddr_out[16] : dont_touch;
+      ms_riscv32_mp_imaddr_out[17] : dont_touch;
+      ms_riscv32_mp_imaddr_out[18] : dont_touch;
+      ms_riscv32_mp_imaddr_out[19] : dont_touch;
+      ms_riscv32_mp_imaddr_out[1] : dont_touch;
+      ms_riscv32_mp_imaddr_out[20] : dont_touch;
+      ms_riscv32_mp_imaddr_out[21] : dont_touch;
+      ms_riscv32_mp_imaddr_out[22] : dont_touch;
+      ms_riscv32_mp_imaddr_out[23] : dont_touch;
+      ms_riscv32_mp_imaddr_out[24] : dont_touch;
+      ms_riscv32_mp_imaddr_out[25] : dont_touch;
+      ms_riscv32_mp_imaddr_out[26] : dont_touch;
+      ms_riscv32_mp_imaddr_out[27] : dont_touch;
+      ms_riscv32_mp_imaddr_out[28] : dont_touch;
+      ms_riscv32_mp_imaddr_out[29] : dont_touch;
+      ms_riscv32_mp_imaddr_out[2] : dont_touch;
+      ms_riscv32_mp_imaddr_out[30] : dont_touch;
+      ms_riscv32_mp_imaddr_out[31] : dont_touch;
+      ms_riscv32_mp_imaddr_out[3] : dont_touch;
+      ms_riscv32_mp_imaddr_out[4] : dont_touch;
+      ms_riscv32_mp_imaddr_out[5] : dont_touch;
+      ms_riscv32_mp_imaddr_out[6] : dont_touch;
+      ms_riscv32_mp_imaddr_out[7] : dont_touch;
+      ms_riscv32_mp_imaddr_out[8] : dont_touch;
+      ms_riscv32_mp_imaddr_out[9] : dont_touch;
+      scan_en : dont_touch;
+      shift_capture_clock : dont_touch;
+      shift_clock_src_p : dont_touch;
+      ms_riscv32_mp_clk_in : clock;
+    }
+  }
+}
+ANALYSIS> 
+ANALYSIS>  #Insert the DFT instruments
+ANALYSIS>  process_dft_specification
+//  
+//  Begin processing of /DftSpecification(msrv32_top,pass1_rtl)
+//    --- IP generation phase ---
+//    Validation of IjtagNetwork
+//    Validation of BoundaryScan
+//    Processing of IjtagNetwork
+//      Generating design files for IJTAG TAP module msrv32_top_pass1_rtl_tessent_tap_main
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tap_main.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tap_main.icl
+//      Generating design files for IJTAG SIB module msrv32_top_pass1_rtl_tessent_sib_1
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_1.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_1.icl
+//      Generating design files for IJTAG SIB module msrv32_top_pass1_rtl_tessent_sib_2
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_2.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_2.icl
+//      Generating design files for IJTAG Tdr module msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl.icl
+//
+//      Loading the generated RTL verilog files (4) to enable instantiating the contained modules
+//      into the design.
+//    Processing of BoundaryScan
+//      Analyzing Boundary Scan requirements
+//      Generating design files for JTAG Boundary Scan cells
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_cells.v
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF.v
+//        JTAG BSDL   : ./TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top.bsdl
+//      Generating design files for JTAG Boundary Scan interface block msrv32_top_pass1_rtl_tessent_bscan_interface
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_interface.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_interface.icl
+//        TCD BScan   : ./TSDB/instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_interface.tcd_bscan
+//
+//      Loading the generated RTL verilog files (3) to enable instantiating the contained modules
+//      into the design.
+//    --- Instrument insertion phase ---
+//   Inserting instruments of type 'ijtag'
+//   Inserting instruments of type 'jtag_bscan'
+//  
+//    Writing out modified source design in ./TSDB/dft_inserted_designs/msrv32_top_pass1_rtl.dft_inserted_design
+//    Writing out specification in ./TSDB/dft_inserted_designs/msrv32_top_pass1_rtl.dft_spec
+//  
+//  Done  processing of DftSpecification(msrv32_top,pass1_rtl)
+//  
+/DftSpecification(msrv32_top,pass1_rtl)
+INSERTION> report_
+report_attributes                         report_bisr_repair_register_icl_instances report_boundary_scan_port_options         
+report_capture_timing_options             report_config_data                        report_config_messages                    
+report_config_syntax                      report_context                            report_core_descriptions                  
+report_current_design                     report_default_ssn_datapath_configuration report_design_sources                     
+report_dft_cell_selection_mappings        report_dft_clock_enables                  report_dft_clock_muxes                    
+report_dft_control_points                 report_dft_modal_connections              report_dft_signal_names                   
+report_dft_signals                        report_drc_rules                          report_edt_configurations                 
+report_environment                        report_gate_to_rtl_mapping                report_icl_extraction_options             
+report_ijtag_instances                    report_ijtag_logical_connections          report_ijtag_retargeting_options          
+report_iprocs                             report_licenses                           report_load_unload_timing_options         
+report_memory_cluster_configuration       report_memory_dft_summary                 report_memory_identification              
+report_memory_instances                   report_module_matching                    report_module_matching_options            
+report_pade_logical_connections           report_power_data                         report_read_verilog_options               
+report_resources                          report_rtl_to_gates_mapping               report_run_synthesis_options              
+report_scan_elements                      report_scan_segments                      report_simulation_library_sources         
+report_tcl_shell_options                  report_testbench_simulation_options       report_version_data                       
+
+[KINSERTION> report_c
+report_capture_timing_options report_config_data            report_config_messages        report_config_syntax          
+report_context                report_core_descriptions      report_current_design         
+[KINSERTION> report_clock[K[K[K[K[K[K[K[K[K[K[K[Kextract_icl
+//  Note: Updating the hierarchical data model to reflect RTL design changes.
+//  Writing design source dictionary : ./TSDB/dft_inserted_designs/msrv32_top_pass1_rtl.dft_inserted_design/msrv32_top.design_source_dictionary
+//  ---------------------------------------------------------------------------
+//  Begin RTL synthesis.
+//  --------------------
+//  Synthesized modules=1, Time=1.00 sec.
+//  Note: There was 1 module selectively synthesized.
+//        Use 'get_module -filter is_synthesized' to see it.
+//        You can also use 'set_quick_synthesis_options -verbose on' to have the synthesis step report the
+//        synthesized module name in the transcript as it is being synthesized.
+//  ---------------------------------------------------------------------------
+//  Warning: Rule FN1 violation occurs 3202 times
+//  Warning: Rule FN3 violation occurs 6 times
+//  Warning: Rule FN4 violation occurs 2 times
+//  Warning: Rule FP13 violation occurs 7 times
+//  Flattening process completed, cell instances=260, gates=1054, PIs=150+1(pseudo port), POs=106, CPU time=0.02 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin ICL extraction.
+//  ---------------------
+//  ICL extraction completed, ICL instances=5, CPU time=0.05 sec.
+//  ---------------------------------------------------------------------------
+//  ---------------------------------------------------------------------------
+//  Begin ICL elaboration and checking.
+//  -----------------------------------
+//  ICL elaboration completed, CPU time=0.03 sec.
+//  ---------------------------------------------------------------------------
+//  Writing ICL file : ./TSDB/dft_inserted_designs/msrv32_top_pass1_rtl.dft_inserted_design/msrv32_top.icl
+//  Extracting SDC...
+//  Writing SDC file: ./TSDB/dft_inserted_designs/msrv32_top_pass1_rtl.dft_inserted_design/msrv32_top.sdc
+//  Writing DFT info dictionary: ./TSDB/dft_inserted_designs/msrv32_top_pass1_rtl.dft_inserted_design/msrv32_top.dft_info_dictionary
+SETUP> 
+SETUP>  set pattern [create_pattern_specification -replace]
+//  sub-command: create_patterns_specification -replace 
+//  Creating '/PatternsSpecification(msrv32_top,pass1_rtl,signoff)'
+//    Getting patterns specifications for the 'ijtag' instrument type
+//    Getting patterns specifications for the 'jtag_bscan' instrument type
+/PatternsSpecification(msrv32_top,pass1_rtl,signoff)
+SETUP>  report_config_data $pattern
+
+PatternsSpecification(msrv32_top,pass1_rtl,signoff) {
+  AdvancedOptions {
+    ConstantPortSettings {
+      scan_en : 0;
+    }
+  }
+  Patterns(ICLNetwork) {
+    ICLNetworkVerify(msrv32_top) {
+    }
+  }
+  Patterns(JtagBscanPatterns) {
+    tester_period : 100ns;
+    TestStep(JtagBscanTestStep) {
+      BoundaryScan {
+        RunTest(test_logic_reset) {
+        }
+        RunTest(inst_reg) {
+        }
+        RunTest(bypass_reg) {
+        }
+        RunTest(bscan_reg) {
+        }
+        RunTest(input) {
+        }
+        RunTest(sample) {
+        }
+        RunTest(highz) {
+        }
+        RunTest(clamp) {
+        }
+        RunTest(output) {
+        }
+      }
+    }
+  }
+}
+SETUP> 
+SETUP>  #Insert the DFT instruments
+SETUP>  process_pattern_specification
+//  
+//  Begin processing of /PatternsSpecification(msrv32_top,pass1_rtl,signoff)
+//  
+//    Processing of /PatternsSpecification(msrv32_top,pass1_rtl,signoff)/Patterns(ICLNetwork)
+//  
+//      Creation of pattern 'ICLNetwork'
+//        Solving ICLNetworkVerify(msrv32_top)
+//  
+//      Writing pattern file './TSDB/patterns/msrv32_top_pass1_rtl.patterns_signoff/ICLNetwork.v'
+//  
+//    Processing of /PatternsSpecification(msrv32_top,pass1_rtl,signoff)/Patterns(JtagBscanPatterns)
+//      Processing of TestStep(JtagBscanTestStep) instrument 'jtag_bscan'
+//  
+//      Creation of pattern 'JtagBscanPatterns'
+//        Solving TestStep(JtagBscanTestStep)
+//  
+//      Writing pattern file './TSDB/patterns/msrv32_top_pass1_rtl.patterns_signoff/JtagBscanPatterns.v'
+//      Writing simulation data dictionary file './TSDB/patterns/msrv32_top_pass1_rtl.patterns_signoff/simulation.data_dictionary'
+//  
+//  Done  processing of /PatternsSpecification(msrv32_top,pass1_rtl,signoff)
+//  
+//  Writing configuration data file './TSDB/patterns/msrv32_top_pass1_rtl.patterns_spec_signoff'.
+SETUP> report_clocks 
+//  No clocks have been defined.
+SETUP> report_clocks -all
+//  No clocks have been defined.
+//  No SDC clocks have been defined.
+SETUP> get_clo
+get_clock_option get_clocks       
+[KSETUP> get_clock
+{}
+SETUP> get_clocks
+{}
+SETUP> open_visualizer 
+//  Note: Generating IJTAG Network data model for visualization purposes... done.
+//  Note: Generating flat model helper data for visualization purposes... done.
+//  Note: Tessent Visualizer client successfully started and connected to the server.
+SETUP> exit

@@ -1,0 +1,1782 @@
+//  Tessent Shell  2022.2    Fri May 27 22:24:01 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Tue Apr 07 17:42:37 IST 2026.
+//  64 bit version
+//  Host: mavenserver-RH3 (255072 MB RAM, 122071 MB Swap)
+//
+SETUP> dofile do
+dofile_Bound.do dofile_pass2.do 
+[KSETUP> dofile dofile_pass2.do 
+//  command: ####### LBIST / EDT / OCC #################
+//  command: set_context dft -rtl -design_identifier pass2_rtl
+//  command: set_tsdb_output_directory TSDB
+//  command: read_cell_library ../libs/adk.tcelllib
+//  Reading DFT Library file ../libs/adk.tcelllib
+//  Finished reading file ../libs/adk.tcelllib
+//  command: open_tsdb ./TSDB
+//  command: read_design msrv32_top -design_identifier pass1_rtl 
+//  command: set_current_design msrv32_top -show_elaboration_warnings
+//  Warning: Floating input 'I' at instance 'edt_channel_out1_p_pad' in module 'msrv32_top'
+//  Warning: Floating input 'control_chain_scan_out_fromCore' at instance 'msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst' in module 'msrv32_top'
+//  Warning: Floating input 'ms_riscv32_mp_data_htrans_out_1_fromCore' at instance 'msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst' in module 'msrv32_top'
+//  Warning: Floating input 'ms_riscv32_mp_dmaddr_out_31_fromCore' at instance 'msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst' in module 'msrv32_top'
+//  Warning: Floating input 'ms_riscv32_mp_dmdata_out_31_fromCore' at instance 'msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst' in module 'msrv32_top'
+//  Warning: Floating input 'ms_riscv32_mp_dmwr_mask_out_3_fromCore' at instance 'msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst' in module 'msrv32_top'
+//  Warning: Floating input 'ms_riscv32_mp_dmwr_req_out_fromCore' at instance 'msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst' in module 'msrv32_top'
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[30]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[29]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[28]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[27]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[26]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[25]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[24]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[23]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[22]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[21]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[20]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[19]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[18]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[17]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[16]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[15]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[14]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[13]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[12]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[11]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[10]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[9]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[8]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[7]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[6]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[5]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[4]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[3]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[2]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[1]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmaddr_out_31_toPad_ts1[0]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[30]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[29]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[28]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[27]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[26]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[25]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[24]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[23]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[22]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[21]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[20]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[19]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[18]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[17]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[16]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[15]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[14]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[13]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[12]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[11]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[10]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[9]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[8]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[7]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[6]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[5]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[4]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[3]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[2]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[1]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmdata_out_31_toPad_ts1[0]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmwr_mask_out_3_toPad_ts1[2]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmwr_mask_out_3_toPad_ts1[1]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_dmwr_mask_out_3_toPad_ts1[0]' in module 'msrv32_top' is not driven
+//  Warning: Net 'ms_riscv32_mp_data_htrans_out_1_toPad_ts1[0]' in module 'msrv32_top' is not driven
+//  Warning: Net 'wr_en_csr_file' in module 'msrv32_top' has no pins
+//  Warning: Net 'wr_en_integer_file' in module 'msrv32_top' has no pins
+//  Warning: Net 'meie_out' in module 'msrv32_top' has no pins
+//  Warning: Net 'mtie_out' in module 'msrv32_top' has no pins
+//  Warning: Net 'msie_out' in module 'msrv32_top' has no pins
+//  Warning: Net 'meip_out' in module 'msrv32_top' has no pins
+//  Warning: Net 'mtip_out' in module 'msrv32_top' has no pins
+//  Warning: Net 'msip_out' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[31]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[30]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[29]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[28]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[27]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[26]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[25]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[24]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[23]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[22]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[21]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[20]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[19]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[18]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[17]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[16]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[15]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[14]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[13]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[12]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[11]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[10]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[9]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[8]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[7]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[6]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[5]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[4]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'next_pc[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[31]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[30]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[29]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[28]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[27]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[26]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[25]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[24]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[23]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[22]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[21]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[20]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[19]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[18]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[17]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[16]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[15]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[14]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[13]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[12]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[11]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[10]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[9]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[8]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[7]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[6]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[5]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[4]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'pc_reg[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'cause_in[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'cause_in[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'cause_in[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'cause_in[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[31]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[30]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[29]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[28]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[27]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[26]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[25]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[24]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[23]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[22]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[21]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[20]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[19]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[18]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[17]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[16]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[15]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[14]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[13]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[12]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[11]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[10]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[9]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[8]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[7]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[6]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[5]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[4]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'iadder_out[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'mem_wr_mask[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'mem_wr_mask[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'mem_wr_mask[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'mem_wr_mask[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[31]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[30]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[29]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[28]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[27]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[26]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[25]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[24]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[23]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[22]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[21]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[20]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[19]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[18]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[17]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[16]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[15]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[14]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[13]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[12]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[11]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[10]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[9]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[8]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[7]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[6]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[5]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[4]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_data_out[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[31]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[30]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[29]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[28]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[27]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[26]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[25]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[24]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[23]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[22]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[21]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[20]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[19]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[18]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[17]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[16]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[15]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[14]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[13]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[12]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[11]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[10]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[9]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[8]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[7]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[6]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[5]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[4]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_d_addr[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_wr_mask[3]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_wr_mask[2]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_wr_mask[1]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_wr_mask[0]' in module 'msrv32_top' has no pins
+//  Warning: Net 'su_wr_req' in module 'msrv32_top' has no pins
+//  Warning: Net 'reset_in' in module 'msrv32_top' is not driven
+//  Warning: Net 'pc_plus_4_out[31]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[30]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[29]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[28]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[27]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[26]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[25]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[24]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[23]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[22]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[21]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[20]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[19]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[18]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[17]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[16]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[15]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[14]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[13]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[12]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[11]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[10]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[9]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[8]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[7]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[6]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[5]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[4]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[3]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[2]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[1]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_plus_4_out[0]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'misaligned_instr_out' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[31]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[30]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[29]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[28]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[27]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[26]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[25]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[24]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[23]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[22]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[21]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[20]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[19]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[18]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[17]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[16]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[15]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[14]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[13]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[12]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[11]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[10]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[9]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[8]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[7]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[6]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[5]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[4]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[3]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[2]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[1]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'pc_mux_out[0]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[31]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[30]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[29]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[28]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[27]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[26]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[25]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[24]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[23]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[22]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[21]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[20]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[19]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[18]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[17]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[16]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[15]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[14]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[13]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[12]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[11]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[10]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[9]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[8]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[7]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[6]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[5]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[4]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[3]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[2]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[1]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'i_addr[0]' in module 'msrv32_pc' is not driven
+//  Warning: Net 'next_pc[31]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[30]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[29]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[28]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[27]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[26]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[25]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[24]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[23]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[22]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[21]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[20]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[19]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[18]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[17]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[16]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[15]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[14]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[13]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[12]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[11]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[10]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[9]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[8]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[7]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[6]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[5]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[4]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[3]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[2]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[1]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'next_pc[0]' in module 'msrv32_pc' has no pins
+//  Warning: Net 'instr_mux[31]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[30]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[29]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[28]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[27]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[26]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[25]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[24]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[23]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[22]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[21]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[20]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[19]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[18]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[17]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[16]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[15]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[14]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[13]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[12]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[11]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[10]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[9]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[8]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[7]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[6]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[5]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[4]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[3]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[2]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[1]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'instr_mux[0]' in module 'msrv32_instruction_decoder' is not driven
+//  Warning: Net 'data_out[31]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[30]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[29]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[28]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[27]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[26]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[25]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[24]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[23]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[22]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[21]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[20]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[19]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[18]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[17]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[16]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[15]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[14]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[13]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[12]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[11]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[10]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[9]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[8]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[7]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[6]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[5]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[4]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[3]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[2]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[1]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'data_out[0]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'wr_mask_out[3]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'wr_mask_out[2]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'wr_mask_out[1]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'wr_mask_out[0]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'ahb_htrans_out[1]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'ahb_htrans_out[0]' in module 'msrv32_store_unit' is not driven
+//  Warning: Net 'byte_dout[31]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[30]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[29]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[28]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[27]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[26]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[25]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[24]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[23]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[22]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[21]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[20]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[19]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[18]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[17]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[16]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[15]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[14]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[13]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[12]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[11]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[10]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[9]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[8]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[7]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[6]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[5]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[4]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[3]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[2]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[1]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_dout[0]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[31]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[30]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[29]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[28]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[27]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[26]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[25]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[24]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[23]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[22]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[21]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[20]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[19]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[18]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[17]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[16]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[15]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[14]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[13]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[12]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[11]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[10]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[9]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[8]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[7]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[6]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[5]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[4]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[3]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[2]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[1]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_dout[0]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_wr_mask[3]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_wr_mask[2]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_wr_mask[1]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'byte_wr_mask[0]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_wr_mask[3]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_wr_mask[2]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_wr_mask[1]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'halfword_wr_mask[0]' in module 'msrv32_store_unit' has no pins
+//  Warning: Net 'alu_opcode_out[3]' in module 'msrv32_dec' is not driven
+//  Warning: Net 'mem_wr_req_out' in module 'msrv32_dec' is not driven
+//  Warning: Net 'iadder_src_out' in module 'msrv32_dec' is not driven
+//  Warning: Net 'rf_wr_en_out' in module 'msrv32_dec' is not driven
+//  Warning: Net 'wb_mux_sel_out[2]' in module 'msrv32_dec' is not driven
+//  Warning: Net 'wb_mux_sel_out[1]' in module 'msrv32_dec' is not driven
+//  Warning: Net 'wb_mux_sel_out[0]' in module 'msrv32_dec' is not driven
+//  Warning: Net 'imm_type_out[2]' in module 'msrv32_dec' is not driven
+//  Warning: Net 'imm_type_out[1]' in module 'msrv32_dec' is not driven
+//  Warning: Net 'imm_type_out[0]' in module 'msrv32_dec' is not driven
+//  Warning: Net 'illegal_instr_out' in module 'msrv32_dec' is not driven
+//  Warning: Net 'misaligned_load_out' in module 'msrv32_dec' is not driven
+//  Warning: Net 'misaligned_store_out' in module 'msrv32_dec' is not driven
+//  Warning: Net 'is_branch' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_jal' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_jalr' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_auipc' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_lui' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_load' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_store' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_system' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_csr' in module 'msrv32_dec' is not driven
+//  Warning: Net 'is_op' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_op_imm' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_misc_mem' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_addi' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_slti' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_sltiu' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_andi' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_ori' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_xori' in module 'msrv32_dec' has no pins
+//  Warning: Net 'is_implemented_instr' in module 'msrv32_dec' has no pins
+//  Warning: Net 'mal_word' in module 'msrv32_dec' has no pins
+//  Warning: Net 'mal_half' in module 'msrv32_dec' has no pins
+//  Warning: Net 'misaligned' in module 'msrv32_dec' has no pins
+//  Warning: Net 'mxl[1]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mxl[0]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[25]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[24]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[23]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[22]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[21]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[20]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[19]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[18]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[17]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[16]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[15]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[14]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[13]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[12]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[11]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[10]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[9]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[8]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[7]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[6]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[5]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[4]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[3]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[2]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[1]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mextensions[0]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_mode[1]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_mode[0]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[29]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[28]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[27]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[26]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[25]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[24]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[23]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[22]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[21]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[20]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[19]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[18]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[17]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[16]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[15]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[14]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[13]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[12]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[11]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[10]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[9]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[8]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[7]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[6]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[5]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[4]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[3]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[2]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[1]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mtvec_base[0]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'mpie' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[26]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[25]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[24]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[23]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[22]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[21]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[20]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[19]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[18]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[17]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[16]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[15]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[14]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[13]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[12]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[11]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[10]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[9]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[8]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[7]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[6]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[5]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[4]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[3]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[2]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[1]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'cause_rem[0]' in module 'msrv32_csr_file' has no pins
+//  Warning: Net 'e_irq' in module 'msrv32_csr_file' is not driven
+//  Warning: Net 't_irq' in module 'msrv32_csr_file' is not driven
+//  Warning: Net 's_irq' in module 'msrv32_csr_file' is not driven
+//  Warning: Net 'mie_out' in module 'mstatus_reg' is not driven
+//  Warning: Net 'mpie_out' in module 'mstatus_reg' is not driven
+//  Warning: Net 'pre_data_out[31]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[30]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[29]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[28]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[27]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[26]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[25]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[24]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[23]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[22]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[21]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[20]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[19]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[18]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[17]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[16]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[15]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[14]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[13]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[12]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[11]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[10]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[9]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[8]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[7]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[6]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[5]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[4]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[3]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[2]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[1]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'pre_data_out[0]' in module 'misa_and_pre_data' is not driven
+//  Warning: Net 'meie' in module 'mie_reg' is not driven
+//  Warning: Net 'mtie' in module 'mie_reg' is not driven
+//  Warning: Net 'msie' in module 'mie_reg' is not driven
+//  Warning: Net 'mtvec_mode[1]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_mode[0]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[29]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[28]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[27]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[26]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[25]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[24]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[23]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[22]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[21]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[20]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[19]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[18]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[17]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[16]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[15]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[14]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[13]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[12]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[11]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[10]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[9]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[8]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[7]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[6]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[5]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[4]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[3]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[2]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[1]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'mtvec_base[0]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[31]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[30]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[29]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[28]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[27]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[26]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[25]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[24]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[23]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[22]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[21]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[20]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[19]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[18]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[17]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[16]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[15]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[14]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[13]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[12]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[11]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[10]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[9]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[8]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[7]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[6]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[5]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[4]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[3]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[2]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[1]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'trap_mux_out[0]' in module 'mtvec_reg' is not driven
+//  Warning: Net 'vec_mux_out[31]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[30]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[29]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[28]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[27]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[26]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[25]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[24]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[23]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[22]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[21]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[20]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[19]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[18]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[17]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[16]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[15]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[14]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[13]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[12]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[11]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[10]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[9]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[8]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[7]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[6]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[5]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[4]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[3]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[2]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[1]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'vec_mux_out[0]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[31]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[30]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[29]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[28]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[27]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[26]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[25]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[24]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[23]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[22]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[21]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[20]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[19]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[18]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[17]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[16]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[15]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[14]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[13]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[12]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[11]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[10]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[9]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[8]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[7]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[6]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[5]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[4]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[3]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[2]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[1]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'base_offset[0]' in module 'mtvec_reg' has no pins
+//  Warning: Net 'mscratch_out[31]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[30]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[29]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[28]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[27]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[26]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[25]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[24]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[23]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[22]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[21]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[20]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[19]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[18]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[17]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[16]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[15]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[14]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[13]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[12]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[11]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[10]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[9]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[8]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[7]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[6]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[5]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[4]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[3]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[2]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[1]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mscratch_out[0]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[31]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[30]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[29]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[28]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[27]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[26]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[25]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[24]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[23]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[22]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[21]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[20]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[19]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[18]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[17]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[16]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[15]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[14]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[13]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[12]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[11]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[10]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[9]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[8]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[7]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[6]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[5]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[4]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[3]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[2]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[1]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'mepc_out[0]' in module 'mepc_and_mscratch_reg' is not driven
+//  Warning: Net 'cause_out[3]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_out[2]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_out[1]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_out[0]' in module 'mcause_reg' is not driven
+//  Warning: Net 'int_or_exc_out' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[26]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[25]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[24]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[23]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[22]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[21]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[20]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[19]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[18]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[17]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[16]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[15]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[14]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[13]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[12]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[11]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[10]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[9]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[8]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[7]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[6]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[5]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[4]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[3]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[2]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[1]' in module 'mcause_reg' is not driven
+//  Warning: Net 'cause_rem[0]' in module 'mcause_reg' is not driven
+//  Warning: Net 'meip' in module 'mip_reg' is not driven
+//  Warning: Net 'mtip' in module 'mip_reg' is not driven
+//  Warning: Net 'msip' in module 'mip_reg' is not driven
+//  Warning: Net 'mcountinhibit_cy_out' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_ir_out' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[31]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[30]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[29]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[28]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[27]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[26]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[25]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[24]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[23]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[22]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[21]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[20]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[19]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[18]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[17]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[16]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[15]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[14]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[13]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[12]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[11]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[10]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[9]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[8]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[7]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[6]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[5]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[4]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[3]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[2]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[1]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'mcountinhibit_out[0]' in module 'machine_counter_setup' is not driven
+//  Warning: Net 'result_out[31]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[30]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[29]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[28]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[27]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[26]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[25]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[24]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[23]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[22]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[21]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[20]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[19]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[18]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[17]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[16]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[15]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[14]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[13]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[12]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[11]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[10]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[9]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[8]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[7]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[6]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[5]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[4]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[3]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[2]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[1]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'result_out[0]' in module 'msrv32_alu' is not driven
+//  Warning: Net 'adder_op2[31]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[30]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[29]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[28]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[27]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[26]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[25]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[24]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[23]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[22]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[21]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[20]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[19]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[18]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[17]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[16]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[15]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[14]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[13]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[12]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[11]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[10]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[9]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[8]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[7]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[6]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[5]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[4]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[3]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[2]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[1]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'adder_op2[0]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[31]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[30]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[29]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[28]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[27]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[26]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[25]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[24]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[23]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[22]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[21]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[20]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[19]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[18]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[17]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[16]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[15]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[14]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[13]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[12]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[11]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[10]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[9]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[8]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[7]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[6]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[5]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[4]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[3]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[2]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[1]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'minus_op2[0]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[31]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[30]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[29]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[28]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[27]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[26]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[25]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[24]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[23]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[22]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[21]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[20]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[19]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[18]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[17]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[16]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[15]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[14]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[13]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[12]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[11]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[10]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[9]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[8]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[7]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[6]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[5]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[4]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[3]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[2]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[1]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sra_result[0]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[31]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[30]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[29]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[28]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[27]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[26]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[25]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[24]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[23]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[22]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[21]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[20]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[19]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[18]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[17]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[16]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[15]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[14]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[13]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[12]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[11]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[10]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[9]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[8]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[7]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[6]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[5]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[4]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[3]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[2]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[1]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'srl_result[0]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[31]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[30]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[29]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[28]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[27]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[26]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[25]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[24]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[23]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[22]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[21]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[20]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[19]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[18]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[17]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[16]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[15]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[14]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[13]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[12]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[11]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[10]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[9]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[8]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[7]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[6]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[5]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[4]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[3]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[2]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[1]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'shr_result[0]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'slt_result' in module 'msrv32_alu' has no pins
+//  Warning: Net 'sltu_result' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[31]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[30]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[29]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[28]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[27]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[26]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[25]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[24]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[23]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[22]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[21]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[20]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[19]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[18]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[17]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[16]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[15]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[14]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[13]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[12]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[11]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[10]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[9]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[8]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[7]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[6]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[5]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[4]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[3]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[2]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[1]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'pre_result[0]' in module 'msrv32_alu' has no pins
+//  Warning: Net 'host_bscan_to_sel' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'force_disable' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'select_jtag_input' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'select_jtag_output' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'extest_pulse' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'extest_train' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'tdo_en' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'instruction[3]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'instruction[2]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'instruction[1]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'instruction[0]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'instruction_latch[3]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'instruction_latch[2]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'instruction_latch[1]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'instruction_latch[0]' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'bypass' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'host_1_to_sel_int' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'retiming_tdo' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'tdo_int' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'tdr_mux' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'tlr' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'bypass_or_unknown_instruction' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'BYPASS_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'CLAMP_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'EXTEST_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'EXTEST_PULSE_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'EXTEST_TRAIN_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'INTEST_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'SAMPLE_PRELOAD_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'HIGHZ_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' is not driven
+//  Warning: Net 'HOSTIJTAG_1_decoded' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'BYPASS_decoded_latched' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'host_bscan_to_sel_int' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'select_jtag_output_int' in module 'msrv32_top_pass1_rtl_tessent_tap_main' has no pins
+//  Warning: Net 'ijtag_to_sel' in module 'msrv32_top_pass1_rtl_tessent_sib_1' is not driven
+//  Warning: Net 'sib' in module 'msrv32_top_pass1_rtl_tessent_sib_1' has no pins
+//  Warning: Net 'sib_latch' in module 'msrv32_top_pass1_rtl_tessent_sib_1' has no pins
+//  Warning: Net 'retiming_so' in module 'msrv32_top_pass1_rtl_tessent_sib_1' is not driven
+//  Warning: Net 'to_enable_int' in module 'msrv32_top_pass1_rtl_tessent_sib_1' has no pins
+//  Warning: Net 'ijtag_to_sel' in module 'msrv32_top_pass1_rtl_tessent_sib_2' is not driven
+//  Warning: Net 'sib' in module 'msrv32_top_pass1_rtl_tessent_sib_2' has no pins
+//  Warning: Net 'sib_latch' in module 'msrv32_top_pass1_rtl_tessent_sib_2' has no pins
+//  Warning: Net 'retiming_so' in module 'msrv32_top_pass1_rtl_tessent_sib_2' is not driven
+//  Warning: Net 'to_enable_int' in module 'msrv32_top_pass1_rtl_tessent_sib_2' has no pins
+//  Warning: Net 'async_set_reset_static_disable_to_buf' in module 'msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl' has no pins
+//  Warning: Net 'tdr[0]' in module 'msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl' has no pins
+//  Warning: Net 'retiming_so' in module 'msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl' is not driven
+//  Warning: Net 'async_set_reset_static_disable_latch' in module 'msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl' is not driven
+//  Warning: Floating input 'CK' at instance 'tessent_persistent_cell_update_clock_gater_inst' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface'
+//  Warning: Net 'to_bscan_force_disable' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'to_bscan_shift_en' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'to_bscan_update_en' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'to_bscan_capture_en' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'to_bscan_select_jtag_output' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'to_bscan_pad_sel' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'capture_shift_clock_enable_wire' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'update_clock_enable_wire' in module 'msrv32_top_pass1_rtl_tessent_bscan_interface' is not driven
+//  Warning: Net 'SJI_Mux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in_s' has no pins
+//  Warning: Net 'bscanShiftMux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in_s' has no pins
+//  Warning: Net 'retimeElem' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in_s' is not driven
+//  Warning: Net 'bscanReg' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in_s' has no pins
+//  Warning: Net 'SJI_Mux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in' is not driven
+//  Warning: Net 'bscanShiftMux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in' has no pins
+//  Warning: Net 'retimeElem' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in' is not driven
+//  Warning: Net 'bscanReg' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in' has no pins
+//  Warning: Net 'updLatch' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_in' has no pins
+//  Warning: Net 'padEnable1' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_en_1' is not driven
+//  Warning: Net 'SJO_Mux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_en_1' has no pins
+//  Warning: Net 'bscanShiftMux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_en_1' has no pins
+//  Warning: Net 'retimeElem' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_en_1' is not driven
+//  Warning: Net 'bscanReg' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_en_1' has no pins
+//  Warning: Net 'updLatch' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_en_1' has no pins
+//  Warning: Net 'SJO_Mux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_out' is not driven
+//  Warning: Net 'bscanShiftMux' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_out' has no pins
+//  Warning: Net 'retimeElem' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_out' is not driven
+//  Warning: Net 'bscanReg' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_out' has no pins
+//  Warning: Net 'updLatch' in module 'msrv32_top_pass1_rtl_tessent_bscan_cell_out' has no pins
+//  ---------------------------------------------------------------------------
+//  Begin ICL elaboration and checking.
+//  -----------------------------------
+//  ICL elaboration completed, CPU time=0.03 sec.
+//  ---------------------------------------------------------------------------
+//  command: set_design_level chip
+//  command: set_dft_specification_requirements -logic_test on 
+//  command: #check_design_rules
+//  command: #report_drc_rules DFT_C6-1
+//  command: #analyze_drc_violation DFT_C6-1
+//  command: #add_clocks [get_ports ms_riscv32_mp_clk_in] -period 6ns -label clk
+//  command: add_dft_signals x_bounding_en observe_test_point_en control_test_point_en mcp_bounding_en
+//  command: check_design_rules 
+//  ---------------------------------------------------------------------------
+//  Begin RTL synthesis.
+//  --------------------
+//  Synthesized modules=38, Time=2.64 sec.
+//  ---------------------------------------------------------------------------
+//  Warning: Rule FN4 violation occurs 2 times
+//  Flattening process completed, cell instances=25836, gates=41924, PIs=150, POs=106, CPU time=0.19 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.09 sec.
+//  Note: There was 1 'add_dft_control_points -type async_set_reset' command inferred from DRC. Use report_dft_control_points to see it.
+//  36 gates may have an observable X-state. (E5)
+//  Warning: There were 71 BUS gates which may have possible contention. (E10)
+//  ATPG bus checking results: pass=0, bidi=0, fail=71, abort=0, CPU time=0.01 sec.
+//  command: #########################################
+//  command: #read the spec file of occ & LBIST & EDT 
+//  command: #########################################
+//  command: set spec [create_dft_specification -sri_sib_list {edt occ lbist} -replace]
+//  sub-command: create_dft_specification -sri_sib_list "edt occ lbist" -replace 
+//  
+//  Begin creation of DftSpecification(msrv32_top,pass2_rtl)
+//    Creation of RtlCells wrapper
+//    Creation of IjtagNetwork wrapper
+//  
+//  Done  creation of DftSpecification(msrv32_top,pass2_rtl)
+//  
+//  command: report_config_data $spec
+
+DftSpecification(msrv32_top,pass2_rtl) {
+  IjtagNetwork {
+    HostScanInterface(sri) {
+      Interface {
+        design_instance : msrv32_top_pass1_rtl_tessent_sib_sri_inst;
+        scan_interface : host;
+        daisy_chain_with_existing_client : On;
+      }
+      Sib(sri_ctrl) {
+        Tdr(sri_ctrl) {
+          Attributes {
+            tessent_dft_function : scan_resource_instrument_dft_control;
+          }
+        }
+      }
+      Sib(edt) {
+      }
+      Sib(occ) {
+      }
+      Sib(lbist) {
+      }
+    }
+  }
+}
+//  command: read_config_data ../logic_instruments_main.dfpspec -in_wrapper $spec -replace
+//  command: report_config_data $spec 
+
+DftSpecification(msrv32_top,pass2_rtl) {
+  IjtagNetwork {
+    HostScanInterface(sri) {
+      Interface {
+        design_instance : msrv32_top_pass1_rtl_tessent_sib_sri_inst;
+        scan_interface : host;
+        daisy_chain_with_existing_client : On;
+      }
+      Sib(sri_ctrl) {
+        Tdr(sri_ctrl) {
+          Attributes {
+            tessent_dft_function : scan_resource_instrument_dft_control;
+          }
+        }
+      }
+      Sib(edt) {
+      }
+      Sib(occ) {
+      }
+      Sib(lbist) {
+      }
+    }
+  }
+  OCC {
+    ijtag_host_interface : Sib(occ);
+    capture_trigger : capture_en;
+    static_clock_control : both;
+    Controller(ms_riscv32_mp_clk_in_p) {
+      clock_intercept_nodes : ms_riscv32_mp_clk_in_p;
+    }
+    Controller(ramclk_p) {
+      clock_intercept_nodes : ramclk_p;
+    }
+  }
+  LogicBist {
+    ijtag_host_interface : Sib(lbist);
+    Controller(c0) {
+      burn_in : on;
+      pre_post_shift_dead_cycles : 8;
+      SingleChainForDiagnosis {
+        present : on;
+      }
+      ShiftCycles {
+        max : 40;
+        hardware_default : 33;
+      }
+      CaptureCycles {
+        max : 4;
+      }
+      // hardware default is max
+      PatternCount {
+        max : 10000;
+        hardware_default : 1024;
+      }
+      // hardware default is 0
+      WarmupPatternCount {
+        max : 512;
+      }
+      ControllerChain {
+        segment_per_instrument : off;
+        present : on;
+        clock : tck;
+      }
+      // no need because NCPINDEXDECODER exist      NcpOptions { }
+      Connections {
+        shift_clock_src : shift_clock_src_p;
+        scan_en_in : scan_en;
+      }
+    }
+    //        controller_chain_enable : msrv32_top_rtl1_tessent_tdr_sri_ctrl; 
+    NcpIndexDecoder {
+      Ncp(clk_occ_ncp) {
+        cycle(0) : OCC(ms_riscv32_mp_clk_in_p);
+        cycle(1) : OCC(ms_riscv32_mp_clk_in_p);
+      }
+      Ncp(ramclk_occ_ncp) {
+        cycle(0) : OCC(ramclk_p);
+        cycle(1) : OCC(ramclk_p);
+      }
+      Ncp(ALL_occ_ncp) {
+        cycle(0) : OCC(ms_riscv32_mp_clk_in_p), OCC(ramclk_p);
+      }
+      Ncp(sti_occ_ncp) {
+        cycle(0) : OCC(ms_riscv32_mp_clk_in_p);
+        cycle(1) : OCC(ms_riscv32_mp_clk_in_p);
+      }
+    }
+  }
+  EDT {
+    ijtag_host_interface : Sib(edt);
+    Controller(c0) {
+      Compactor {
+        type : basic;
+      }
+      longest_chain_range : 20, 60;
+      scan_chain_count : 10;
+      input_channel_count : 1;
+      output_channel_count : 1;
+      Connections {
+        EdtChannelsIn(1) {
+          port_pin_name : edt_channel_in1_p;
+        }
+        EdtChannelsOut(1) {
+          port_pin_name : edt_channel_out1_p;
+        }
+      }
+      ShiftPowerOptions {
+        present : on;
+        min_switching_threshold_percentage : 15;
+      }
+      LogicBistOptions {
+        misr_input_ratio : 1;
+        chain_mask_register_ratio : 1;
+        ShiftPowerOptions {
+          present : on;
+          default_operation : disabled;
+          SwitchingThresholdPercentage {
+            hardware_default : 25;
+          }
+        }
+      }
+    }
+  }
+}
+//  command: display_specification 
+//  Starting Visualizer...
+//  command: process_dft_specification 
+//  
+//  Begin processing of /DftSpecification(msrv32_top,pass2_rtl)
+//    --- IP generation phase ---
+//    Validation of IjtagNetwork
+//    Validation of OCC
+//    Validation of EDT
+//    Validation of LogicBist
+//    Processing of IjtagNetwork
+//      Generating design files for IJTAG SIB module msrv32_top_pass2_rtl_tessent_sib_1
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_sib_1.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_sib_1.icl
+//      Generating design files for IJTAG Tdr module msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl.icl
+//
+//      Loading the generated RTL verilog files (2) to enable instantiating the contained modules
+//      into the design.
+//    Processing of OCC
+//      Generating design files for OCC module msrv32_top_pass2_rtl_tessent_occ
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.icl
+//        IJTAG PDL   : ./TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.pdl
+//        TCD         : ./TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.tcd
+//        TCD Scan    : ./TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.tcd_scan
+//        CTL         : ./TSDB/instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.ctl
+//
+//      Loading the generated RTL verilog files (1) to enable instantiating the contained modules
+//      into the design.
+//    Processing of EDT
+//      Generating design files for EDT Tdr module msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr.icl
+//      Generating design files for EDT module msrv32_top_pass2_rtl_tessent_edt_lbist_c0
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.icl
+//        IJTAG PDL   : ./TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.pdl
+//        TCD         : ./TSDB/instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.tcd
+//
+//      Loading the generated RTL verilog files (2) to enable instantiating the contained modules
+//      into the design.
+//    Processing of LogicBist
+//      Generating design files for LBIST NCP index decoder module msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist_ncp_index_decoder.instrument/msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist_ncp_index_decoder.instrument/msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.icl
+//        TCD         : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist_ncp_index_decoder.instrument/msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.tcd
+//
+//      Loading the generated RTL verilog files (1) to enable instantiating the contained modules
+//      into the design.
+//      Generating design files for LBIST module msrv32_top_pass2_rtl_tessent_lbist
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.icl
+//        IJTAG PDL   : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.pdl
+//        TCD         : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.tcd
+//      Generating design files for LBIST module msrv32_top_pass2_rtl_tessent_single_chain_mode_logic
+//        Verilog RTL : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_single_chain_mode_logic.v
+//        IJTAG ICL   : ./TSDB/instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_single_chain_mode_logic.icl
+//
+//      Loading the generated RTL verilog files (2) to enable instantiating the contained modules
+//      into the design.
+//    --- Instrument insertion phase ---
+//   Inserting instruments of type 'ijtag'
+//   Inserting instruments of type 'occ'
+//   Inserting instruments of type 'edt'
+//   Inserting instruments of type 'logic_bist'
+//   Inserting instruments of type 'logic_bist'
+//  Error: No valid paths found. Hint: This could be an empty collection.
+//  
+//    Writing out modified source design in ./TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design
+//    Writing out specification in ./TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_spec
+//  
+//  Done  processing of DftSpecification(msrv32_top,pass2_rtl)
+//  
+//  command: extract_icl 
+//  Note: Updating the hierarchical data model to reflect RTL design changes.
+//  Writing design source dictionary : ./TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design/msrv32_top.design_source_dictionary
+//  ---------------------------------------------------------------------------
+//  Begin RTL synthesis.
+//  --------------------
+//  Synthesized modules=1, Time=1.00 sec.
+//  Synthesized modules=2, Time=1.00 sec.
+//  Synthesized modules=2, Time=1.00 sec.
+//  Synthesized modules=1, Time=1.00 sec.
+//  Synthesized modules=1, Time=1.00 sec.
+//  Synthesized modules=1, Time=1.00 sec.
+//  Synthesized modules=2, Time=1.00 sec.
+//  Note: There were 10 modules selectively synthesized. There was also 1 sub-module created by synthesis.
+//        Use 'get_module -filter is_synthesized' to see them.
+//        You can also use 'set_quick_synthesis_options -verbose on' to have the synthesis step report the
+//        synthesized module names in the transcript as they are being synthesized.
+//  ---------------------------------------------------------------------------
+//  Warning: Rule FN1 violation occurs 3539 times
+//  Warning: Rule FN3 violation occurs 6 times
+//  Warning: Rule FN4 violation occurs 21 times
+//  Warning: Rule FP13 violation occurs 26 times
+//  Flattening process completed, cell instances=1372, gates=2883, PIs=150+1(pseudo port), POs=106, CPU time=0.03 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin ICL extraction.
+//  ---------------------
+//  ICL extraction completed, ICL instances=17, CPU time=0.11 sec.
+//  ---------------------------------------------------------------------------
+//  ---------------------------------------------------------------------------
+//  Begin ICL elaboration and checking.
+//  -----------------------------------
+//  ICL elaboration completed, CPU time=0.07 sec.
+//  ---------------------------------------------------------------------------
+//  Writing ICL file : ./TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design/msrv32_top.icl
+//  Writing consolidated PDL file: ./TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design/msrv32_top.pdl
+//  Extracting SDC...
+//  Writing SDC file: ./TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design/msrv32_top.sdc
+//  Writing DFT info dictionary: ./TSDB/dft_inserted_designs/msrv32_top_pass2_rtl.dft_inserted_design/msrv32_top.dft_info_dictionary
+//  command: set Pattern [create_pattern_specification]
+//  sub-command: create_patterns_specification 
+//  Creating '/PatternsSpecification(msrv32_top,pass2_rtl,signoff)'
+//    Getting patterns specifications for the 'ijtag' instrument type
+//    Getting patterns specifications for the 'jtag_bscan' instrument type
+//    Getting patterns specifications for the 'logic_bist' instrument type
+//  Warning: It is required that the instrument data exist inside a directory structure that
+//           follows the TSDB specification. One of the following directories does not exist for the
+//           instrument 'msrv32_top_pass2_rtl_tessent_lbist' within the core 'msrv32_top':
+//             './TSDB/logic_test_cores/msrv32_top_pass2_rtl.logic_test_core'
+//             './TSDB/logic_test_cores/msrv32_top.logic_test_core'
+//           Make sure that the fault simulation has been run and that the correct design identifier is set.
+//           This instrument will not be added to the pattern specification.
+//  command: report_config_data $Pattern
+
+PatternsSpecification(msrv32_top,pass2_rtl,signoff) {
+  AdvancedOptions {
+    ConstantPortSettings {
+      scan_en : 0;
+    }
+  }
+  Patterns(ICLNetwork) {
+    ICLNetworkVerify(msrv32_top) {
+    }
+  }
+  Patterns(JtagBscanPatterns) {
+    tester_period : 100ns;
+    TestStep(JtagBscanTestStep) {
+      BoundaryScan {
+        RunTest(test_logic_reset) {
+        }
+        RunTest(inst_reg) {
+        }
+        RunTest(bypass_reg) {
+        }
+        RunTest(bscan_reg) {
+        }
+        RunTest(input) {
+        }
+        RunTest(sample) {
+        }
+        RunTest(highz) {
+        }
+        RunTest(clamp) {
+        }
+        RunTest(output) {
+        }
+      }
+    }
+  }
+}
+//  command: process_patterns_specification 
+//  
+//  Begin processing of /PatternsSpecification(msrv32_top,pass2_rtl,signoff)
+//  
+//    Processing of /PatternsSpecification(msrv32_top,pass2_rtl,signoff)/Patterns(ICLNetwork)
+//  
+//      Creation of pattern 'ICLNetwork'
+//        Solving ICLNetworkVerify(msrv32_top)
+//  
+//      Writing pattern file './TSDB/patterns/msrv32_top_pass2_rtl.patterns_signoff/ICLNetwork.v'
+//  
+//    Processing of /PatternsSpecification(msrv32_top,pass2_rtl,signoff)/Patterns(JtagBscanPatterns)
+//      Processing of TestStep(JtagBscanTestStep) instrument 'jtag_bscan'
+//  
+//      Creation of pattern 'JtagBscanPatterns'
+//        Solving TestStep(JtagBscanTestStep)
+//  
+//      Writing pattern file './TSDB/patterns/msrv32_top_pass2_rtl.patterns_signoff/JtagBscanPatterns.v'
+//      Writing simulation data dictionary file './TSDB/patterns/msrv32_top_pass2_rtl.patterns_signoff/simulation.data_dictionary'
+//  
+//  Done  processing of /PatternsSpecification(msrv32_top,pass2_rtl,signoff)
+//  
+//  Writing configuration data file './TSDB/patterns/msrv32_top_pass2_rtl.patterns_spec_signoff'.
+//  command: ###################################
+//  command: #simulations
+//  command: ####################################
+//  command: set_simulation_library_sources -v ../libs/adk.v
+//  command: run_testbench_simulations 
+Starting 2 simulations for ./simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff
+//  Waiting for the simulation(s) to complete
+
+unscheduled 0 queued 0 running 0 pass 1 fail 1
+
+//  Error: 1 out of 2 simulations failed:
+//         JtagBscanPatterns - 497 unexpected miscompares (./simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff/JtagBscanPatterns.simulation/questa.simulation_log)
+// 'DOFile dofile_pass2.do' aborted at line 63
+SETUP> sh ls
+//  Error: Command 'sh ls' is unknown
+SETUP> ls
+dofile_Bound.do
+dofile_pass2.do
+logs
+simulation_outdir
+TSDB
+SETUP> cd simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff/
+ICLNetwork.simulation/        JtagBscanPatterns.simulation/ patterns_directory/           
+[KSETUP> cd simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff/JtagBscanPatterns.simulation/
+dut_work/           file_lists/         patterns_directory/ 
+[KSETUP> cd simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff/JtagBscanPatterns.simulation/=========[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kset_sim
+set_simulation_library_sources set_simulation_options         
+[KSETUP> set_simulation_library_sources -help
+set_simulation_library_sources { { [ -v <file_path> ... ] [ -y <dir_path> ... -extensions <ext> ... ] }
+                                 [ -sv_extensions <ext> ... ]
+                                 [ -logical_library_map_list {<name> <dir_path>} ... ]
+                                 [ -include_directory_list <dir_path> ...]
+                                 [ -f <file_path> ...] } | -clear 
+SETUP> set_simulation_library_sources -help[K[K[K[K[K[8G[Kcheck_testbench_simulations 
+
+unscheduled 0 queued 0 running 0 pass 1 fail 1
+
+//  Error: 1 out of 2 simulations failed:
+//         JtagBscanPatterns - 497 unexpected miscompares (./simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff/JtagBscanPatterns.simulation/questa.simulation_log)
+SETUP> check_testbench_simulations -
+-design_id                        -design_name                      -exclude                          -get_status_dictionary            
+-keep_simulation_data             -kill                             -pattern_id                       -report_status                    
+-select                           -simulation_output_directory_list -simulator                        -wait                             
+
+[KSETUP> check_testbench_simulations -report_status 
+
+// Simulation status for ./simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff
+// =================================================================================
+// -----------------  ------  -----------  -----------  ----------------------------
+// Pattern Name       Status  Unexpected   Missing      Date
+//                            Miscompares  Miscompares
+// -----------------  ------  -----------  -----------  ----------------------------
+// ICLNetwork         pass           0            0     Tue Apr 07 17:43:52 IST 2026
+// JtagBscanPatterns  fail         497            0     Tue Apr 07 17:43:56 IST 2026
+//
+SETUP> check_testbench_simulations -report_status[35G[K[8Gset_simulation_library_sources -help[8Gls[Ksh ls[8Gdofile dofile_pass2.do[8Gsh ls[K[8Gls[Kset_simulation_library_sources -help[8Gcheck_testbench_simulations[K[8Gset_simulation_library_sources -help[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kr[Kquit [K[K[K[Kset_quick_synthesis_options -
+-backward_tracing_of_control_signal_limit             -blackbox_design_ware_modules                         
+-complete_synthesis                                   -parallel_synthesis                                   
+-skip_synthesis_of_two_dimensional_arrays_larger_than -trace_allowed_no_destination                         
+-trace_allowed_no_source                              -verbose                                              
+
+[KSETUP> set_quick_synthesis_options -complete_synthesis on
+SETUP> set_system_mode analysis
+//  ---------------------------------------------------------------------------
+//  Begin RTL synthesis.
+//  --------------------
+//  Synthesized modules=69, Time=2.88 sec.
+//  ---------------------------------------------------------------------------
+//  Warning: Rule FN1 violation occurs 594 times
+//  Warning: Rule FN3 violation occurs 6 times
+//  Warning: Rule FN4 violation occurs 21 times
+//  Warning: Rule FP13 violation occurs 6 times
+//  Flattening process completed, cell instances=28563, gates=46787, PIs=150, POs=106, CPU time=0.25 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.04 sec.
+ANALYSIS> run[K[K[Kwrite_de
+write_design                   write_design_import_script     write_design_source_dictionary 
+[KANALYSIS> write_design -
+-banner               -create_ijtag_graybox -created              -exclude_modules      -hierarchical         -interface            
+-modified             -modules              -output_file          -replace              -simulation_wrapper   -softlink_netlist     
+-tsdb                 -variant_icl_id       -verbose              
+[KANALYSIS> write_design -ou
+-output_directory -output_extension -output_file      
+[KANALYSIS> write_design -output_file pass2[K\[K[K[K[K[Kmsrv32_top.[K_netlist.v 32_top_netlist.v 
+ANALYSIS> set_s
+set_screen_display             set_simulation_library_sources set_simulation_options         set_ssn_datapath_options       
+set_ssn_options                set_static_learning            set_system_mode                
+[KANALYSIS> set_sim
+set_simulation_library_sources set_simulation_options         
+[KANALYSIS> set_simulation_library_sources ..[K[K-v ../libs/adk.v ../libs/adk[K[K[Kdft_sim.tcelllib
+ANALYSIS> check
+//  Error: Command 'check' is not available in the current context.
+//         It is available in the following contexts: dft -edt,
+//                                                    patterns -scan | -scan_diagnosis.
+ANALYSIS> _[K~~~[K[K[Kchec
+check_synthesis             check_testbench_simulations 
+[KANALYSIS> check_testbench_simulations 
+
+unscheduled 0 queued 0 running 0 pass 1 fail 1
+
+//  Error: 1 out of 2 simulations failed:
+//         JtagBscanPatterns - 497 unexpected miscompares (./simulation_outdir/msrv32_top_pass2_rtl.simulation_signoff/JtagBscanPatterns.simulation/questa.simulation_log)
+ANALYSIS> check_synthesis 
+//  Error: The default synthesis output directory './synthesis_outdir' does not exist.
+ANALYSIS> check_synthesis[17Gtestbench_simulations[17Gsynthesis[K -helo[Kp
+check_synthesis [ -design_name <design_name> ] [ -design_id <design_id> ] 
+                [ -report_status | -get_status_dictionary | 
+                -wait | -kill ] [ -synthesis_tool <name> ] [ -synthesis_output_directory_list <directory_list> ] 
+
+DESCRIPTION 
+   -synthesis_tool: (dc_shell) | genus
+ANALYSIS> check_synthesis -help[K[K[K[Ksy
+-synthesis_output_directory_list -synthesis_tool                  
+[KANALYSIS> check_synthesis -synthesis_output_directory_list check_syn_floder
+//  Error: The directory 'check_syn_floder' specified as part of the '-synthesis_output_directory_list' does not exist.
+ANALYSIS> check_synthesis -synthesis_output_directory_list check_syn_floder[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcheck_synthesis
+//  Error: No synthesis sub-directories matching 'msrv32_top_pass2_rtl.synthesis_dc_shell' were found in the directory 'check_synthesis'.
+ANALYSIS> exit[K[K[K[Kexit
