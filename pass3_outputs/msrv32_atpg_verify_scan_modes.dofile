@@ -1,0 +1,28 @@
+set dofileName ./pass3_outputs/msrv32_atpg.dofile
+set designFile /home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/scan_inserted_netlist.v
+set topName {msrv32_top}
+set libName "../libs/adk.tcelllib ../libs/dft_sim.tcelllib"
+
+
+proc verify_all_scan_modes {} {
+   set modeList [list unwrapped]
+   foreach mode $modeList {
+      set_system_mode setup
+      reset_design
+      tessent_scan_setup $mode
+      set_edt_options off
+      add_black_box -auto
+      set_system_mode analysis
+      report_scan_cells
+   }
+}
+
+
+set_context patterns -scan
+delete_design
+read_cell_library $libName
+read_verilog $designFile
+set_current_design $topName
+dofile $dofileName
+
+verify_all_scan_modes

@@ -1,0 +1,43 @@
+#
+#  Written by Tessent Shell 2022.2 on Wed Apr 08 15:26:33 IST 2026
+#
+proc tessent_scan_common {} {
+   add_clocks 0 ms_riscv32_mp_rst_in
+   add_clocks 1 trst_p
+   add_clocks 0 ms_riscv32_mp_instr_hready_in
+   add_clocks 0 ms_riscv32_mp_clk_in
+   add_clocks 0 ms_riscv32_mp_data_hready_in
+   add_clocks 1 {{ms_riscv32_mp_instr_in[6]}}
+   add_clocks 1 ms_riscv32_mp_hresp_in
+   add_clocks 1 tck_p
+   add_clocks 0 scan_set
+   add_pin_constraints ltest_en C1
+}
+
+
+proc tessent_scan_unwrapped_mode {} {
+   add_scan_groups grp1 ./pass3_outputs/msrv32_atpg.testproc
+
+   add_scan_chains chain1 grp1 {/ts_si[1]} {/ts_so[1]}
+   add_scan_chains chain2 grp1 {/ts_si[2]} {/ts_so[2]}
+   add_scan_chains chain3 grp1 {/ts_si[3]} {/ts_so[3]}
+   add_scan_chains chain4 grp1 {/ts_si[4]} {/ts_so[4]}
+   add_scan_chains chain5 grp1 {/ts_si[5]} {/ts_so[5]}
+   add_scan_chains chain6 grp1 {/ts_si[6]} {/ts_so[6]}
+   add_scan_chains chain7 grp1 {/ts_si[7]} {/ts_so[7]}
+
+   tessent_scan_common
+
+}
+
+
+proc tessent_scan_setup { {mode unwrapped} } {
+   switch -exact -- $mode {
+      unwrapped { tessent_scan_unwrapped_mode }
+      default {
+         display_message -error "invalid scan mode: $mode"
+      }
+   }
+}
+
+
