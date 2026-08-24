@@ -1,0 +1,43 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.2
+//       Created on: Tue Apr  7 17:43:46 IST 2026
+//-------------------------------------------------
+
+
+PatternsSpecification(msrv32_top,pass2_rtl,signoff) {
+  AdvancedOptions {
+    ConstantPortSettings {
+      scan_en : 0;
+    }
+  }
+  Patterns(ICLNetwork) {
+    ICLNetworkVerify(msrv32_top) {
+    }
+  }
+  Patterns(JtagBscanPatterns) {
+    tester_period : 100ns;
+    TestStep(JtagBscanTestStep) {
+      BoundaryScan {
+        RunTest(test_logic_reset) {
+        }
+        RunTest(inst_reg) {
+        }
+        RunTest(bypass_reg) {
+        }
+        RunTest(bscan_reg) {
+        }
+        RunTest(input) {
+        }
+        RunTest(sample) {
+        }
+        RunTest(highz) {
+        }
+        RunTest(clamp) {
+        }
+        RunTest(output) {
+        }
+      }
+    }
+  }
+}

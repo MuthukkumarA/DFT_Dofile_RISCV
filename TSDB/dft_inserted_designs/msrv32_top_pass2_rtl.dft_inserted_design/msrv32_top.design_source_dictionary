@@ -1,0 +1,216 @@
+set design_source_dictionary \
+{
+  read1 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/csr_data_mux_unit.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/data_wr_mux_unit.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/machine_counter.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/machine_counter_setup.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/mcause_reg.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/mepc_and_mscratch_reg.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/mie_reg.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/mip_reg.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/misa_and_pre_data.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_alu.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_bu.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_csr_file.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_dec.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_img.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_immediate_adder.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_instruction_decoder.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_integer_file.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_lu.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_machine_control.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_pc.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_reg_block_1.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_reg_block_2.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_store_unit.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/msrv32_wb_mux_sel_unit.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/mstatus_reg.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/mtval_reg.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/mtvec_reg.v"
+      "/home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/../rtl/wr_en_generator.v"
+      "./modified_rtl_files/msrv32_top.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+    }
+    is_current_design on
+  }
+  read2 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tap_main.v"
+      "../../instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_1.v"
+      "../../instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_sib_2.v"
+      "../../instruments/msrv32_top_pass1_rtl_ijtag.instrument/msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+    }
+  }
+  read3 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_cells.v"
+      "../../instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF.v"
+      "../../instruments/msrv32_top_pass1_rtl_bscan.instrument/msrv32_top_pass1_rtl_tessent_bscan_interface.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+    }
+  }
+  read4 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_sib_1.v"
+      "../../instruments/msrv32_top_pass2_rtl_ijtag.instrument/msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read5 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/msrv32_top_pass2_rtl_occ.instrument/msrv32_top_pass2_rtl_tessent_occ.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read6 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0.v"
+      "../../instruments/msrv32_top_pass2_rtl_edt_lbist.instrument/msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read7 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/msrv32_top_pass2_rtl_lbist_ncp_index_decoder.instrument/msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read8 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_lbist.v"
+      "../../instruments/msrv32_top_pass2_rtl_lbist.instrument/msrv32_top_pass2_rtl_tessent_single_chain_mode_logic.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  logical_design_library_list {work}
+  default_logical_design_library {work}
+}
+

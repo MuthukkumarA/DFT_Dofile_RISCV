@@ -1,0 +1,92 @@
+#-------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.2
+#       Created on: Tue Apr  7 17:43:16 IST 2026
+#-------------------------------------------------
+
+set sdc_dictionary(msrv32_top_pass2_rtl_tessent_edt_lbist_c0) {
+  edt_bypass_logic on
+  single_chain_bypass on
+  insertion_done 1
+  low_power_hold_reg msrv32_top_pass2_rtl_tessent_edt_c0_controller_i/low_power_shift_controller_i/low_power_hold_reg*
+  edt_clock_persistent_pin tessent_persistent_cell_edt_clock_buf/Y
+  edt_update_persistent_pin tessent_persistent_cell_edt_update_buf/Y
+  edt_bypass_persistent_pin tessent_persistent_cell_edt_bypass_buf/Y
+  edt_single_bypass_chain_persistent_pin tessent_persistent_cell_edt_single_bypass_chain_buf/Y
+  edt_low_power_shift_en_persistent_pin tessent_persistent_cell_edt_low_power_shift_en_buf/Y
+  edt_channels_in_persistent_pins tessent_persistent_cell_edt_channels_in_*_buf/Y
+  edt_channels_out_persistent_pins tessent_persistent_cell_edt_channels_out_*_buf/Y
+  edt_scan_in_persistent_pins tessent_persistent_cell_edt_scan_in_*_buf/Y
+  edt_scan_out_persistent_pins tessent_persistent_cell_edt_scan_out_*_buf/Y
+  edt_ports {
+    edt_clock {
+      type edt_clock
+      direction input
+      on_state 1
+      port OptionalDftSignal(edt_clock)
+    }
+    edt_update {
+      type edt_update
+      direction input
+      on_state 1
+      port OptionalDftSignal(edt_update)
+    }
+    edt_bypass {
+      type edt_bypass
+      direction input
+      on_state 1
+      port {$msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr/edt_bypass}
+    }
+    edt_low_power_shift_en {
+      type edt_low_power_shift_en
+      direction input
+      on_state 1
+      port {$msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr/edt_low_power_shift_en}
+    }
+    edt_single_bypass_chain {
+      type edt_single_bypass_chain
+      direction input
+      on_state 1
+      port edt_single_bypass_chain
+    }
+    edt_channels_in {
+      type channel_input
+      direction input
+      on_state 1
+      port edt_channel_in1_p
+    }
+    edt_channels_out {
+      type channel_output
+      direction output
+      on_state 1
+      port edt_channel_out1_p
+    }
+  }
+  non_modal {
+    mcp0 {
+      comment {Relax hold time check from low power hold registers}
+      from {
+        cells {$tessent_controller_instance/low_power_shift_controller_i/low_power_hold_reg*}
+      }
+      hold 1
+    }
+  }
+  modal {
+    edt_shift {
+    }
+    edt_fast_capture {
+    }
+  }
+  chain_mask_reg msrv32_top_pass2_rtl_tessent_edt_c0_compactor_i/edt_chain_mask*reg*
+  misr_reg msrv32_top_pass2_rtl_tessent_edt_c0_misr_i/msrv32_top_pass2_rtl_tessent_edt_c0_misr_reg_i/misr*_reg*
+  prpg_sib_reg msrv32_top_pass2_rtl_tessent_edt_c0_decompressor_i/msrv32_top_pass2_rtl_tessent_edt_c0_sib_decompressor_i/*reg
+  lbist_lp_static_control_sib_reg msrv32_top_pass2_rtl_tessent_edt_c0_decompressor_i/msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_static_control_i/*reg
+  lbist_lp_mask_shift_reg_sib_reg msrv32_top_pass2_rtl_tessent_edt_c0_decompressor_i/msrv32_top_pass2_rtl_tessent_edt_c0_sib_lbist_lp_mask_shift_reg_i/*reg
+  chain_mask_sib_reg msrv32_top_pass2_rtl_tessent_edt_c0_compactor_i/msrv32_top_pass2_rtl_tessent_edt_c0_sib_i/*reg
+  misr_sib_reg msrv32_top_pass2_rtl_tessent_edt_c0_misr_i/msrv32_top_pass2_rtl_tessent_edt_c0_sib_i/*reg
+  edt_lbist_sib_clock tck
+  edt_lbist_shift_clock_select_size 2
+  ccm_en tessent_persistent_cell_ccm_en_buf/Y
+  ccm_clock tck
+  tdr_persistent_buffers 1
+}

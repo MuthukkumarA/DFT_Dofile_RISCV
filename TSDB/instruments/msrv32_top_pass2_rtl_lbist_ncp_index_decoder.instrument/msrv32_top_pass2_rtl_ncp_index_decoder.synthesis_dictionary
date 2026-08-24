@@ -1,0 +1,36 @@
+#--------------------------------------------------------------------------
+#
+#  Unpublished work. Copyright 2021 Siemens
+#
+#  This material contains trade secrets or otherwise confidential 
+#  information owned by Siemens Industry Software Inc. or its affiliates 
+#  (collectively, SISW), or its licensors. Access to and use of this 
+#  information is strictly limited as set forth in the Customer's 
+#  applicable agreements with SISW.
+#
+#--------------------------------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.2
+#       Created on: Tue Apr  7 17:43:15 IST 2026
+#--------------------------------------------------------------------------
+
+set synthesis_dictionary {
+  design_source_dictionary {
+    read1 {
+      format verilog_2001
+      work_library work
+      files ./msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.v
+    }
+  }
+  designs_dictionary {
+    msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder {
+      boundary_optimization off
+      size_only_prefix_list tessent_persistent_cell_
+      output_files {
+        msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder.vg {
+          module_name_list msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder
+        }
+      }
+    }
+  }
+}

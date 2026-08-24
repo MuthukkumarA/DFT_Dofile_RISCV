@@ -1,0 +1,38 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.2
+//       Created on: Tue Apr  7 17:30:08 IST 2026
+//-------------------------------------------------
+
+
+Core(msrv32_top_pass1_rtl_tessent_bscan_interface) {
+  tessent_tool_version : 2022.2;
+  tessent_meta_version : 10;
+  BoundaryScan {
+    Interface {
+      select : bscan_select;
+      force_disable : force_disable;
+      select_jtag_input : select_jtag_input;
+      select_jtag_output : select_jtag_output;
+      bscan_clock : ijtag_tck;
+      capture_en : ijtag_capture_en;
+      shift_en : ijtag_shift_en;
+      update_en : ijtag_update_en;
+      scan_in : scan_in;
+      scan_out : scan_out;
+      to_select : to_bscan_select;
+      to_force_disable : to_bscan_force_disable;
+      to_select_jtag_input : to_bscan_select_jtag_input;
+      to_select_jtag_output : to_bscan_select_jtag_output;
+      to_pad_sel : to_bscan_pad_sel;
+      to_capture_shift_clock : to_bscan_capture_shift_clock;
+      to_bscan_clock : to_bscan_tck;
+      to_update_clock : to_bscan_update_clock;
+      to_capture_en : to_bscan_capture_en;
+      to_shift_en : to_bscan_shift_en;
+      to_update_en : to_bscan_update_en;
+      to_scan_in : to_bscan_scan_in;
+      from_scan_out : from_bscan_scan_out;
+    }
+  }
+}

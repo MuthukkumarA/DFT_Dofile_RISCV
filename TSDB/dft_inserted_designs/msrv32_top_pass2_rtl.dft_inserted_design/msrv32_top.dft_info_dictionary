@@ -1,0 +1,143 @@
+set tessent_dft_info_dict {
+  version 1
+  dft_signals {
+    async_set_reset_dynamic_disable {
+      connection_node_name tessent_persistent_cell_async_set_reset_dynamic_disable/Y
+      connection_node_type pin
+    }
+    async_set_reset_static_disable {
+      connection_node_name msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst/async_set_reset_static_disable
+      connection_node_type pin
+      forced_value_in_pre_scan_drc 0
+    }
+    control_test_point_en {
+      connection_node_name msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl_inst/control_test_point_en
+      connection_node_type pin
+    }
+    mcp_bounding_en {
+      connection_node_name msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl_inst/mcp_bounding_en
+      connection_node_type pin
+    }
+    observe_test_point_en {
+      connection_node_name msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl_inst/observe_test_point_en
+      connection_node_type pin
+    }
+    scan_en {
+      connection_node_name msrv32_top_pass2_rtl_tessent_lbist_inst/scan_en_out
+      connection_node_type pin
+    }
+    x_bounding_en {
+      connection_node_name msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl_inst/x_bounding_en
+      connection_node_type pin
+    }
+  }
+  modules_with_chains {
+    msrv32_top_pass2_rtl_tessent_occ {
+      pre_scan_drc_on_boundary_only 0
+      module_type occ
+      is_hard_module 1
+      internal_scan_only 0
+      allow_scan_out_retiming 0
+      instance_list {
+        msrv32_top_pass2_rtl_tessent_occ_ms_riscv32_mp_clk_in_p_inst
+        msrv32_top_pass2_rtl_tessent_occ_ramclk_p_inst
+      }
+      scan_en_ports {
+        scan_en {
+          active_polarity 1
+        }
+      }
+      clock_ports {
+        slow_clock {
+          off_state 0
+        }
+      }
+      clock_out_ports_or_pins {
+        tessent_persistent_cell_clock_out_mux/Y {}
+      }
+      scan_chains {
+        scan_chain0 {
+          length 3
+          mux_si_functional_source 0
+          no_si_pipelining 0
+          is_non_scan_stitchable 0
+          scan_in_port scan_in
+          scan_in_clock_name slow_clock
+          scan_in_clock_inversion 0
+          scan_in_clock_unbalanced 0
+          scan_out_port scan_out
+          scan_out_clock_name slow_clock
+          scan_out_clock_inversion 1
+          scan_out_clock_unbalanced 0
+        }
+      }
+    }
+  }
+  modules_with_chains_not_active_by_default {}
+  non_scannable_instance_list {
+    msrv32_top_pass1_rtl_tessent_bscan_interface_I
+    msrv32_top_pass1_rtl_tessent_bscan_interface_I
+    msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst
+    msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst
+    msrv32_top_pass1_rtl_tessent_sib_sri_inst
+    msrv32_top_pass1_rtl_tessent_tap_main_inst
+    msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst
+    msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst
+    msrv32_top_pass2_rtl_tessent_edt_lbist_c0_tdr_inst
+    msrv32_top_pass2_rtl_tessent_lbist_inst
+    msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder_inst
+    msrv32_top_pass2_rtl_tessent_sib_edt_inst
+    msrv32_top_pass2_rtl_tessent_sib_lbist_inst
+    msrv32_top_pass2_rtl_tessent_sib_occ_inst
+    msrv32_top_pass2_rtl_tessent_sib_sri_ctrl_inst
+    msrv32_top_pass2_rtl_tessent_single_chain_mode_logic_inst
+    msrv32_top_pass2_rtl_tessent_tdr_sri_ctrl_inst
+  }
+  edt_instances {
+    msrv32_top_pass2_rtl_tessent_edt_lbist_c0_inst {
+      edt_module_name msrv32_top_pass2_rtl_tessent_edt_lbist_c0
+      scan_chains {
+        scan_chain0 {
+          scan_in_port {edt_scan_in[0]}
+          scan_out_port {edt_scan_out[0]}
+        }
+        scan_chain1 {
+          scan_in_port {edt_scan_in[1]}
+          scan_out_port {edt_scan_out[1]}
+        }
+        scan_chain2 {
+          scan_in_port {edt_scan_in[2]}
+          scan_out_port {edt_scan_out[2]}
+        }
+        scan_chain3 {
+          scan_in_port {edt_scan_in[3]}
+          scan_out_port {edt_scan_out[3]}
+        }
+        scan_chain4 {
+          scan_in_port {edt_scan_in[4]}
+          scan_out_port {edt_scan_out[4]}
+        }
+        scan_chain5 {
+          scan_in_port {edt_scan_in[5]}
+          scan_out_port {edt_scan_out[5]}
+        }
+        scan_chain6 {
+          scan_in_port {edt_scan_in[6]}
+          scan_out_port {edt_scan_out[6]}
+        }
+        scan_chain7 {
+          scan_in_port {edt_scan_in[7]}
+          scan_out_port {edt_scan_out[7]}
+        }
+        scan_chain8 {
+          scan_in_port {edt_scan_in[8]}
+          scan_out_port {edt_scan_out[8]}
+        }
+        scan_chain9 {
+          scan_in_port {edt_scan_in[9]}
+          scan_out_port {edt_scan_out[9]}
+        }
+      }
+    }
+  }
+}

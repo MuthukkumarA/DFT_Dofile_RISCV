@@ -1,0 +1,53 @@
+#--------------------------------------------------------------------------
+#
+#  Unpublished work. Copyright 2021 Siemens
+#
+#  This material contains trade secrets or otherwise confidential 
+#  information owned by Siemens Industry Software Inc. or its affiliates 
+#  (collectively, SISW), or its licensors. Access to and use of this 
+#  information is strictly limited as set forth in the Customer's 
+#  applicable agreements with SISW.
+#
+#--------------------------------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.2
+#       Created on: Tue Apr  7 17:30:08 IST 2026
+#--------------------------------------------------------------------------
+
+set tessent_bscan {
+  icl_scan_interface tessent_bscan
+  bscan_clocks {
+    bscan_capture_shift_clock bscan_update_clock
+  }
+  capture_shift_clock bscan_capture_shift_clock
+  update_clock bscan_update_clock
+  top_clock {
+    module msrv32_top
+    port tck_p
+    period 100.00
+  }
+  input_clock {
+    bscan_tck {
+      pin {${bscan_interface_instance}/ijtag_tck}
+    }
+  }
+  output_clock {
+    bscan_capture_shift_clock {
+      pin {${bscan_interface_instance}/tessent_persistent_cell_capture_shift_clock_gater_inst/GCK}
+      inversion 0
+    }
+    bscan_update_clock {
+      pin {${bscan_interface_instance}/tessent_persistent_cell_update_clock_gater_inst/GCK}
+      inversion 1
+    }
+  }
+  persistent_buffer {
+    shift_enable {${bscan_interface_instance}/tessent_persistent_cell_ijtag_shift_en_buf/Y}
+    update_enable {${bscan_interface_instance}/tessent_persistent_cell_ijtag_update_en_buf/Y}
+    capture_enable {${bscan_interface_instance}/tessent_persistent_cell_ijtag_capture_en_buf/Y}
+    force_disable {${bscan_interface_instance}/tessent_persistent_cell_force_disable_buf/Y}
+    select {${bscan_interface_instance}/tessent_persistent_cell_bscan_select_buf/Y}
+    select_jtag_output {${bscan_interface_instance}/tessent_persistent_cell_select_jtag_output_buf/Y}
+    select_jtag_input {${bscan_interface_instance}/tessent_persistent_cell_select_jtag_input_buf/Y}
+  }
+}

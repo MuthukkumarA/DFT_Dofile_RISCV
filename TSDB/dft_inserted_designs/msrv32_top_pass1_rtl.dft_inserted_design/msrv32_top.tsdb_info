@@ -1,0 +1,23 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.2
+//       Created on: Tue Apr  7 17:30:11 IST 2026
+//-------------------------------------------------
+
+
+TsdbInfo(msrv32_top,pass1_rtl) {
+  tessent_tool_version : 2022.2;
+  tessent_meta_version : 10;
+  version : 3;
+  creation_date : Tue Apr 07 12:00:11 GMT 2026;
+  creation_user : AMuthuKKumar;
+  creation_step : process_dft_specification;
+  level : chip;
+  icl_extraction_needed : On;
+  library_name : work;
+  gate_extension : vg;
+  interface_has_external_dependencies : 0;
+  OpenedTsdbDirectories {
+    /home1/PD07/AMuthuKKumar/DFT_RISCV_PROJECT/Project/TSDB;
+  }
+}

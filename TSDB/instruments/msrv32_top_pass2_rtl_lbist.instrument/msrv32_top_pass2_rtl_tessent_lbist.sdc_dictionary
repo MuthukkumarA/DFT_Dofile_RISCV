@@ -1,0 +1,47 @@
+#-------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.2
+#       Created on: Tue Apr  7 17:43:17 IST 2026
+#-------------------------------------------------
+
+set sdc_dictionary(msrv32_top_pass2_rtl_tessent_lbist) {
+  insertion_done 1
+  edt_clock_created_from_test_clock 0
+  shift_capture_clock_created_from_test_clock 0
+  shift_capture_clock_mux_lbist_in tessent_persistent_cell_shift_clock_out_*mux/A1
+  shift_capture_clock_mux_out tessent_persistent_cell_shift_clock_out_*mux/Y
+  lbist_en tessent_persistent_cell_lbist_en_buf/Y
+  shift_clock_select1 tessent_persistent_cell_shift_clock_select_1_buf/Y
+  shift_clock_select0 tessent_persistent_cell_shift_clock_select_0_buf/Y
+  scan_en_mux_lbist_in tessent_persistent_cell_scan_en_out_*mux/A1
+  scan_en_mux_lbist_sel tessent_persistent_cell_scan_en_out_*mux/S0
+  shift_en_mux_lbist_sel tessent_persistent_cell_shift_en_out_*mux/S0
+  shift_clock_select_mux_sel msrv32_top_pass2_rtl_tessent_lbist_fsm_i/tessent_persistent_cell_*_mux/S0
+  shift_clock_select_mux msrv32_top_pass2_rtl_tessent_lbist_fsm_i/tessent_persistent_cell_*_mux
+  prpg_en_reg msrv32_top_pass2_rtl_tessent_lbist_fsm_i/prpg_en_reg
+  misr_en_reg msrv32_top_pass2_rtl_tessent_lbist_fsm_i/misr_en_reg
+  hwdefault_reset_reg msrv32_top_pass2_rtl_tessent_lbist_fsm_i/lbist_reset_reg
+  tdr_sync_reset_reg msrv32_top_pass2_rtl_tessent_lbist_ctrl_signals_i/lbist_sync_reset_reg
+  prpg_en_persistent_buf tessent_persistent_cell_prpg_en/Y
+  misr_en_persistent_buf tessent_persistent_cell_misr_en/Y
+  capture_en_reg msrv32_top_pass2_rtl_tessent_lbist_fsm_i/capture_en_reg
+  mcp_per_pattern_en {
+    setup 8
+    hold 7
+  }
+  mcp_sync_reset {
+    setup 3
+    hold 2
+  }
+  tdr_single_bypass_persistent_pins tessent_persistent_cell_tdr_single_bypass*_buf/Y
+  single_chain_tdr_reg tdr_single_bypass_reg*
+  single_chain_sib_reg *_sib_i/*reg
+  single_chain_tdr_sib_so_retime_reg tdr_sib_i/so_retime_reg
+  ccm_en tessent_persistent_cell_ccm_en_buf/Y
+  ccm_clock tck
+  ccm_scan_in control_chain_scan_in
+  ccm_scan_out control_chain_scan_out
+  lbist_en_reg msrv32_top_pass2_rtl_tessent_lbist_ctrl_signals_i/lbist_en_reg
+  lbist_setup_reg msrv32_top_pass2_rtl_tessent_lbist_ctrl_signals_i/lbist_setup_reg*
+  lbist_run_mode_reg msrv32_top_pass2_rtl_tessent_lbist_fsm_i/lbist_run_mode_reg
+}

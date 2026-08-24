@@ -1,0 +1,131 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.2
+//       Created on: Tue Apr  7 17:43:20 IST 2026
+//-------------------------------------------------
+
+
+DftSpecification(msrv32_top,pass2_rtl) {
+  IjtagNetwork {
+    HostScanInterface(sri) {
+      Interface {
+        design_instance : msrv32_top_pass1_rtl_tessent_sib_sri_inst;
+        scan_interface : host;
+        daisy_chain_with_existing_client : On;
+      }
+      Sib(sri_ctrl) {
+        Tdr(sri_ctrl) {
+          Attributes {
+            tessent_dft_function : scan_resource_instrument_dft_control;
+          }
+        }
+      }
+      Sib(edt) {
+      }
+      Sib(occ) {
+      }
+      Sib(lbist) {
+      }
+    }
+  }
+  OCC {
+    ijtag_host_interface : Sib(occ);
+    capture_trigger : capture_en;
+    static_clock_control : both;
+    Controller(ms_riscv32_mp_clk_in_p) {
+      clock_intercept_nodes : ms_riscv32_mp_clk_in_p;
+    }
+    Controller(ramclk_p) {
+      clock_intercept_nodes : ramclk_p;
+    }
+  }
+  LogicBist {
+    ijtag_host_interface : Sib(lbist);
+    Controller(c0) {
+      burn_in : on;
+      pre_post_shift_dead_cycles : 8;
+      SingleChainForDiagnosis {
+        present : on;
+      }
+      ShiftCycles {
+        max : 40;
+        hardware_default : 33;
+      }
+      CaptureCycles {
+        max : 4;
+      }
+      // hardware default is max
+      PatternCount {
+        max : 10000;
+        hardware_default : 1024;
+      }
+      // hardware default is 0
+      WarmupPatternCount {
+        max : 512;
+      }
+      ControllerChain {
+        segment_per_instrument : off;
+        present : on;
+        clock : tck;
+      }
+      // no need because NCPINDEXDECODER exist      NcpOptions { }
+      Connections {
+        shift_clock_src : shift_clock_src_p;
+        scan_en_in : scan_en;
+      }
+    }
+    //        controller_chain_enable : msrv32_top_rtl1_tessent_tdr_sri_ctrl; 
+    NcpIndexDecoder {
+      Ncp(clk_occ_ncp) {
+        cycle(0) : OCC(ms_riscv32_mp_clk_in_p);
+        cycle(1) : OCC(ms_riscv32_mp_clk_in_p);
+      }
+      Ncp(ramclk_occ_ncp) {
+        cycle(0) : OCC(ramclk_p);
+        cycle(1) : OCC(ramclk_p);
+      }
+      Ncp(ALL_occ_ncp) {
+        cycle(0) : OCC(ms_riscv32_mp_clk_in_p), OCC(ramclk_p);
+      }
+      Ncp(sti_occ_ncp) {
+        cycle(0) : OCC(ms_riscv32_mp_clk_in_p);
+        cycle(1) : OCC(ms_riscv32_mp_clk_in_p);
+      }
+    }
+  }
+  EDT {
+    ijtag_host_interface : Sib(edt);
+    Controller(c0) {
+      Compactor {
+        type : basic;
+      }
+      longest_chain_range : 20, 60;
+      scan_chain_count : 10;
+      input_channel_count : 1;
+      output_channel_count : 1;
+      Connections {
+        EdtChannelsIn(1) {
+          port_pin_name : edt_channel_in1_p;
+        }
+        EdtChannelsOut(1) {
+          port_pin_name : edt_channel_out1_p;
+        }
+      }
+      ShiftPowerOptions {
+        present : on;
+        min_switching_threshold_percentage : 15;
+      }
+      LogicBistOptions {
+        misr_input_ratio : 1;
+        chain_mask_register_ratio : 1;
+        ShiftPowerOptions {
+          present : on;
+          default_operation : disabled;
+          SwitchingThresholdPercentage {
+            hardware_default : 25;
+          }
+        }
+      }
+    }
+  }
+}

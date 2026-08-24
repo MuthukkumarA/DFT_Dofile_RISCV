@@ -1,0 +1,62 @@
+#--------------------------------------------------------------------------
+#
+#  Unpublished work. Copyright 2021 Siemens
+#
+#  This material contains trade secrets or otherwise confidential 
+#  information owned by Siemens Industry Software Inc. or its affiliates 
+#  (collectively, SISW), or its licensors. Access to and use of this 
+#  information is strictly limited as set forth in the Customer's 
+#  applicable agreements with SISW.
+#
+#--------------------------------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.2
+#       Created on: Tue Apr  7 17:29:57 IST 2026
+#--------------------------------------------------------------------------
+
+set ijtag_sdc_dictionary {
+  msrv32_top_pass1_rtl_tessent_tap_main {
+    version 2
+    shift_en {
+      register fsm/se_reg
+      persistent_buffer tessent_persistent_cell_shift_en_buf
+    }
+    tck {
+      persistent_buffer tessent_persistent_cell_tck_cts_stop_buf
+    }
+    capture_en {
+      persistent_buffer tessent_persistent_cell_capture_en_buf
+    }
+    update_en {
+      persistent_buffer tessent_persistent_cell_update_en_buf
+    }
+    test_logic_reset {
+      persistent_buffer tessent_persistent_cell_tlr_buf
+    }
+    select0 {
+      persistent_buffer tessent_persistent_cell_host_1_to_sel_buf
+    }
+    data_out_buf_list {}
+  }
+  Cells {
+    Cell.And2.input0 A0
+    Cell.And2.input1 A1
+    Cell.And2.module_name and02
+    Cell.And2.output Y
+    Cell.Buf.input A
+    Cell.Buf.module_name buf02
+    Cell.Buf.output Y
+    Cell.ClkBuf.input A
+    Cell.ClkBuf.module_name clock_buf02
+    Cell.ClkBuf.output Y
+    Cell.Inv.input A
+    Cell.Inv.module_name inv01
+    Cell.Inv.output Y
+    Cell.Or2.input0 A0
+    Cell.Or2.input1 A1
+    Cell.Or2.module_name or02
+    Cell.Or2.output Y
+    persistent_cell_prefix tessent_persistent_cell_
+    persistent_clock_cell_prefix tessent_persistent_cell_
+  }
+}

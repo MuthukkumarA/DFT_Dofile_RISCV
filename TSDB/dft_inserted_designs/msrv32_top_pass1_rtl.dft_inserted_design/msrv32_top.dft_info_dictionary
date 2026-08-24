@@ -1,0 +1,30 @@
+set tessent_dft_info_dict {
+  version 1
+  dft_signals {
+    async_set_reset_dynamic_disable {
+      connection_node_name tessent_persistent_cell_async_set_reset_dynamic_disable/Y
+      connection_node_type pin
+    }
+    async_set_reset_static_disable {
+      connection_node_name msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst/async_set_reset_static_disable
+      connection_node_type pin
+      forced_value_in_pre_scan_drc 0
+    }
+    scan_en {
+      connection_node_name scan_en_pad/C
+      connection_node_type pin
+    }
+  }
+  modules_with_chains {}
+  modules_with_chains_not_active_by_default {}
+  non_scannable_instance_list {
+    msrv32_top_pass1_rtl_tessent_bscan_interface_I
+    msrv32_top_pass1_rtl_tessent_bscan_interface_I
+    msrv32_top_pass1_rtl_tessent_bscan_logical_group_DEF_inst
+    msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst
+    msrv32_top_pass1_rtl_tessent_sib_sri_inst
+    msrv32_top_pass1_rtl_tessent_tap_main_inst
+    msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst
+  }
+  edt_instances {}
+}

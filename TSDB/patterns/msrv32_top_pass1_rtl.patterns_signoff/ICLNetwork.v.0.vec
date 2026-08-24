@@ -1,0 +1,573 @@
+//
+// Verilog format test patterns produced by Tessent Shell 2022.2
+// Filename       : ./TSDB/patterns/msrv32_top_pass1_rtl.patterns_signoff/ICLNetwork.v.0.vec
+// Idstamp        : 2022.2:ec94:6099:0:0000
+// Date           : Tue Apr  7 17:30:53 2026
+//
+// Format of broadside vector:
+//   PI_bits PO_bits MASK_bits Increment_bit Timeplate_bits(1) PatType_bits(3)
+//   VecType_bits(4)
+//   Increment_bit  - indicates when to increment pattern count
+//   Timeplate_bits - encodes timeplate number to use
+//   PatType_bits   - encodes pattern type
+//   VecType_bits   - encodes vector type
+
+// Scan test block
+
+// Pattern 0 Cycle 0 Timestamp 0 ns 
+000000000000000000000000000001000110000
+ // Start Pattern (0) MSG
+// Pattern_set msrv32_top 
+000000000000000000000000000101000110000
+// Simulation Cycle 0  Timestamp 0 ns
+01000X0Z10101011
+// + TAP controller reset 
+00010X0Z10101011
+// + Advance TAP controller to idle 
+01010X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000101010110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux 
+000000000000000000000000000101100110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 9: instruction = 'bx -> DRMux = bypass 
+000000000000000000000000000101110110000
+// + Scan path activation 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 3:0    R 3:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0] 
+// ) 
+// +  Loading: 1011 
+// Unloading: 0001 
+// + Advance TAP controller from idle to Shift-IR 
+11010X0Z10101011
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-IR 
+0111011Z10101011
+000000000000000000000000000110000110000
+0111001Z10101011
+000000000000000000000000000110010110000
+0101001Z10101011
+000000000000000000000000000110100110000
+// + Advance TAP controller from Shift-IR to Exit-IR 
+// Simulation Cycle 10  Timestamp 1000 ns
+1111001Z10101011
+000000000000000000000000000110110110000
+// + Advance TAP controller from Exit-IR to Update-IR 
+11010X0Z10101011
+//  Scan in verification pattern to the following scan register: 
+000000000000000000000000000111000110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1 
+000000000000000000000000000111010110000
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 1 
+// Unloading: 0 
+// + Advance TAP controller from Update-IR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111001Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Pause-DR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan register: 
+000000000000000000000000000111110110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1 
+000000000000000000000000001000000110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 0 
+// Unloading: 1 
+// + Advance TAP controller from Pause-DR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1101011Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Update-DR 
+// Simulation Cycle 20  Timestamp 2000 ns
+11010X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000101010110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux 
+000000000000000000000000000101100110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so 
+000000000000000000000000001000010110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si 
+000000000000000000000000001000100110000
+// + Scan path activation 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 3:0    R 3:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0] 
+// ) 
+// +  Loading: 0111 
+// Unloading: 0001 
+// + Advance TAP controller from Update-DR to Shift-IR 
+11010X0Z10101011
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-IR 
+0111011Z10101011
+000000000000000000000000000110000110000
+0111001Z10101011
+000000000000000000000000000110010110000
+0111001Z10101011
+000000000000000000000000000110100110000
+// + Advance TAP controller from Shift-IR to Exit-IR 
+1101001Z10101011
+000000000000000000000000000110110110000
+// + Advance TAP controller from Exit-IR to Update-IR 
+11010X0Z10101011
+//  Scan in verification pattern to the following scan register: 
+000000000000000000000000000111000110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1 
+000000000000000000000000001000110110000
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib 
+// ) 
+// +  Loading: 1 
+// Unloading: 0 
+// + Advance TAP controller from Update-IR to Shift-DR 
+// Simulation Cycle 30  Timestamp 3000 ns
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111001Z10101011
+000000000000000000000000001001000110000
+// + Advance TAP controller from Exit-DR to Pause-DR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan register: 
+000000000000000000000000000111110110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1 
+000000000000000000000000001001010110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib 
+// ) 
+// +  Loading: 1 
+// Unloading: 1 
+// + Advance TAP controller from Pause-DR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111011Z10101011
+000000000000000000000000001001000110000
+// + Advance TAP controller from Exit-DR to Update-DR 
+11010X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000101010110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux 
+000000000000000000000000000101100110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so 
+000000000000000000000000001000010110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000001001100110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si 
+000000000000000000000000001001110110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 1:1    R 1:1   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib 
+// ) 
+// +  Loading: 0_1 
+// Unloading: 0_0 
+// + Advance TAP controller from Update-DR to Shift-DR 
+11010X0Z10101011
+//  Scan in verification pattern to the following scan registers: 
+000000000000000000000000001010000110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0 
+000000000000000000000000001010010110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1 
+000000000000000000000000001000110110000
+// Simulation Cycle 40  Timestamp 4000 ns
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+0111001Z10101011
+000000000000000000000000001001000110000
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1101001Z10101011
+000000000000000000000000001010100110000
+// + Advance TAP controller from Exit-DR to Pause-DR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan registers: 
+000000000000000000000000001010110110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0 
+000000000000000000000000001011000110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1 
+000000000000000000000000001001010110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 1:1    R 1:1   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib 
+// ) 
+// +  Loading: 1_1 
+// Unloading: 0_1 
+// + Advance TAP controller from Pause-DR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+0111011Z10101011
+000000000000000000000000001001000110000
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111001Z10101011
+000000000000000000000000001010100110000
+// + Advance TAP controller from Exit-DR to Update-DR 
+11010X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000101010110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux 
+000000000000000000000000000101100110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 8: instruction = 4'b0111 -> DRMux = host_1_from_so 
+000000000000000000000000001000010110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000001001100110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000001011010110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 2:2    R 2:2   msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst.tdr[0:0] 
+//        W 1:1    R 1:1   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib 
+// ) 
+// +  Loading: 1_0_1 
+// Unloading: 0_0_0 
+// + Advance TAP controller from Update-DR to Shift-DR 
+// Simulation Cycle 50  Timestamp 5000 ns
+11010X0Z10101011
+//  Scan in verification pattern to the following scan registers: 
+000000000000000000000000001010000110000
+//   msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst.tdr[0:0], load value = 1 
+000000000000000000000000001011100110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, load value = 0 
+000000000000000000000000001010010110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, load value = 1 
+000000000000000000000000001000110110000
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+0111001Z10101011
+000000000000000000000000001001000110000
+0101001Z10101011
+000000000000000000000000001010100110000
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111001Z10101011
+000000000000000000000000001011110110000
+// + Advance TAP controller from Exit-DR to Pause-DR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan registers: 
+000000000000000000000000001010110110000
+//   msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst.tdr[0:0], expected value = 1 
+000000000000000000000000001100000110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib, expected value = 0 
+000000000000000000000000001011000110000
+//   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib, expected value = 1 
+000000000000000000000000001001010110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 2:2    R 2:2   msrv32_top_pass1_rtl_tessent_tdr_sri_ctrl_inst.tdr[0:0] 
+//        W 1:1    R 1:1   msrv32_top_pass1_rtl_tessent_sib_sri_ctrl_inst.sib 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_sib_sri_inst.sib 
+// ) 
+// +  Loading: 0_0_0 
+// Unloading: 1_0_1 
+// + Advance TAP controller from Pause-DR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+0101011Z10101011
+000000000000000000000000001001000110000
+// Simulation Cycle 60  Timestamp 6000 ns
+0101001Z10101011
+000000000000000000000000001010100110000
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1101011Z10101011
+000000000000000000000000001011110110000
+// + Advance TAP controller from Exit-DR to Update-DR 
+11010X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000101010110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux 
+000000000000000000000000000101100110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 7: instruction = 4'b0110 -> DRMux = bypass 
+000000000000000000000000001100010110000
+// + Scan path activation 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 3:0    R 3:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0] 
+// ) 
+// +  Loading: 0110 
+// Unloading: 0001 
+// + Advance TAP controller from Update-DR to Shift-IR 
+11010X0Z10101011
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-IR 
+0101011Z10101011
+000000000000000000000000000110000110000
+0111001Z10101011
+000000000000000000000000000110010110000
+0111001Z10101011
+000000000000000000000000000110100110000
+// + Advance TAP controller from Shift-IR to Exit-IR 
+// Simulation Cycle 70  Timestamp 7000 ns
+1101001Z10101011
+000000000000000000000000000110110110000
+// + Advance TAP controller from Exit-IR to Update-IR 
+11010X0Z10101011
+//  Scan in verification pattern to the following scan register: 
+000000000000000000000000000111000110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1 
+000000000000000000000000000111010110000
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 1 
+// Unloading: 0 
+// + Advance TAP controller from Update-IR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111001Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Pause-DR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan register: 
+000000000000000000000000000111110110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1 
+000000000000000000000000001000000110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 0 
+// Unloading: 1 
+// + Advance TAP controller from Pause-DR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1101011Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Update-DR 
+// Simulation Cycle 80  Timestamp 8000 ns
+11010X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000101010110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux 
+000000000000000000000000000101100110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 1: instruction = 4'b0000 -> DRMux = bypass 
+000000000000000000000000001100100110000
+// + Scan path activation 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 3:0    R 3:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0] 
+// ) 
+// +  Loading: 0000 
+// Unloading: 0001 
+// + Advance TAP controller from Update-DR to Shift-IR 
+11010X0Z10101011
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-IR 
+0101011Z10101011
+000000000000000000000000000110000110000
+0101001Z10101011
+000000000000000000000000000110010110000
+0101001Z10101011
+000000000000000000000000000110100110000
+// + Advance TAP controller from Shift-IR to Exit-IR 
+1101001Z10101011
+000000000000000000000000000110110110000
+// + Advance TAP controller from Exit-IR to Update-IR 
+11010X0Z10101011
+//  Scan in verification pattern to the following scan register: 
+000000000000000000000000000111000110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1 
+000000000000000000000000000111010110000
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 1 
+// Unloading: 0 
+// + Advance TAP controller from Update-IR to Shift-DR 
+// Simulation Cycle 90  Timestamp 9000 ns
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111001Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Pause-DR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan register: 
+000000000000000000000000000111110110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1 
+000000000000000000000000001000000110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 0 
+// Unloading: 1 
+// + Advance TAP controller from Pause-DR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1101011Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Update-DR 
+11010X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000101010110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 0: fsm.irSel = 1'b0 -> IRMux = DRMux 
+000000000000000000000000000101100110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.DRMux, selection 0: instruction = 4'b1111 -> DRMux = bypass 
+000000000000000000000000001100110110000
+// + Scan path activation 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 3:0    R 3:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0] 
+// ) 
+// +  Loading: 1111 
+// Unloading: 0001 
+// + Advance TAP controller from Update-DR to Shift-IR 
+11010X0Z10101011
+// Simulation Cycle 100  Timestamp 10000 ns
+11010X0Z10101011
+01010X0Z10101011
+01010X0Z10101011
+// + Shift-IR 
+0111011Z10101011
+000000000000000000000000000110000110000
+0111001Z10101011
+000000000000000000000000000110010110000
+0111001Z10101011
+000000000000000000000000000110100110000
+// + Advance TAP controller from Shift-IR to Exit-IR 
+1111001Z10101011
+000000000000000000000000000110110110000
+// + Advance TAP controller from Exit-IR to Update-IR 
+11010X0Z10101011
+//  Scan in verification pattern to the following scan register: 
+000000000000000000000000000111000110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, load value = 1 
+000000000000000000000000000111010110000
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 1 
+// Unloading: 0 
+// + Advance TAP controller from Update-IR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// Simulation Cycle 110  Timestamp 11000 ns
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1111001Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Pause-DR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan register: 
+000000000000000000000000000111110110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass, expected value = 1 
+000000000000000000000000001000000110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 0:0    R 0:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.bypass 
+// ) 
+// +  Loading: 0 
+// Unloading: 1 
+// + Advance TAP controller from Pause-DR to Shift-DR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-DR 
+// + Advance TAP controller from Shift-DR to Exit-DR 
+1101011Z10101011
+000000000000000000000000000111100110000
+// + Advance TAP controller from Exit-DR to Update-DR 
+11010X0Z10101011
+//  Activate selection for scan mux msrv32_top_pass1_rtl_tessent_tap_main_inst.IRMux, selection 1: fsm.irSel = 1'b1 -> IRMux = instruction[0] 
+000000000000000000000000001101000110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 3:0    R 3:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0] 
+// ) 
+// +  Loading: 1011 
+// Unloading: 0001 
+// + Advance TAP controller from Update-DR to Shift-IR 
+11010X0Z10101011
+//  Scan in verification pattern to the following scan register: 
+000000000000000000000000000111000110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0], load value = 1011 
+000000000000000000000000001101010110000
+11010X0Z10101011
+01010X0Z10101011
+// Simulation Cycle 120  Timestamp 12000 ns
+01010X0Z10101011
+// + Shift-IR 
+0111011Z10101011
+000000000000000000000000000110000110000
+0111001Z10101011
+000000000000000000000000000110010110000
+0101001Z10101011
+000000000000000000000000000110100110000
+// + Advance TAP controller from Shift-IR to Exit-IR 
+1111001Z10101011
+000000000000000000000000000110110110000
+// + Advance TAP controller from Exit-IR to Pause-IR 
+01010X0Z10101011
+//  Scan out verification pattern from the following scan register: 
+000000000000000000000000000111110110000
+//   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0], expected value = 1011 
+000000000000000000000000001101100110000
+// + Read integrity pattern from scan registers 
+// + TAP vector tdi_p..tdo_p ( 
+//        W 3:0    R 3:0   msrv32_top_pass1_rtl_tessent_tap_main_inst.instruction[3:0] 
+// ) 
+// +  Loading: 1111 
+// Unloading: 1011 
+// + Advance TAP controller from Pause-IR to Shift-IR 
+11010X0Z10101011
+01010X0Z10101011
+// + Shift-IR 
+0111011Z10101011
+000000000000000000000000000110000110000
+0111011Z10101011
+000000000000000000000000000110010110000
+// Simulation Cycle 130  Timestamp 13000 ns
+0111001Z10101011
+000000000000000000000000000110100110000
+// + Advance TAP controller from Shift-IR to Exit-IR 
+1111011Z10101011
+000000000000000000000000000110110110000
+// + Advance TAP controller from Exit-IR to idle 
+11010X0Z10101011
+01010X0Z10101011
+// end of Vec file MSG
+000000000000000000000000000000110110000

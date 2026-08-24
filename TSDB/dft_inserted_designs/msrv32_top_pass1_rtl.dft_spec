@@ -1,0 +1,80 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.2
+//       Created on: Tue Apr  7 17:30:13 IST 2026
+//-------------------------------------------------
+
+
+DftSpecification(msrv32_top,pass1_rtl) {
+  IjtagNetwork {
+    HostScanInterface(tap) {
+      Interface {
+        tck : tck_p;
+        trst : trst_p;
+        tms : tms_p;
+        tdi : tdi_p;
+        tdo : tdo_p;
+      }
+      Tap(main) {
+        HostIjtag(1) {
+          Sib(sri) {
+            Attributes {
+              tessent_dft_function : scan_resource_instrument_host;
+            }
+            Sib(sri_ctrl) {
+              Tdr(sri_ctrl) {
+                Attributes {
+                  tessent_dft_function : scan_resource_instrument_dft_control;
+                }
+              }
+            }
+          }
+        }
+        HostBscan {
+        }
+      }
+    }
+  }
+  BoundaryScan {
+    ijtag_host_interface : Tap(main)/HostBscan;
+    BoundaryScanCellOptions {
+      edt_channel_out1_p : dont_touch;
+      ms_riscv32_mp_imaddr_out[0] : dont_touch;
+      ms_riscv32_mp_imaddr_out[10] : dont_touch;
+      ms_riscv32_mp_imaddr_out[11] : dont_touch;
+      ms_riscv32_mp_imaddr_out[12] : dont_touch;
+      ms_riscv32_mp_imaddr_out[13] : dont_touch;
+      ms_riscv32_mp_imaddr_out[14] : dont_touch;
+      ms_riscv32_mp_imaddr_out[15] : dont_touch;
+      ms_riscv32_mp_imaddr_out[16] : dont_touch;
+      ms_riscv32_mp_imaddr_out[17] : dont_touch;
+      ms_riscv32_mp_imaddr_out[18] : dont_touch;
+      ms_riscv32_mp_imaddr_out[19] : dont_touch;
+      ms_riscv32_mp_imaddr_out[1] : dont_touch;
+      ms_riscv32_mp_imaddr_out[20] : dont_touch;
+      ms_riscv32_mp_imaddr_out[21] : dont_touch;
+      ms_riscv32_mp_imaddr_out[22] : dont_touch;
+      ms_riscv32_mp_imaddr_out[23] : dont_touch;
+      ms_riscv32_mp_imaddr_out[24] : dont_touch;
+      ms_riscv32_mp_imaddr_out[25] : dont_touch;
+      ms_riscv32_mp_imaddr_out[26] : dont_touch;
+      ms_riscv32_mp_imaddr_out[27] : dont_touch;
+      ms_riscv32_mp_imaddr_out[28] : dont_touch;
+      ms_riscv32_mp_imaddr_out[29] : dont_touch;
+      ms_riscv32_mp_imaddr_out[2] : dont_touch;
+      ms_riscv32_mp_imaddr_out[30] : dont_touch;
+      ms_riscv32_mp_imaddr_out[31] : dont_touch;
+      ms_riscv32_mp_imaddr_out[3] : dont_touch;
+      ms_riscv32_mp_imaddr_out[4] : dont_touch;
+      ms_riscv32_mp_imaddr_out[5] : dont_touch;
+      ms_riscv32_mp_imaddr_out[6] : dont_touch;
+      ms_riscv32_mp_imaddr_out[7] : dont_touch;
+      ms_riscv32_mp_imaddr_out[8] : dont_touch;
+      ms_riscv32_mp_imaddr_out[9] : dont_touch;
+      scan_en : dont_touch;
+      shift_capture_clock : dont_touch;
+      shift_clock_src_p : dont_touch;
+      ms_riscv32_mp_clk_in : clock;
+    }
+  }
+}

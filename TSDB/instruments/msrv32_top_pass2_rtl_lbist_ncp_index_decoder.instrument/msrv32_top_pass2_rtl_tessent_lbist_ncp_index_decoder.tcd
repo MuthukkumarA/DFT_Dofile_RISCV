@@ -1,0 +1,53 @@
+//--------------------------------------------------------------------------
+//
+//  Unpublished work. Copyright 2021 Siemens
+//
+//  This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//  (collectively, SISW), or its licensors. Access to and use of this 
+//  information is strictly limited as set forth in the Customer's 
+//  applicable agreements with SISW.
+//
+//--------------------------------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.2
+//       Created on: Tue Apr  7 17:43:15 IST 2026
+//--------------------------------------------------------------------------
+
+Core(msrv32_top_pass2_rtl_tessent_lbist_ncp_index_decoder) {
+   LbistNcpIndexDecoder {
+      Interface {
+         NcpIndex(ncp_index[1:0]) {
+            persistent_pin(0): tessent_persistent_cell_ncp_index_buf_0/Y;
+            persistent_pin(1): tessent_persistent_cell_ncp_index_buf_1/Y;
+         }
+         ClockSequence(occ1_clock_sequence[2:0]) {
+            persistent_pin(0): tessent_persistent_cell_occ1_clock_sequence_buf_0/Y;
+            persistent_pin(1): tessent_persistent_cell_occ1_clock_sequence_buf_1/Y;
+            persistent_pin(2): tessent_persistent_cell_occ1_clock_sequence_buf_2/Y;
+         }
+         ClockSequence(occ2_clock_sequence[2:0]) {
+            persistent_pin(0): tessent_persistent_cell_occ2_clock_sequence_buf_0/Y;
+            persistent_pin(1): tessent_persistent_cell_occ2_clock_sequence_buf_1/Y;
+            persistent_pin(2): tessent_persistent_cell_occ2_clock_sequence_buf_2/Y;
+         }
+      }
+      CaptureProcedures {
+         Ncp(clk_occ_ncp) {
+            Cycle(0) : occ1_clock_sequence;
+            Cycle(1) : occ1_clock_sequence;
+         }
+         Ncp(ramclk_occ_ncp) {
+            Cycle(0) : occ2_clock_sequence;
+            Cycle(1) : occ2_clock_sequence;
+         }
+         Ncp(ALL_occ_ncp) {
+            Cycle(0) : occ1_clock_sequence, occ2_clock_sequence;
+         }
+         Ncp(sti_occ_ncp) {
+            Cycle(0) : occ1_clock_sequence;
+            Cycle(1) : occ1_clock_sequence;
+         }
+      }
+   }
+}
